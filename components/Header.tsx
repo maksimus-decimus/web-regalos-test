@@ -4,19 +4,20 @@ interface HeaderProps {
     cartCount: number;
     searchTerm: string;
     onSearchChange: (val: string) => void;
+    onGoHome: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ cartCount, searchTerm, onSearchChange }) => {
+const Header: React.FC<HeaderProps> = ({ cartCount, searchTerm, onSearchChange, onGoHome }) => {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-[#28392e] bg-background-dark/80 backdrop-blur-md px-6 py-4">
             <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-6">
                 {/* Logo */}
-                <div className="flex items-center gap-3 text-white cursor-pointer select-none">
+                <button onClick={onGoHome} className="flex items-center gap-3 text-white cursor-pointer select-none hover:opacity-80 transition-opacity">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary">
                         <span className="material-symbols-outlined text-3xl">redeem</span>
                     </div>
                     <h2 className="text-xl font-bold tracking-tight">Regalos 2025</h2>
-                </div>
+                </button>
 
                 {/* Search Bar */}
                 <div className="hidden md:flex flex-1 max-w-lg">
@@ -37,8 +38,9 @@ const Header: React.FC<HeaderProps> = ({ cartCount, searchTerm, onSearchChange }
                 {/* Right Actions */}
                 <div className="flex items-center gap-6">
                     <div className="hidden lg:flex items-center gap-6">
-                        <a href="#" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Mi Cuenta</a>
-                        <a href="#" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Ayuda</a>
+                        <button onClick={onGoHome} className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Inicio</button>
+                        <a href="#" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Categorías</a>
+                        <a href="#" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Ofertas</a>
                     </div>
                     <div className="flex gap-3">
                         <button className="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#28392e] text-white hover:bg-[#344a3b] transition-colors">

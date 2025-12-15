@@ -6,6 +6,9 @@ export interface Product {
     image: string;
     tag?: string;
     discount?: string;
+    oldPrice?: number;
+    categoryId?: number;
+    subcategory?: string;
 }
 
 export interface Category {

@@ -3,11 +3,15 @@ import { Category } from '../types';
 
 interface CategoryCardProps {
     category: Category;
+    onClick: (category: Category) => void;
 }
 
-const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
+const CategoryCard: React.FC<CategoryCardProps> = ({ category, onClick }) => {
     return (
-        <a href={`#category-${category.id}`} className="group relative block aspect-[4/3] overflow-hidden rounded-2xl bg-surface-dark transition-transform hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
+        <button 
+            onClick={() => onClick(category)} 
+            className="group relative block w-full text-left aspect-[4/3] overflow-hidden rounded-2xl bg-surface-dark transition-transform hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10"
+        >
             <div className="absolute inset-0 grid grid-cols-3 h-full gap-[2px]">
                 {/* Main Large Image */}
                 <div
@@ -42,7 +46,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
                 <p className="text-sm font-medium text-primary uppercase tracking-wider mb-1">{category.subtitle}</p>
                 <h3 className="text-2xl font-bold text-white">{category.title}</h3>
             </div>
-        </a>
+        </button>
     );
 };
 

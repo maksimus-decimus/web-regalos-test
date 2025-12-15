@@ -2,16 +2,6 @@ import { Category, Product } from './types';
 
 export const CATEGORIES: Category[] = [
     {
-        id: 1,
-        title: "Regalos para Hombre",
-        subtitle: "Para Él",
-        images: [
-            "https://lh3.googleusercontent.com/aida-public/AB6AXuAGoWKgaP41pazxTEiffNYJJ2zabbrKXTsWkwxJbP9RjG_2k_7Ar88seCYcvSBI0rZIer0aJWZYha9qbdY74aqzjXnUvotnxm_avJ92dTtOv8Yc2-YAMDzAyJ_mjBMmHiFcgEoGSElnzXTbK08alQvHXkISgVJHQFO_11KDScWE0CmZTI7xLhbRQp0iVlAgUDg5dxQ9LnFVcY8KJPcRyDpTbiD_8ZuMNg-Wxzeb9nWIDA0tsX-LyLwhpTjVQCTBJ_BNVMe-4X_rCHA",
-            "https://lh3.googleusercontent.com/aida-public/AB6AXuCIamB4gKwsuIu3MykK5AzmM4C8KvYNF1i7HCWEZSiDhwyQr9Q20OZHZUGVOnv-R0CiwEyp--VL_ELCpqgORU7yldhb9HUrOsOcqaxU5lxQnvR-rNdUns7CHDVr1plkuIOLxDCIwgsXm0FscXH4OrLFT-4zuo48BR71hC-E7pK-cm-1C_jGyBboN5UKH_W94EtzgRlo9ex_F2vewbbgk3ANTh_b-wrgg-YwyGh9aO_vZZmZUA-knkmkDOxBLC1M3eHoixueC2oG7mE",
-            "https://lh3.googleusercontent.com/aida-public/AB6AXuDmwELOimnLT5MYqpFksWilser2D4Au1OE-08P7R7xUnYE4zmP9MVwtXagqnegnsMjUUzUka28CWdZFaCP0xEze14CEvwcw4v6-02DhJuJaqBaVeq8pfskgezVyqNayOBRxCU5vc9rUzV1w30EVplMBWCRsvnGbIjZxCFyVIxQ01EC_CR9sGbL90QbIKBrStp3FFCSoqKB5_ipd9--r_0bZeb3IAq1T_TDlZNpHdMNDxoo3mnKHjrYKZWSPCAhq9y6RIMEoAQX6j-A"
-        ]
-    },
-    {
         id: 2,
         title: "Regalos para Padres",
         subtitle: "Especiales",
@@ -100,5 +90,168 @@ export const PRODUCTS: Product[] = [
         price: 149,
         category: "Fotografía",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD_FKhR0cZ3xIvU7rWM9N-QWo6g1abXZMy4r3aTK6c6nKsgRCMuf1RWXwt7zsIALlK3iJXWQcoCHg16vIQMMfpOIeo10OL7_w6eP1UN6Y590tWYPEBk2DhbW5fE5GSYxEIer2aueLzLezpAzc4mw590E8hFZSFFnIpR0aelDgIsvjb8gI8lm61YrBbISvhsbMaDXNT4U7DKRsRQoPJhEnYSKqT04aaaq95KbP6QYJitEpz3RkIPgz3GnAzZcspswi7lKqimr21jhSs"
+    },
+    // Products for Fathers (id 2)
+    {
+        id: 201,
+        categoryId: 2,
+        title: "Titan Smartwatch Pro",
+        price: 299.00,
+        oldPrice: 349.00,
+        category: "Wearables",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0CvV4MF4ZgCyG32yhghOzAQSgPN05wp3w_mKTBuWEjXDa-ZcfbzCZiwJPx3GKwvVExK_Bb65_e2ktD-EL4snaH7csYp8k5RuswttJNB7wRSKfbreVZxGgpKsH97msD19KswBNPUAu_OZI5FysBBkRg_bgkiqv04-FeL5XWzcXhVvrp_MNgPgpi0F4SqDVxvuDsj0atOQR1kR5ISSjfLdNc4T4uYtlwY3vCbm8ZfMPRBRelarZn4TI52siFXcs79oNI_t5bZrm43g",
+        tag: "Más Vendido"
+    },
+    {
+        id: 202,
+        categoryId: 2,
+        title: "SonicPure Headphones",
+        price: 199.00,
+        category: "Audio",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAmeARDRqeiNFqqw2mGeGb5L9Bx1NFAEeRbYimNM2qCqN_PF9szIXgrYQF34pyy023IRLoOF5I5anxEbXTY0p1O2ytUfb7n3MGwNIBJq5k5UBo7EbwsXlhKE3pdOpjvBhiotRLBh-6iC8k2NbbFYRu8YfscQlx1UYe1M0Gu74YolaTycNEVoTQBJtqYOyg5iZ6-dtw7iBvVGSIB67TSSrOnByPs2sAPkWTQ60bTN5jUanGg52jzskRXmkyt8QDSWUX0Z5e_xgdfxIA"
+    },
+    {
+        id: 203,
+        categoryId: 2,
+        title: "Taladro Smart X2",
+        price: 144.00,
+        oldPrice: 180.00,
+        category: "Herramientas",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAvmJCjnUbIAOIQtS9963oPtM_nRhxjiOdfBUUeW_Eup1ZVR2lYMssISUW5iZ0Ei1e3NsWPp8sr-rdIX5FaQ05ZNZdG2rQRtDmFpopWGRAs0qYuEXkS6tyhTsyuJuiLaKob02v3mwW_4dw97v-x4GFLq4SZOS0yzJVZEYytdkZ4YzTR5DY9fFhniwIJTgGcxrIaXHmaQuvOtT-r45Jpc0QbdygGL_5EqeADTBHimunKuVpJ1HDEHKRKsPjHt8x4K_8rDlpf-S9OyVQ",
+        discount: "-20%"
+    },
+    {
+        id: 204,
+        categoryId: 2,
+        title: "SkyRunner Drone 4K",
+        price: 499.00,
+        category: "Drones",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDP-Om7UBSg7non487iB4gUIziD3Dbhz696herDB65xIr198dnC-sRX0fNkcCHPSxpZrECuGijuA33yOLGgvFG6oP5C33_GjkcbxksU-p5JSuXRvw89IGxnQhNJr7EQMG28F-JTrz0dwtn933GPVN2sU_8KuF_DRkI0wypO-8pXbe_8hSGYTpK4-pVYZMau266C8_HadgZ3c55IFd1HDftsmALPdSJWLGN8wbvUL8uxPXFLBkc-MtF2kMj0AJVWEJZfJm405R2H0yY"
+    },
+    {
+        id: 205,
+        categoryId: 2,
+        title: "Barista Express",
+        price: 550.00,
+        category: "Hogar",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCFEV1qNQbaEjL5vP1ZezoxUJ85rqE5-YfJFt6em7zqKlMvoZPuFhPJMjg2etWieTawTLVckQ2lqoMLBMADooXb7ivJcHcAJ3rMYONIAgaTGA8ZEj3bWWi3gXFfyhGJXUqt6BEqCbooJY1T2qsdo_ZlvE_Dbzv4HHfs49e7bvY8lR63NkcOYKlnMd3Kd1fmfCoUzNYf_oDPm-R3q1n2T25Iz03vDnA47TgH_kTXj94FI3Hc_ttILgHZ1KqfVFKp680sL0QRXy2pUsg"
+    },
+    {
+        id: 206,
+        categoryId: 2,
+        title: "RetroConsole 64-bit",
+        price: 89.99,
+        category: "Gaming",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBRJD8LO78wdPCEDVIXLueMmkHq_SljkeQ7L7XaYWMrLfVcpCpLbSgAzfC6RxIipp76DfRSJPw0ciJjLXNR6cQvZUdWplz3LLjfw2GMPjM2_h-FUqicSps1HM8Jd7dgpga4BTMsew1TRCe275bkm70_dn268ZgfgYYjRtZ30vuzUHeyPRqAARIzVQy3bi55KFj6v-snUcyMmq_oJFkr-parinnfnaGqNlWg-yNnVeMxiPbJupMN53gQSEx69TyrhzLUfitFqqOoYXw"
+    },
+    // Products for Mothers (id 3)
+    {
+        id: 301,
+        categoryId: 3,
+        subcategory: "Belleza",
+        title: "Set de Skincare Premium",
+        price: 85.00,
+        category: "Cuidado Personal",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCpo_vm6ZwEG8BNJ5hsx7va_N6vwPAXCrDtRHwqHKu36oDQ4Tr3PjMlnoMgF6rgfxqQB4GF7nqPzWsW86MvTjYMlIqO88AtC_R_kVe-5vS76IwlwBT8fFzAO2NnDbrQaDSQm61yxRFFtlgQFRZMb0HTdDwOIwMvFFNJM5336ktnvGCAp5rZ_EdMdZnys5RVseMT9J3zfQ9CVBsbjnx_fz3DUzaa3dCJALXVYzxt9ePmIEwQCC6iOMVmi5uyM981cpJHExFviVOS07I"
+    },
+    {
+        id: 302,
+        categoryId: 3,
+        subcategory: "Belleza",
+        title: "Masajeador Facial de Jade",
+        price: 45.00,
+        category: "Belleza",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDAWR1ltb7HoJN8Hgd5MfSEnCeh-GAYFyTqZ3vL_UWNtWr3kfh0tz0SjjcvukNoefN5OQb6ALMyAGCCy2l7Q8JNgARM6XGRKTQCEGKtOxz5sinwg3AWFMBKIttcnNPqpZRGfOQQjzD5QIJFfwDLxKNAlBSPhDePqVPE2yOzIdD9oJhfS-_a9t6flutCXyGfvIV9HW68F5FrHi1KnGJ8Q61loszUFnbxJMcArI0CEJHGKdDU9t1V7uiJVkF8NERuNhrIg5XYL-RGMYg"
+    },
+    {
+        id: 303,
+        categoryId: 3,
+        subcategory: "Belleza",
+        title: "Eau de Parfum Floral",
+        price: 120.00,
+        category: "Fragancias",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAElcARZxX1ec7dGnfm7OXMjAkb_bApi-2nGqQZludMpMS-r3gnN1q3-c4HMbQOdKGe3VAopae2wFt2OqExTLaEGkzpgEIVE_l_KYbc5kP_fo2PILOUomC6gzRPAanzx4ucL2gSnLU9h5S_eeQvxN6vwToC8tzi0xLzvQ48Za38liBKBXissIyTIcZXUOAbpKV9j4aR6JpNc8jeOgYpqdWVUmP8OHfWcfhvmGJMICKKAIRjsf7iqFkMgerlnXndihtUNCs-j8fChjY"
+    },
+    {
+        id: 304,
+        categoryId: 3,
+        subcategory: "Hogar",
+        title: "Lámpara de Diseño",
+        price: 95.00,
+        category: "Decoración",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDSi1ss1TgBj6Y0G15ecLXQMvlLOyk3V9bT1CoHENorCw8iIYnfBiniqAcg_DT6ojmQOIIw6bHmxCrfn-3NAlHJ902YyfjPkr0tL3Ew1Ka2sRiucqYR9bJKz-Y0bpLSR1r2_3qCQMSQw6Ynka8EXoIx0dcMXJ2sUm8T302z6NAlhuxfxkPPhfn9oFDEU-y42GLashChOO9Diqv5zcDJGCLoR7J6ecdfwslZHRu8L6R06lmYGrf1tNISySos0M6m4R2vsV4_nUPLChA",
+        tag: "Más vendido"
+    },
+    {
+        id: 305,
+        categoryId: 3,
+        subcategory: "Hogar",
+        title: "Manta Tejida Suave",
+        price: 60.00,
+        category: "Hogar",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCPcF4JAZc5mgkBC2dY6cLi27dUnNljxOBdGAxrvI0D6IlyndBJQwzgQyLT8MycPlR7S3drijLdPZuUm17xACArz6Tu85h697wu52OsPLzrejLo1M5jOaagn0Z8zUl-X8_23oI5iui_97xBhLMbxjGc8tVQENFifGuQ2gpd3kcr2MvFRt7nNBX3SsV8K_WKPou1sHpvgkG_EjYcC4jjdVL8RBfAk9uVRHYqDqpjXRpvDwB1p0J7p_s9oaqR_L3ZaEMXWPY6lqd4rt0"
+    },
+    {
+        id: 306,
+        categoryId: 3,
+        subcategory: "Hogar",
+        title: "Jarrón de Cerámica",
+        price: 75.00,
+        category: "Decoración",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBfdvgwng1m6V3_FLVEOk6FSqErMURpvee3ZivfFm9zViSUi9JprOrISpCnE17EXdk8T9Kc1XLANVz0gHCXMnrbB-ZTL7Jl7RdU0YaAE7kmkXD9XTe1FtlTt-cYX45_VDbaFA9AD2z-0J6A07SqORN7N6f_wVCkTIoMmyKbEG8JP1ph5Ufq0nncT_6zJKL0SrALSPq1FlaSFyqYCYGGSP4a5q7lYCskL-1TuVQjQbYpuV5SxHdT45wt9lP-6PG-j-Gau2Mcu5CzilE"
+    },
+    {
+        id: 307,
+        categoryId: 3,
+        subcategory: "Moda",
+        title: "Bolso de Cuero",
+        price: 180.00,
+        category: "Accesorios",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCKpAnsk7J27MB7u3HDr7dYcw-ITgM9my-J597PmxzEz2r-D1Cqxl1V8f1hkxGrFCPNFxyLezyZPE3A6HvObgXX7vn4SfjqmItXRJQKPdWkBmUaLQUXIkv0gsH7f0Oz2Oel680D8tswF587Pmxdsd35CU0H4U6TwQ8Q6aVuyrrFvaaROxztsshsPU25g813dfLEQVh-VtNM9GUX_fp5abTYZcy2iRViGb6Cwm2NGwh9lVsxWTXreKm3rRBd2VIPhnjUFvcPfOVOLA4"
+    },
+    {
+        id: 308,
+        categoryId: 3,
+        subcategory: "Moda",
+        title: "Bufanda de Seda",
+        price: 55.00,
+        category: "Accesorios",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBVQbRJvmHsCoNkk-7adiRVfh9yxA1MCDP4t8_vii8FgCsaBKWKSH1F1K94KKOwwNp9i_R8XJ_7exJknsAl7ChjopRPxH2LtSbu0JXkjAGEp_9TV3xw48OhzhQBtlGtujw7ZZXjBzrtddi_Bc5fjsbuQFvMihTQyYGe9Kn20U_cpxh5L7RAJ_57wWSR31sVKkk259ve-JNMEc5kH7JSc_Idjj4Q2qdENXudIG35ou3kTaOVCBvqPQ_a05JtGjB43k5Ftm9skf8txjw"
+    },
+    {
+        id: 309,
+        categoryId: 3,
+        subcategory: "Moda",
+        title: "Joyería Minimalista",
+        price: 89.00,
+        category: "Joyería",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBb80cJS6B7Ihxp8RLISdrPsugVqHqnR70DXkBpdHNofIJ9OMYMVwMEGM0DKPHUl2UISzH3Di4dVuY7RiE-spQFRFETjCsa9PzfNDuceZfxXLgqlwL8tpyzQ9K_IF0quLq5KZntzFKc3CLNdVajA8ZVbT0Mvr1ofhyvZd2Nazi-EI36GSCcdqVl3_DZHu7w48bwLRcOSsXmeHGRwPreWqw9PZAWFGwkCCUgUydTXYLp3qI_ZNLRU-4Znauc41OdsAhcJlUXgSZJwTg"
+    },
+    {
+        id: 310,
+        categoryId: 3,
+        subcategory: "Experiencias",
+        title: "Día de Spa Completo",
+        price: 150.00,
+        category: "Relax",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCNuIjt2mrF0St_DJYFR0HwgsECZprR-WqrFP7dzrprklV0Er6mWFKLOn99C1iq47U3_TH0jb2JxC-pzn192q3nUKzqK4TEHjJaIvdUaorW3rpCARG33tLtUq1mBq-zzc9jR0WSjkWHFerhMnrY0S9nkGz-6bde4gkvtkXd3gPVET05oLnMwe4Hf-ogrHDrotHH586k3BV93xI9qZ3-GM6PQ824hx26UnBzpgK_Xq3m5J-DfrBQvicwm-waJNp0ego3fzhNne4cAM8"
+    },
+    {
+        id: 311,
+        categoryId: 3,
+        subcategory: "Experiencias",
+        title: "Cata de Vinos",
+        price: 90.00,
+        category: "Gourmet",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCV9o3ij3WSCtr4WyaOhJl1zkGfh261tNFXdHauOAMI9aS8sTEN7nM18mYhCqmpz8kjosPEeyaraA1W0Z1oWXm4MLgl3tC3d2GrozP34g1g1e6eUKTENyzQ9JtuIMhI28TFzH0WEFV2eyIrDj5XnSQh1cW21mZynJi2sQYtRVB93822Rx9S5ybiOo8f_WaHySaWxY4l4fI_BdrRTsdm0ilLv_ek9Fa0rbFfB-mrMZUNC1bYIUn-zMY0a0b338JC7giAqmiLO4WQBQU"
+    },
+    {
+        id: 312,
+        categoryId: 3,
+        subcategory: "Experiencias",
+        title: "Taller de Cerámica",
+        price: 65.00,
+        category: "Arte",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBdmMOO8TPQqreXT1YW8Rzwy2OvBMtQNYhnQSehNm8MEC8P_kEMq_3cVhWfhGgm-13QCCNARFwC7l81ZE2anJWFjmjLKBry7hAIJwc7Kd_7eMIEqeybHcNpImZTclVq85zsWHebu27B95fhav_hmd6cBIV-z287IxaVLwYcHP0KlyN8hq2zpGxjdLFuGRoE_ozkUcQaD0gEaBT_p-rZYRZGpqkC5ucBmSQYjOZlOwTxtUYZUNhaK2Un6Y9ZR973oCZ5VrLY7Ch1AhM"
     }
 ];

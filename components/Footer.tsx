@@ -29,9 +29,9 @@ const Footer: React.FC = () => {
                 
                 <div className="flex flex-col gap-2">
                     <h4 className="font-bold text-white mb-2">Comprar</h4>
-                    <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">Para Él</a>
-                    <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">Para Ella</a>
-                    <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">Niños y Bebés</a>
+                    <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">Para Papá</a>
+                    <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">Para Mamá</a>
+                    <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">Niños y Niñas</a>
                     <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">Tecnología</a>
                 </div>
                 
