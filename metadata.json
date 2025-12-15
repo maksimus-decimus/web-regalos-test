@@ -1,4 +1,5 @@
 {
   "name": "Regalos 2025",
-  "description": "Encuentra la magia del 2025. Una plataforma moderna de comercio electrónico con colecciones curadas."
+  "description": "Una plataforma moderna de comercio electrónico para encontrar regalos curados para 2025.",
+  "requestFramePermissions": []
 }

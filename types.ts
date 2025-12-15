@@ -1,16 +1,16 @@
-export interface Category {
-  id: string;
-  title: string;
-  subtitle: string;
-  images: [string, string, string]; // Main image, Top Right, Bottom Right
+export interface Product {
+    id: number;
+    title: string;
+    price: number;
+    category: string;
+    image: string;
+    tag?: string;
+    discount?: string;
 }
 
-export interface Product {
-  id: string;
-  name: string;
-  price: string;
-  category: string;
-  image: string;
-  isNew?: boolean;
-  discount?: string;
+export interface Category {
+    id: number;
+    title: string;
+    subtitle: string;
+    images: [string, string, string]; // Expecting exactly 3 images for the grid layout
 }
