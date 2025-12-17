@@ -1,4 +1,5 @@
 import React from 'react';
+import UserMenu from './UserMenu';
 
 interface HeaderProps {
     searchTerm: string;
@@ -8,6 +9,7 @@ interface HeaderProps {
     onShowCategories: () => void;
     onShowWishlist: () => void;
     wishlistCount: number;
+    onOpenAuth: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ 
@@ -17,7 +19,8 @@ const Header: React.FC<HeaderProps> = ({
     onShowOffers, 
     onShowCategories,
     onShowWishlist,
-    wishlistCount
+    wishlistCount,
+    onOpenAuth
 }) => {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-[#28392e] bg-background-dark/80 backdrop-blur-md px-6 py-4">
@@ -66,13 +69,7 @@ const Header: React.FC<HeaderProps> = ({
                                 </span>
                             )}
                         </button>
-                        <button 
-                            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#28392e] text-white hover:bg-[#344a3b] transition-colors tooltip-trigger"
-                            title="Perfil de Usuario"
-                            onClick={() => alert("El inicio de sesión estará disponible próximamente.")}
-                        >
-                            <span className="material-symbols-outlined text-[20px]">account_circle</span>
-                        </button>
+                        <UserMenu onOpenAuth={onOpenAuth} />
                     </div>
                 </div>
             </div>

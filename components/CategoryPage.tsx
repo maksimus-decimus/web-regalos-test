@@ -162,8 +162,8 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
                                         <p className="opacity-60 text-sm line-clamp-2">{product.category}</p>
                                         <div className="flex items-center justify-between mt-2">
                                             <div className="flex flex-col">
-                                                {product.oldPrice && <span className="opacity-40 text-xs line-through">${product.oldPrice.toFixed(2)}</span>}
-                                                <span className={`${config.textColor} text-xl font-bold`}>${product.price.toFixed(2)}</span>
+                                                {product.oldPrice && <span className="opacity-40 text-xs line-through">€{product.oldPrice.toFixed(2)}</span>}
+                                                <span className={`${config.textColor} text-xl font-bold`}>€{product.price.toFixed(2)}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -271,8 +271,8 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
                                                 <p className="opacity-60 text-sm line-clamp-2">{product.category}</p>
                                                 <div className="flex items-center justify-between mt-2">
                                                     <div className="flex flex-col">
-                                                        {product.oldPrice && <span className="opacity-40 text-xs line-through">${product.oldPrice.toFixed(2)}</span>}
-                                                        <span className={`${config.textColor} text-xl font-bold`}>${product.price.toFixed(2)}</span>
+                                                        {product.oldPrice && <span className="opacity-40 text-xs line-through">€{product.oldPrice.toFixed(2)}</span>}
+                                                        <span className={`${config.textColor} text-xl font-bold`}>€{product.price.toFixed(2)}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -298,7 +298,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
                                         style={{backgroundImage: `url("${product.image}")`}}>
                                     </div>
                                     <p className={`${config.textColor} text-sm font-medium leading-tight truncate`}>{product.title}</p>
-                                    <p className="opacity-60 text-xs">${product.price.toFixed(2)}</p>
+                                    <p className="opacity-60 text-xs">€{product.price.toFixed(2)}</p>
                                 </div>
                             ))}
                         </div>
@@ -406,8 +406,8 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
                                     <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">{product.category}</p>
                                     <div className="mt-auto flex items-center justify-between pt-4">
                                         <div className="flex flex-col">
-                                            {product.oldPrice && <span className="text-xs text-gray-500 line-through">${product.oldPrice.toFixed(2)}</span>}
-                                            <span className="text-xl font-bold text-slate-900 dark:text-white">${product.price.toFixed(2)}</span>
+                                            {product.oldPrice && <span className="text-xs text-gray-500 line-through">€{product.oldPrice.toFixed(2)}</span>}
+                                            <span className="text-xl font-bold text-slate-900 dark:text-white">€{product.price.toFixed(2)}</span>
                                         </div>
                                     </div>
                                 </div>

@@ -6,24 +6,73 @@ import ProductCard from './components/ProductCard';
 import CategoryPage from './components/CategoryPage';
 import WishlistPage from './components/WishlistPage';
 import Footer from './components/Footer';
+import AuthModal from './components/AuthModal';
+import FilterSidebar from './components/FilterSidebar';
 import { CATEGORIES, PRODUCTS } from './constants';
 import { Category } from './types';
+import { useAuth } from './AuthContext';
+import { getUserFavorites, addFavorite, removeFavorite } from './favoritesService';
 
 const App: React.FC = () => {
+    const { user } = useAuth();
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
     const [showOffers, setShowOffers] = useState(false);
     const [showWishlist, setShowWishlist] = useState(false);
+    const [showAuthModal, setShowAuthModal] = useState(false);
+    const [showAllCategories, setShowAllCategories] = useState(false);
+    
+    // Filter States
+    const [priceRange, setPriceRange] = useState<[number, number]>([0, 20000]);
+    const [selectedRecipient, setSelectedRecipient] = useState<string | null>(null);
+    const [selectedFilterCategories, setSelectedFilterCategories] = useState<number[]>([]);
     
     // Global Favorites State
     const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
 
-    const handleToggleFavorite = (id: number) => {
+    // Cargar favoritos del usuario cuando inicie sesión
+    useEffect(() => {
+        const loadFavorites = async () => {
+            if (user) {
+                const favorites = await getUserFavorites(user.uid);
+                setFavoriteIds(favorites);
+            } else {
+                // Limpiar favoritos cuando cierre sesión
+                setFavoriteIds([]);
+            }
+        };
+        
+        loadFavorites();
+    }, [user]);
+
+    const handleToggleFavorite = async (id: number) => {
+        const isCurrentlyFavorite = favoriteIds.includes(id);
+        
+        // Actualizar UI inmediatamente
         setFavoriteIds(prev => 
-            prev.includes(id) 
+            isCurrentlyFavorite
                 ? prev.filter(favId => favId !== id) 
                 : [...prev, id]
         );
+
+        // Sincronizar con Firebase si el usuario está autenticado
+        if (user) {
+            try {
+                if (isCurrentlyFavorite) {
+                    await removeFavorite(user.uid, id);
+                } else {
+                    await addFavorite(user.uid, id);
+                }
+            } catch (error) {
+                // Revertir el cambio si hay error
+                setFavoriteIds(prev => 
+                    isCurrentlyFavorite
+                        ? [...prev, id]
+                        : prev.filter(favId => favId !== id)
+                );
+                console.error('Error al actualizar favoritos:', error);
+            }
+        }
     };
 
     // Navigation Handlers
@@ -31,6 +80,7 @@ const App: React.FC = () => {
         setSelectedCategory(null);
         setShowOffers(false);
         setShowWishlist(false);
+        setShowAllCategories(false);
         window.scrollTo(0, 0);
     };
 
@@ -39,10 +89,18 @@ const App: React.FC = () => {
         if (term.trim() !== '') {
             resetViews();
         }
+        // Limpiar filtros también
+        setPriceRange([0, 20000]);
+        setSelectedRecipient(null);
+        setSelectedFilterCategories([]);
     };
 
     const handleGoHome = () => {
         setSearchTerm('');
+        // Limpiar filtros también
+        setPriceRange([0, 20000]);
+        setSelectedRecipient(null);
+        setSelectedFilterCategories([]);
         resetViews();
     };
 
@@ -65,13 +123,9 @@ const App: React.FC = () => {
     };
 
     const handleScrollToCategories = () => {
-        handleGoHome();
-        setTimeout(() => {
-            const element = document.getElementById('categories-section');
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        }, 100);
+        setSearchTerm('');
+        resetViews();
+        setShowAllCategories(true);
     };
 
     const handleCategorySelectById = (id: number) => {
@@ -81,16 +135,59 @@ const App: React.FC = () => {
         }
     };
 
+    const handleCategoryToggle = (categoryId: number) => {
+        setSelectedFilterCategories(prev =>
+            prev.includes(categoryId)
+                ? prev.filter(id => id !== categoryId)
+                : [...prev, categoryId]
+        );
+    };
+
+    const handleClearFilters = () => {
+        setPriceRange([0, 20000]);
+        setSelectedRecipient(null);
+        setSelectedFilterCategories([]);
+    };
+
     // Main Content Logic
     const homeProducts = useMemo(() => {
-        // 1. Search Mode
-        if (searchTerm) {
-            const lowerTerm = searchTerm.toLowerCase();
-            return PRODUCTS.filter(p => 
-                p.title.toLowerCase().includes(lowerTerm) || 
-                p.category.toLowerCase().includes(lowerTerm) ||
-                (p.subcategory && p.subcategory.toLowerCase().includes(lowerTerm))
-            );
+        // 1. Search Mode or All Categories Mode
+        if (searchTerm || showAllCategories) {
+            let results = PRODUCTS;
+            
+            // Si hay término de búsqueda, filtrar por él
+            if (searchTerm) {
+                const lowerTerm = searchTerm.toLowerCase();
+                results = PRODUCTS.filter(p => 
+                    p.title.toLowerCase().includes(lowerTerm) || 
+                    p.category.toLowerCase().includes(lowerTerm) ||
+                    (p.subcategory && p.subcategory.toLowerCase().includes(lowerTerm))
+                );
+            }
+
+            // Aplicar filtros de precio
+            results = results.filter(p => p.price >= priceRange[0] && p.price <= priceRange[1]);
+
+            // Aplicar filtro de destinatario
+            if (selectedRecipient) {
+                const recipientMap: { [key: string]: number } = {
+                    'padres': 2,
+                    'madres': 3,
+                    'niños': 4,
+                    'niñas': 5
+                };
+                const categoryId = recipientMap[selectedRecipient];
+                results = results.filter(p => p.categoryId === categoryId);
+            }
+
+            // Aplicar filtro de categorías
+            if (selectedFilterCategories.length > 0) {
+                results = results.filter(p => 
+                    p.categoryId && selectedFilterCategories.includes(p.categoryId)
+                );
+            }
+
+            return results;
         }
 
         // 2. Offers Mode
@@ -100,7 +197,7 @@ const App: React.FC = () => {
 
         // 3. Default Home Mode (Generic Interest)
         return PRODUCTS.filter(p => !p.categoryId || p.subcategory === 'Interes').slice(0, 10);
-    }, [searchTerm, showOffers]);
+    }, [searchTerm, showOffers, showAllCategories, priceRange, selectedRecipient, selectedFilterCategories]);
 
     const categoryProducts = useMemo(() => {
         if (!selectedCategory) return [];
@@ -111,6 +208,7 @@ const App: React.FC = () => {
     const getSectionTitle = () => {
         if (searchTerm) return `Resultados para "${searchTerm}"`;
         if (showOffers) return "Mejores Ofertas y Descuentos";
+        if (showAllCategories) return "Explorar Todas las Categorías";
         return "Te puede interesar...";
     };
 
@@ -124,6 +222,12 @@ const App: React.FC = () => {
                 onShowCategories={handleScrollToCategories}
                 onShowWishlist={handleShowWishlist}
                 wishlistCount={favoriteIds.length}
+                onOpenAuth={() => setShowAuthModal(true)}
+            />
+            
+            <AuthModal 
+                isOpen={showAuthModal} 
+                onClose={() => setShowAuthModal(false)} 
             />
             
             {showWishlist ? (
@@ -142,13 +246,34 @@ const App: React.FC = () => {
                     onBack={handleGoHome}
                 />
             ) : (
-                <main className="flex-1 w-full max-w-[1280px] mx-auto px-6 py-8 flex flex-col gap-12">
+                <main className="flex-1 w-full max-w-[1280px] mx-auto px-6 py-8">
                     
                     {/* Hero Section - Only show on pure home */}
-                    {!searchTerm && !showOffers && <Hero />}
+                    {!searchTerm && !showOffers && !showAllCategories && <Hero />}
                     
-                    {/* Categories Grid - Only show if not searching/offers */}
-                    {!searchTerm && !showOffers && (
+                    {/* Layout con Sidebar para búsqueda o explorar categorías */}
+                    <div className={(searchTerm || showAllCategories) ? "flex gap-6 mt-8" : "flex flex-col gap-12"}>
+                        
+                        {/* Sidebar de filtros - Mostrar cuando hay búsqueda o modo explorar categorías */}
+                        {(searchTerm || showAllCategories) && (
+                            <FilterSidebar
+                                priceRange={priceRange}
+                                onPriceRangeChange={setPriceRange}
+                                selectedRecipient={selectedRecipient}
+                                onRecipientChange={setSelectedRecipient}
+                                selectedCategories={selectedFilterCategories}
+                                onCategoryToggle={handleCategoryToggle}
+                                categories={CATEGORIES}
+                                totalResults={homeProducts.length}
+                                onClearFilters={handleClearFilters}
+                            />
+                        )}
+                        
+                        {/* Contenido principal */}
+                        <div className="flex-1">
+                    
+                    {/* Categories Grid - Only show if not searching/offers/all categories */}
+                    {!searchTerm && !showOffers && !showAllCategories && (
                         <section id="categories-section">
                             <div className="flex items-center justify-between mb-6">
                                 <h2 className="text-2xl font-bold text-white">Explora Categorías</h2>
@@ -172,13 +297,19 @@ const App: React.FC = () => {
                             {getSectionTitle()}
                         </h2>
                         
-                        {!searchTerm && !showOffers && (
+                        {!searchTerm && !showOffers && !showAllCategories && (
                             <p className="text-gray-400 mb-6 text-sm">
                                 Basado en tendencias globales y tus preferencias.
                             </p>
                         )}
                         
-                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                        {showAllCategories && (
+                            <p className="text-gray-400 mb-6 text-sm">
+                                Explora todos nuestros productos. Usa los filtros para encontrar exactamente lo que buscas.
+                            </p>
+                        )}
+                        
+                        <div className={`grid ${(searchTerm || showAllCategories) ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5'} gap-4`}>
                             {homeProducts.map(product => (
                                 <ProductCard 
                                     key={product.id} 
@@ -203,6 +334,9 @@ const App: React.FC = () => {
                             </div>
                         )}
                     </section>
+                    
+                    </div> {/* Cierre del contenido principal */}
+                    </div> {/* Cierre del layout con sidebar */}
                 </main>
             )}
             

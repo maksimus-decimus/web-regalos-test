@@ -55,12 +55,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggle
                     <h3 className="font-medium text-white group-hover:text-primary transition-colors line-clamp-1">
                         {product.title}
                     </h3>
-                    <span className="font-bold text-white">${product.price.toFixed(2)}</span>
+                    <span className="font-bold text-white">€{product.price.toFixed(2)}</span>
                 </div>
                 <div className="flex items-center gap-2">
                     <p className="text-sm text-gray-500 line-clamp-1">{product.category}</p>
                     {product.oldPrice && (
-                        <span className="text-xs text-gray-600 line-through">${product.oldPrice.toFixed(2)}</span>
+                        <span className="text-xs text-gray-600 line-through">€{product.oldPrice.toFixed(2)}</span>
                     )}
                 </div>
             </div>
