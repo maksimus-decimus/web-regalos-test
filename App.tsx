@@ -6,17 +6,11 @@ import ProductCard from './components/ProductCard';
 import CategoryPage from './components/CategoryPage';
 import Footer from './components/Footer';
 import { CATEGORIES, PRODUCTS } from './constants';
-import { Product, Category } from './types';
+import { Category } from './types';
 
 const App: React.FC = () => {
-    const [cartCount, setCartCount] = useState(2); // Initial mocked count from design
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
-
-    const handleAddToCart = (product: Product) => {
-        setCartCount(prev => prev + 1);
-        console.log(`Added ${product.title} to cart`);
-    };
 
     const handleGoHome = () => {
         setSelectedCategory(null);
@@ -55,7 +49,6 @@ const App: React.FC = () => {
     return (
         <>
             <Header 
-                cartCount={cartCount} 
                 searchTerm={searchTerm} 
                 onSearchChange={setSearchTerm} 
                 onGoHome={handleGoHome}
@@ -65,7 +58,6 @@ const App: React.FC = () => {
                 <CategoryPage 
                     category={selectedCategory} 
                     products={categoryProducts} 
-                    onAddToCart={handleAddToCart}
                     onBack={handleGoHome}
                 />
             ) : (
@@ -113,7 +105,6 @@ const App: React.FC = () => {
                                 <ProductCard 
                                     key={product.id} 
                                     product={product} 
-                                    onAddToCart={handleAddToCart} 
                                 />
                             ))}
                         </div>

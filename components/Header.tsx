@@ -1,13 +1,12 @@
 import React from 'react';
 
 interface HeaderProps {
-    cartCount: number;
     searchTerm: string;
     onSearchChange: (val: string) => void;
     onGoHome: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ cartCount, searchTerm, onSearchChange, onGoHome }) => {
+const Header: React.FC<HeaderProps> = ({ searchTerm, onSearchChange, onGoHome }) => {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-[#28392e] bg-background-dark/80 backdrop-blur-md px-6 py-4">
             <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-6">
@@ -43,14 +42,6 @@ const Header: React.FC<HeaderProps> = ({ cartCount, searchTerm, onSearchChange, 
                         <a href="#" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Ofertas</a>
                     </div>
                     <div className="flex gap-3">
-                        <button className="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#28392e] text-white hover:bg-[#344a3b] transition-colors">
-                            <span className="material-symbols-outlined text-[20px]">shopping_cart</span>
-                            {cartCount > 0 && (
-                                <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-black animate-bounce">
-                                    {cartCount}
-                                </span>
-                            )}
-                        </button>
                         <button className="flex h-10 w-10 items-center justify-center rounded-full bg-[#28392e] text-white hover:bg-[#344a3b] transition-colors">
                             <span className="material-symbols-outlined text-[20px]">account_circle</span>
                         </button>

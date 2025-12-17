@@ -3,10 +3,9 @@ import { Product } from '../types';
 
 interface ProductCardProps {
     product: Product;
-    onAddToCart: (product: Product) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     return (
         <div className="group flex flex-col gap-3">
             <div className="relative aspect-square w-full rounded-2xl bg-surface-dark overflow-hidden">
@@ -15,13 +14,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
                     src={product.image}
                     alt={product.title}
                 />
-                <button
-                    onClick={() => onAddToCart(product)}
-                    className="absolute bottom-3 right-3 h-10 w-10 rounded-full bg-primary text-black flex items-center justify-center opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110 shadow-lg cursor-pointer"
-                    aria-label={`Add ${product.title} to cart`}
-                >
-                    <span className="material-symbols-outlined text-[20px]">add</span>
-                </button>
                 
                 {/* Badges */}
                 {product.tag && (

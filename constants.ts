@@ -69,55 +69,36 @@ export const PRODUCTS: Product[] = [
         category: "Realidad Virtual",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCXCtUm34EVzf--NdEeWtXWM2Qx1X8jleHWZ_BwD0xj_9FCqt0mSdZEZGTZ6vJJnrKV49_br_O10P4F4ZvWSNZ5iFKAE_pE4QDiJoyxMpqxF1FPGiMxzTptrJaci1jJHlx2Xs249lFsYGzHr3VEX1RvdIqDgphAMmirg1sSQvMElW9vj2cBVQV9tMHDILnlnljm48VcQn8tZHyG0nYkqrGIElSqAioh7A2BXbn3jSBT5AWOp_gzDBzWP3XOoDW3OdOPm4R6KzBm7uU"
     },
-    {
-        id: 103,
-        title: "Apple Watch Series X",
-        price: 399,
-        category: "Wearables",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCAeMsjYk2UAZ17SiCSr2YlLBqOxNuUqZoT7Vhh7em_zAM4sF9zC97rxXVeTUchEGzVAhOfSw4zXIf8NXjYa_Z_jQg4w86DNBWW1_QeKaRFLtvOzQBSi1dL2C2Qt8om21jj5YrM7znhPD0rNJObQmB6INA6R-YdmuHh8HebLeOfxcUC4EO1fpDrtU8TMX1xEA_VSyP3ASLeHib8iK-UvspjOuNgWjvJaRmK0gxEA-rcp8fcet4UP3iNON30jumn5mQ0Q23mdLu7sms"
-    },
-    {
-        id: 104,
-        title: "Google Nest Audio",
-        price: 79,
-        category: "Hogar Inteligente",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC441lD7ahExAoWYqgXKVvGap75jNgW62OV9M5E2SFnkAyXzbDiaqMKKetk75Mkcilg-JP7hyifM__q8Wtpd3bTqd-Kx2KAzgMgsbzlYdsP8Y-EQyR4znlfbADzZfpWr2WOm7Cisok4VVfeHkJV_6kSRlElKdiWzvMqgCe1toF3e-lOkuD8__kjKBJeOjqsHKUmM8EagOb9A7DqE7fKhMW3InNY2BRKNnNDNnH7LMYv0-kotCLL5oHHuJzJ9S5L1Nd0IBISoVLQ3Kk",
-        discount: "-20%"
-    },
-    {
-        id: 105,
-        title: "Polaroid Now+",
-        price: 149,
-        category: "Fotografía",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD_FKhR0cZ3xIvU7rWM9N-QWo6g1abXZMy4r3aTK6c6nKsgRCMuf1RWXwt7zsIALlK3iJXWQcoCHg16vIQMMfpOIeo10OL7_w6eP1UN6Y590tWYPEBk2DhbW5fE5GSYxEIer2aueLzLezpAzc4mw590E8hFZSFFnIpR0aelDgIsvjb8gI8lm61YrBbISvhsbMaDXNT4U7DKRsRQoPJhEnYSKqT04aaaq95KbP6QYJitEpz3RkIPgz3GnAzZcspswi7lKqimr21jhSs"
-    },
-    // Products for Fathers (id 2)
+    // ... Fathers and Mothers products remain ...
     {
         id: 201,
         categoryId: 2,
-        title: "Titan Smartwatch Pro",
+        title: "Smartwatch Pro 2025",
+        subcategory: "Gadgets",
         price: 299.00,
         oldPrice: 349.00,
         category: "Wearables",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0CvV4MF4ZgCyG32yhghOzAQSgPN05wp3w_mKTBuWEjXDa-ZcfbzCZiwJPx3GKwvVExK_Bb65_e2ktD-EL4snaH7csYp8k5RuswttJNB7wRSKfbreVZxGgpKsH97msD19KswBNPUAu_OZI5FysBBkRg_bgkiqv04-FeL5XWzcXhVvrp_MNgPgpi0F4SqDVxvuDsj0atOQR1kR5ISSjfLdNc4T4uYtlwY3vCbm8ZfMPRBRelarZn4TI52siFXcs79oNI_t5bZrm43g",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAoHyTMeEStgeLNadfL86--t8Dop7GF71vtE4MzG5pQumrLMEgV8K6_NgkwOvSF4QFO8qEG36sCCnaFnlxvbG9hX1lJp-Gq-GTEV5qCdbixIPjuhlYkiqQCIEXJleKsu_tkm0g-hGhZy06XVlCaujcqB4YV3CNHM_aZKcpXqbEFM0cMzOD8n7jNhPbl4zVQJqseKZ2KsxkpJKkkpQL-5rXPqJlfVVbcUo71wPjhhXsbOg6wM24xRU2LNfVuS82j-cPxHRngYEyaVmU",
         tag: "Más Vendido"
     },
     {
         id: 202,
         categoryId: 2,
-        title: "SonicPure Headphones",
-        price: 199.00,
+        title: "Auriculares Silence X",
+        subcategory: "Gadgets",
+        price: 349.00,
         category: "Audio",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAmeARDRqeiNFqqw2mGeGb5L9Bx1NFAEeRbYimNM2qCqN_PF9szIXgrYQF34pyy023IRLoOF5I5anxEbXTY0p1O2ytUfb7n3MGwNIBJq5k5UBo7EbwsXlhKE3pdOpjvBhiotRLBh-6iC8k2NbbFYRu8YfscQlx1UYe1M0Gu74YolaTycNEVoTQBJtqYOyg5iZ6-dtw7iBvVGSIB67TSSrOnByPs2sAPkWTQ60bTN5jUanGg52jzskRXmkyt8QDSWUX0Z5e_xgdfxIA"
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCm_8ukEzOB8SDuF8mGuXPkUs-1RmmMkUgpvYZKzFd8awguapFcNGkjr2JSmJCkH5lX_Shm_BkKi8oMFNfT6ThuBFbgvlAz4G9sz0iHX84cR5GbH1jdaPLCVx7gSGcWcyilmcnsiWiLaBzWGRSO73uS_0w_8RCruDKhW3igkFewKQEDZlVoKuwa-DK1lTrs3bxZwmKjRuE1pjyTC4wojPhoHVuNb-CGXqJBswczj2ucAH1jWEr98BqtKE29TrNGaNJ7Oom8VWJI3zc"
     },
     {
         id: 203,
         categoryId: 2,
-        title: "Taladro Smart X2",
+        subcategory: "Gadgets",
+        title: "Termómetro Grill Master",
         price: 144.00,
         oldPrice: 180.00,
         category: "Herramientas",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAvmJCjnUbIAOIQtS9963oPtM_nRhxjiOdfBUUeW_Eup1ZVR2lYMssISUW5iZ0Ei1e3NsWPp8sr-rdIX5FaQ05ZNZdG2rQRtDmFpopWGRAs0qYuEXkS6tyhTsyuJuiLaKob02v3mwW_4dw97v-x4GFLq4SZOS0yzJVZEYytdkZ4YzTR5DY9fFhniwIJTgGcxrIaXHmaQuvOtT-r45Jpc0QbdygGL_5EqeADTBHimunKuVpJ1HDEHKRKsPjHt8x4K_8rDlpf-S9OyVQ",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCvZ8GybuBUy5v6AIaSrFCj-rACZYa7RszlFS2BRhH1RYpN_qc_6VXwdo2-bYYVJl_4gd4oFT0yY9h3eINQtENaTDZZ-u8Jfw2Bgdv31wb8tpX2jsw6RU6uIZXhE7vjEJLacLUJHdrJGiN11uSuHLDCmcy9OxGbhEZi7aoQh10M_Skesuf2yd4uotJCvWvwxvhNz-D8D-XJ0G5yAwTleE5nbvpOTpsu9Nb8d2hShHr3zs4Kb5tOM_IzWThk5KcnD_41t6PPvf7F4nY",
         discount: "-20%"
     },
     {
@@ -129,22 +110,122 @@ export const PRODUCTS: Product[] = [
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDP-Om7UBSg7non487iB4gUIziD3Dbhz696herDB65xIr198dnC-sRX0fNkcCHPSxpZrECuGijuA33yOLGgvFG6oP5C33_GjkcbxksU-p5JSuXRvw89IGxnQhNJr7EQMG28F-JTrz0dwtn933GPVN2sU_8KuF_DRkI0wypO-8pXbe_8hSGYTpK4-pVYZMau266C8_HadgZ3c55IFd1HDftsmALPdSJWLGN8wbvUL8uxPXFLBkc-MtF2kMj0AJVWEJZfJm405R2H0yY"
     },
     {
-        id: 205,
+        id: 208,
         categoryId: 2,
-        title: "Barista Express",
-        price: 550.00,
-        category: "Hogar",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCFEV1qNQbaEjL5vP1ZezoxUJ85rqE5-YfJFt6em7zqKlMvoZPuFhPJMjg2etWieTawTLVckQ2lqoMLBMADooXb7ivJcHcAJ3rMYONIAgaTGA8ZEj3bWWi3gXFfyhGJXUqt6BEqCbooJY1T2qsdo_ZlvE_Dbzv4HHfs49e7bvY8lR63NkcOYKlnMd3Kd1fmfCoUzNYf_oDPm-R3q1n2T25Iz03vDnA47TgH_kTXj94FI3Hc_ttILgHZ1KqfVFKp680sL0QRXy2pUsg"
+        subcategory: "Experiencias",
+        title: "Cata de Vinos Premium",
+        price: 90.00,
+        category: "Gourmet",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCOKHq8Lu7uUc9YY0ha9qbMrNpc5u6JX2FDJ5s7dd1sf_PgMkNdCgoGZFDlWUFgA3bYGaE3jLBJO41lkcyt_J7DY-k3za96HPUUOWw5CKd2yRU9Tn5kqxFZs9WEUhi7091Xd6pAtdaFdwPqd3ZO9mZ1M3jjJIpnLUqMQ9KAHiWae9JE0rY1HXLPkXwb7sHK0Wi10kylzDCV8TyOwPHY6_8hK9pdu4jFGyJ8ePZFAsL0OM6Gn3Q7F3-FLwZG2AY9uWvI4NfgsdtjoUk"
     },
     {
-        id: 206,
+        id: 209,
         categoryId: 2,
-        title: "RetroConsole 64-bit",
-        price: 89.99,
-        category: "Gaming",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBRJD8LO78wdPCEDVIXLueMmkHq_SljkeQ7L7XaYWMrLfVcpCpLbSgAzfC6RxIipp76DfRSJPw0ciJjLXNR6cQvZUdWplz3LLjfw2GMPjM2_h-FUqicSps1HM8Jd7dgpga4BTMsew1TRCe275bkm70_dn268ZgfgYYjRtZ30vuzUHeyPRqAARIzVQy3bi55KFj6v-snUcyMmq_oJFkr-parinnfnaGqNlWg-yNnVeMxiPbJupMN53gQSEx69TyrhzLUfitFqqOoYXw"
+        subcategory: "Experiencias",
+        title: "Salto en Paracaídas",
+        price: 250.00,
+        category: "Aventura",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBmg0HIW_-l-KBlM2Y3VxH_m_J32-EyK8E90lYashGgWaHeaIpLOO4nNMoM3W6rJNkSZUeR3HZd6f8g2p1bxxaARhZZzX8tE3Abru6ust8b507xi_UH65Am8o7euZZ7LQ8tRXnaUVwJZJ4fuJrEggB_-8v5NPidqd7lcqPzynXf8ZVMD3VHfOITUgD_Q3acBBCkxYLlE_Z_4tFjPIEWv4Kj8T956Zsr_sT8pelA3MM-C6AhBjfeGTHH0HWxc4ihTTCGrJrp0rpdF6Q"
     },
-    // Products for Mothers (id 3)
+    {
+        id: 210,
+        categoryId: 2,
+        subcategory: "Experiencias",
+        title: "Masterclass de Asado",
+        price: 120.00,
+        category: "Cocina",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCUWOVHK6RvYeD0ktNmbkQy-CrjXviuy8mlwGNb3CXWLJKq8Cc_pGJvQ2SDSygZqPDXfGhf7goyemTOrs2i5fYWkYaeaOHAzG8S2F1RW9xbBXhW-8URbvCjoJBVr7lImJwo50R5LiRFP8Q0srJfTlHHlIy4FV78MBeSVqpTRzW1wCtv8wbmndTSso2a4aM0qjx-G8FJaKlPZ8UAmb8kMkSqh8CqcxCGR8tN6CyMHgLePBIHBsgUYzEo2g3YeU-OwCBILTd1cfkkq70"
+    },
+    {
+        id: 211,
+        categoryId: 2,
+        subcategory: "Estilo",
+        title: "Billetera de Cuero",
+        price: 45.00,
+        category: "Accesorios",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBYpAi2XWZyTV6-1-MqVA_zKqjUBJYwogccxRqTsb_boLBN2bN8typEbFYFhCk8jghtvJb97RSli4Vs_0D5tlb1Gm23l5wYGgYnUY-QYL4cXSpDQKaA040T93A4LDuandVrrMKp43PebdpKziKWHXiPWGa8xDbawKzIMTr7WCKSen2JL_JKK9oGofAHzvvmnfmSYQlIfiWMwwmS3uA4LcU-OZYsKxRyFrngw-udzmXExc4iVYvUVka6LjIxqYwJ0TgIwYRNRKzPhLs"
+    },
+    {
+        id: 212,
+        categoryId: 2,
+        subcategory: "Estilo",
+        title: "Gafas Aviador",
+        price: 120.00,
+        category: "Accesorios",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBRnTQlHpKUL74mLUzfUNcclifmI9nxdHvWCX5DmXZgOWMAIXRiNpiIey1ldTmQgec_jH6dHnEHu5IVP26PlGLj2J1573m2u_bRhXp5BS_ydhVZ6bTrBMlxQJe7AtAreQTTPc9AShXKiU40MgGsKIhuFm8iCoLsTYh9iqZm1qAnr-NQ8duh_IOnN7UdzZ4m0pqUQw54sVFifIcYQfAbKGy-fOvBesIyARWx1_O79mHlqLIvBvPXjTWjP69Fi-95e3RvmfeqHp6uwSA"
+    },
+    {
+        id: 213,
+        categoryId: 2,
+        subcategory: "Estilo",
+        title: "Corbata de Seda",
+        price: 35.00,
+        category: "Ropa",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC2X2fUwxjJBDB48NK9i_daIoEA8bY0shqVHm0a1PhvcbRu8uCALC14cQQn9m4MYUdqYAyGlm38XkZZ5ATvZTyf1jTCFGib0cGg8Cp0IfRgZFCA3D_DqzMf0Kmi0Q0IDLvuASNYeLFmTTy4w8Bp8KU0VfsHhjTrlphIUur-6O9EpF2ljT_d50Kxasm7B9T5ol2V2iuYTb2HCPU3nhofE34DcuICg-DFxEWY08RBWmdxtSjOy-vAYgutrX0vfXcYWpt7UTpX507Z6Q8"
+    },
+    {
+        id: 214,
+        categoryId: 2,
+        subcategory: "Estilo",
+        title: "Sneakers Urbanos",
+        price: 89.00,
+        category: "Calzado",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA833RtCR_iqzL-Akdw9IVhG27SIbwMrkvwvDTrGPGdgnZnJKsCgCUDrMjlsTBXF6lpNpebYMlUsXvYqyzFafju9myRPbrIUcCum_8y9m7TfzipOMZRdzuRLeVA7mJFRUtS7MRiuvJr3fQaQ1FGH3m3fgfDzSFeVuFyELIvEgGD8H4iy-CxDtABRY_sjraJmRFW67_YoX7WDcLstitjfEm4LEAhwt_aHGSS7vVnUoCEMt9YLKWVLgZHEL5f7QcK34WO0Ph9uUicR7I"
+    },
+    {
+        id: 215,
+        categoryId: 2,
+        subcategory: "Interes",
+        title: "Historia del Mundo",
+        price: 24.99,
+        category: "Libros",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB5kRs7GplRVxSl-0tSOS-8FRCT38hDK9QaH-f6qhQ2NuaZ8dpXtKvGhURhQNEfewfLPTzpGpVSWtSZL4C5U8Zzw6lJrpcIBCTQpTqZxqjm-j2fO-ZXA1iMs3gIMsRbY8L8Kl8IbGTYz1fFMkRhLqfQJn_yhU0yULfe6V4Gjb7wZsDziro5sa70QalUMwDtbObV04l3fY28t-UMoJKUbE4W7mIEWB2gmIJdFmyjJPsgKcfA0SjOgtt86uZx129XDQ8MIY3xWjV-dMY"
+    },
+    {
+        id: 216,
+        categoryId: 2,
+        subcategory: "Interes",
+        title: "Kit Cerveza Artesanal",
+        price: 59.99,
+        category: "DIY",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBq0yiAdz0oLMI2gfpk2-8sciJO9MPZt5jrxMpSIAu9hmR7GBGDhzp3_5cDfVGSU6GV9fSrm7TdhFFPvSQHT5UVcdcoekgSk8itGmz_q70pOnUoyPZuWHSJwydfnNiL10zgUi9pyDe1HgXtglmU5D6_l_fEbXtXaodS-2vELmhpeor3VeGF_nHIBgv-si9zn1mlhNhjbrEoOFeJUODXq1tXPB2seN7Imrj_JInMxhyliZ5EEtOxrOD9i-adZZ6UfW-7mQKPbs6rP70"
+    },
+    {
+        id: 217,
+        categoryId: 2,
+        subcategory: "Interes",
+        title: "Cafetera Italiana",
+        price: 40.00,
+        category: "Cocina",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuChn-wSNct87QKoOlZoXFuqmOu8uHJJVZugQhIHXN6Er3cD_oFsctkpCpEPzb_VS6gIwX9pQ4eah_gyIWzgsPMpQYK8IqMyvfPhkgnS9-AaoRDVisfixCUpUPfBrxxu3m1qfXXUsWLBYUpPnBnusMjoWL8QgqWDm2qqRbo-7jcxtoe6BozA_jVuRBy31qiL0wkFA3qZz7_ss5Dg3TWEDhlBArgrlKFTP415X3HlX2rysTKHhwtlbiuKxKkUwVYAHtxbvcca3YTzd9Y"
+    },
+    {
+        id: 218,
+        categoryId: 2,
+        subcategory: "Interes",
+        title: "Set de Golf Básico",
+        price: 299.00,
+        category: "Deportes",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB7Hu8AlkAHVmozV1FP3qS4R5a3NN5gLlt2DRoFPwcf_b87QU2S6lJbQu1aL_rAv1hBQ3nTewhODj00Q9zOV_bVRRGcvg1aJD2__njK9NrfBLvU2wivUnVniZkfsiArTQ38cDg0RmKuYXCyqEzEuxmYdZoMGs39guilS8tWm1LTBIiueL7tGw13Q0QxJvOk7H-NlnWRRm6tLN2-RNbh_G6BnKkCuHtNr0sspLXGOW8rJ2UpBQYJQLpsoG6d0zGB6rEom04vKZHY8uc"
+    },
+    {
+        id: 219,
+        categoryId: 2,
+        subcategory: "Interes",
+        title: "Tocadiscos Vintage",
+        price: 129.99,
+        category: "Música",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDUquggzKJBFWsPAyPdCBQ70BPnE6Kc_Ipug1o1M_QjmVHcD_OIKoTId2oYHSyCiL0BmMTjlG3zwdg1gS2Vg5cZg0KP7_EbmC4ioOzzo8gAOtvNnhHl4HoQ4VaSTqb36kEcoyuVVWWK779rflmje8G8Tm6SIFqHC6Th9-fQD10LRdG1hISTnpO_XflAp0iz1K65DEGjaCyda2l2mwaIlBx7kTjZ5VpU5Xy41XgTKmSYV_fzP1zu_194DkPJn-b-F5FeJb2xBAcjNlo"
+    },
+    {
+        id: 220,
+        categoryId: 2,
+        subcategory: "Interes",
+        title: "Kit de Afeitado Lujo",
+        price: 75.00,
+        category: "Cuidado Personal",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDsD2pbZDVsD6ydEdsqO2YyO5lVTE5suBhgFE8sdSMjoeRJLBYS0G6RBQac-TdXuERW5PAzXfaUDNCgBBaTM1Y5vReIZ2063BBUJ-tY4M6-peuNDPRpheeurvW7zKzSJPhsjxKicNUwm-FPgsXbNyKPBv3QLLGGeXw71h-TdGUrL92YunxDmk4tKy-bsAVZAM2Se3NGDJxcprtkAM5Ic7FqfNyojy8jwJzB3BcIID3LJDqxAs5NbQGu5WXRo4sDr09WG5C3lPjaEak"
+    },
     {
         id: 301,
         categoryId: 3,
@@ -227,31 +308,216 @@ export const PRODUCTS: Product[] = [
         category: "Joyería",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBb80cJS6B7Ihxp8RLISdrPsugVqHqnR70DXkBpdHNofIJ9OMYMVwMEGM0DKPHUl2UISzH3Di4dVuY7RiE-spQFRFETjCsa9PzfNDuceZfxXLgqlwL8tpyzQ9K_IF0quLq5KZntzFKc3CLNdVajA8ZVbT0Mvr1ofhyvZd2Nazi-EI36GSCcdqVl3_DZHu7w48bwLRcOSsXmeHGRwPreWqw9PZAWFGwkCCUgUydTXYLp3qI_ZNLRU-4Znauc41OdsAhcJlUXgSZJwTg"
     },
+    // New Kids (Boy) Products (ID 4)
     {
-        id: 310,
-        categoryId: 3,
-        subcategory: "Experiencias",
-        title: "Día de Spa Completo",
-        price: 150.00,
-        category: "Relax",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCNuIjt2mrF0St_DJYFR0HwgsECZprR-WqrFP7dzrprklV0Er6mWFKLOn99C1iq47U3_TH0jb2JxC-pzn192q3nUKzqK4TEHjJaIvdUaorW3rpCARG33tLtUq1mBq-zzc9jR0WSjkWHFerhMnrY0S9nkGz-6bde4gkvtkXd3gPVET05oLnMwe4Hf-ogrHDrotHH586k3BV93xI9qZ3-GM6PQ824hx26UnBzpgK_Xq3m5J-DfrBQvicwm-waJNp0ego3fzhNne4cAM8"
+        id: 401,
+        categoryId: 4,
+        subcategory: "Acción",
+        title: "Lanzador Nerf Ultra",
+        price: 45.00,
+        category: "Juguetes",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCW_k_rCqC3MhDqO6pYnZqF2tG1wK5vE8x7jL0yI9h4mB3oA2dF1nE6sJ5rT8uV9iW4qO3lP7zX0mC2kG1yH5bN8vF6dJ9gR3tL1wE4xK7zO2mP5nB8qI1vF0yH6jG9wL3sK5nE7rT9xZ1yU4oM2pQ6wV8tN3kR1jS5hB7vG0xL9yF4wM1pE2zH8qI5nJ6oK9rT3wE4xL7zO1mP2nC5kH8vG3xJ4yF6dI9gR1tL0wE3xK6zO0mP4nB7qI1vF0yH5bN8vF6dJ9gR3tL1w"
     },
     {
-        id: 311,
-        categoryId: 3,
-        subcategory: "Experiencias",
-        title: "Cata de Vinos",
-        price: 90.00,
-        category: "Gourmet",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCV9o3ij3WSCtr4WyaOhJl1zkGfh261tNFXdHauOAMI9aS8sTEN7nM18mYhCqmpz8kjosPEeyaraA1W0Z1oWXm4MLgl3tC3d2GrozP34g1g1e6eUKTENyzQ9JtuIMhI28TFzH0WEFV2eyIrDj5XnSQh1cW21mZynJi2sQYtRVB93822Rx9S5ybiOo8f_WaHySaWxY4l4fI_BdrRTsdm0ilLv_ek9Fa0rbFfB-mrMZUNC1bYIUn-zMY0a0b338JC7giAqmiLO4WQBQU"
+        id: 402,
+        categoryId: 4,
+        subcategory: "Acción",
+        title: "Walkie Talkies Espía",
+        price: 35.00,
+        category: "Electrónica",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCW_k_rCqC3MhDqO6pYnZqF2tG1wK5vE8x7jL0yI9h4mB3oA2dF1nE6sJ5rT8uV9iW4qO3lP7zX0mC2kG1yH5bN8vF6dJ9gR3tL1wE4xK7zO2mP5nB8qI1vF0yH6jG9wL3sK5nE7rT9xZ1yU4oM2pQ6wV8tN3kR1jS5hB7vG0xL9yF4wM1pE2zH8qI5nJ6oK9rT3wE4xL7zO1mP2nC5kH8vG3xJ4yF6dI9gR1tL0wE3xK6zO0mP4nB7qI1vF0yH5bN8vF6dJ9gR3tL1w" // Reusing random hash for mock
     },
     {
-        id: 312,
-        categoryId: 3,
-        subcategory: "Experiencias",
-        title: "Taller de Cerámica",
+        id: 403,
+        categoryId: 4,
+        subcategory: "Acción",
+        title: "Set de Arquería",
+        price: 29.99,
+        category: "Aire Libre",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCW_k_rCqC3MhDqO6pYnZqF2tG1wK5vE8x7jL0yI9h4mB3oA2dF1nE6sJ5rT8uV9iW4qO3lP7zX0mC2kG1yH5bN8vF6dJ9gR3tL1wE4xK7zO2mP5nB8qI1vF0yH6jG9wL3sK5nE7rT9xZ1yU4oM2pQ6wV8tN3kR1jS5hB7vG0xL9yF4wM1pE2zH8qI5nJ6oK9rT3wE4xL7zO1mP2nC5kH8vG3xJ4yF6dI9gR1tL0wE3xK6zO0mP4nB7qI1vF0yH5bN8vF6dJ9gR3tL1w"
+    },
+    {
+        id: 404,
+        categoryId: 4,
+        subcategory: "Construcción",
+        title: "Bloques Espaciales",
         price: 65.00,
+        category: "Lego",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCyzcBJllL2YpRO2Ee2CiOlet8Vc3is8TZ3ov6XIb3u1Biln-bUVgWwakpuMZ_C7CBpftWWwJFdi2NHUavjHeS8h0k6EAghL6TzVKyP_DK7xSeGPhLCmeZCtcvkv6jZSIIlqLSxAN3pSTaF79SidufVa7IyTQOyHNkh0LN6dfqv808Ya11XnXDm6JBf7qPkvsrn_r_j6TscAYDapyK81REZ0ynpxGlOgCjVGdcd7GhdqqBa3HhETqBHyu_3rtSAgQ7OpktqIlEzvaY"
+    },
+    {
+        id: 405,
+        categoryId: 4,
+        subcategory: "Construcción",
+        title: "Circuito de Canicas",
+        price: 45.00,
+        category: "Ingeniería",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCyzcBJllL2YpRO2Ee2CiOlet8Vc3is8TZ3ov6XIb3u1Biln-bUVgWwakpuMZ_C7CBpftWWwJFdi2NHUavjHeS8h0k6EAghL6TzVKyP_DK7xSeGPhLCmeZCtcvkv6jZSIIlqLSxAN3pSTaF79SidufVa7IyTQOyHNkh0LN6dfqv808Ya11XnXDm6JBf7qPkvsrn_r_j6TscAYDapyK81REZ0ynpxGlOgCjVGdcd7GhdqqBa3HhETqBHyu_3rtSAgQ7OpktqIlEzvaY"
+    },
+    {
+        id: 406,
+        categoryId: 4,
+        subcategory: "Vehículos",
+        title: "Carro Control Remoto",
+        price: 55.00,
+        category: "RC",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDR7j3wIHo2MbTE1JQ0U4P4BT3gr4dgMaVhAcaKM2nZypUKymi7GVOFcEeZ_vAP_PqX41ZOPTdEvl_ia488cSUuIJKYS0aOU_2TI2zpiCIpDZCTtFLLZhYsj_qK--VoUrErkCi5xsO0oXNlqedthXqghvxeKggsBruwT2jewHta2EacF4EpJVNiMWWM84rZp8NaQcRQNi3yZEm21TulW2Vxj1vd3ozgXUB1mZfxlhRNtebrTTn5iiuOsNyGEAECVeoRNbqVT_RIGU8"
+    },
+    // Nuevos productos "Interes" para Niños (ID 4)
+    {
+        id: 410,
+        categoryId: 4,
+        subcategory: "Interes",
+        title: "Microscopio Junior",
+        price: 39.99,
+        category: "Ciencia",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCW_k_rCqC3MhDqO6pYnZqF2tG1wK5vE8x7jL0yI9h4mB3oA2dF1nE6sJ5rT8uV9iW4qO3lP7zX0mC2kG1yH5bN8vF6dJ9gR3tL1wE4xK7zO2mP5nB8qI1vF0yH6jG9wL3sK5nE7rT9xZ1yU4oM2pQ6wV8tN3kR1jS5hB7vG0xL9yF4wM1pE2zH8qI5nJ6oK9rT3wE4xL7zO1mP2nC5kH8vG3xJ4yF6dI9gR1tL0wE3xK6zO0mP4nB7qI1vF0yH5bN8vF6dJ9gR3tL1w"
+    },
+    {
+        id: 411,
+        categoryId: 4,
+        subcategory: "Interes",
+        title: "Balón Espacial",
+        price: 24.50,
+        category: "Deportes",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCyzcBJllL2YpRO2Ee2CiOlet8Vc3is8TZ3ov6XIb3u1Biln-bUVgWwakpuMZ_C7CBpftWWwJFdi2NHUavjHeS8h0k6EAghL6TzVKyP_DK7xSeGPhLCmeZCtcvkv6jZSIIlqLSxAN3pSTaF79SidufVa7IyTQOyHNkh0LN6dfqv808Ya11XnXDm6JBf7qPkvsrn_r_j6TscAYDapyK81REZ0ynpxGlOgCjVGdcd7GhdqqBa3HhETqBHyu_3rtSAgQ7OpktqIlEzvaY"
+    },
+    {
+        id: 412,
+        categoryId: 4,
+        subcategory: "Interes",
+        title: "Reloj Aventurero",
+        price: 34.00,
+        category: "Accesorios",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDR7j3wIHo2MbTE1JQ0U4P4BT3gr4dgMaVhAcaKM2nZypUKymi7GVOFcEeZ_vAP_PqX41ZOPTdEvl_ia488cSUuIJKYS0aOU_2TI2zpiCIpDZCTtFLLZhYsj_qK--VoUrErkCi5xsO0oXNlqedthXqghvxeKggsBruwT2jewHta2EacF4EpJVNiMWWM84rZp8NaQcRQNi3yZEm21TulW2Vxj1vd3ozgXUB1mZfxlhRNtebrTTn5iiuOsNyGEAECVeoRNbqVT_RIGU8"
+    },
+    // New Kids (Girl) Products (ID 5)
+    {
+        id: 501,
+        categoryId: 5,
+        subcategory: "Creatividad",
+        title: "Kit de Arte Deluxe",
+        price: 35.00,
         category: "Arte",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBdmMOO8TPQqreXT1YW8Rzwy2OvBMtQNYhnQSehNm8MEC8P_kEMq_3cVhWfhGgm-13QCCNARFwC7l81ZE2anJWFjmjLKBry7hAIJwc7Kd_7eMIEqeybHcNpImZTclVq85zsWHebu27B95fhav_hmd6cBIV-z287IxaVLwYcHP0KlyN8hq2zpGxjdLFuGRoE_ozkUcQaD0gEaBT_p-rZYRZGpqkC5ucBmSQYjOZlOwTxtUYZUNhaK2Un6Y9ZR973oCZ5VrLY7Ch1AhM"
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDr010zdWNBFi_Gfr76vUna1x-tcNqpVYrN9t0-OMTSpIGpBOVb3BeJvC5WEtAecFMSOJCa-bj5H0J7YQSVAKCJQSJfGDG9nC-OcoiKPL2Vl8LHbFflzztxtQnJNiXao2nFeDa2Zxp7gPzE_YOuHCWvRDAs7Yi2QJDktJJ_imbmZHJiZr8ytCkxqRaRdduZDIz0W-rhwRYYfiqBojDCt-XsZAiswAMqEo3-BmZAs4boB8F6z9n-2OcLhidtpqp8WSnFmCYda_qUPdg"
+    },
+    {
+        id: 502,
+        categoryId: 5,
+        subcategory: "Creatividad",
+        title: "Fábrica de Pulseras",
+        price: 25.00,
+        category: "Moda",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDr010zdWNBFi_Gfr76vUna1x-tcNqpVYrN9t0-OMTSpIGpBOVb3BeJvC5WEtAecFMSOJCa-bj5H0J7YQSVAKCJQSJfGDG9nC-OcoiKPL2Vl8LHbFflzztxtQnJNiXao2nFeDa2Zxp7gPzE_YOuHCWvRDAs7Yi2QJDktJJ_imbmZHJiZr8ytCkxqRaRdduZDIz0W-rhwRYYfiqBojDCt-XsZAiswAMqEo3-BmZAs4boB8F6z9n-2OcLhidtpqp8WSnFmCYda_qUPdg"
+    },
+    {
+        id: 503,
+        categoryId: 5,
+        subcategory: "Fantasía",
+        title: "Disfraz de Hada",
+        price: 40.00,
+        category: "Disfraces",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtJbDgBMRbSuRfuli5reM5fNU3FqdqoljoYIX0auaH8JT8YOTYufGPAEr1GWurFXuUID6Xx9EkSGvB_KCY6TA2pEwkjPS0-I0vFCy_DeggrRIKWnG_qb_8fha-X1iO86dvsWihwAmfy_z4uOSoI-hakcq4w3s8FFsgNiThZlxSvW4e-atxIuIT9x9Hct8002vwuldlSrItBU4den1dfv9d_5Q9w_C2bcUBhPmYE242CaaSFvcZ3bIA3KW4cWSiU1_43NjgJZCk5vc"
+    },
+    {
+        id: 504,
+        categoryId: 5,
+        subcategory: "Muñecas",
+        title: "Casa de Muñecas XL",
+        price: 120.00,
+        category: "Juguetes",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBcnEtjkqNu8wh_qzpesuqkhPLhQ-HQLD030OHtxJT__fey35w84ZmbxPuRWGT2aVrSbpi0CfBsxs_IhOeXUHwRy4oVMNUtDs74VTRGvyOPayX8HGY5fkGqsC_7Fo2pzdd4YWYheqhBrOSdKsF9RQzRW4p1UqRqcw9h_qDd-b8j50GKHQyxYbtVe9Jujru-Vk-WqzyM0ETSPz47m79C2KECIZ1ZY8mYNWfbyDCsq4W423I8sQmG_E6t4B9as7kwhpIIPNYPAHhP6t0"
+    },
+    {
+        id: 505,
+        categoryId: 5,
+        subcategory: "Muñecas",
+        title: "Muñeca Interactiva",
+        price: 55.00,
+        category: "Juguetes",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBcnEtjkqNu8wh_qzpesuqkhPLhQ-HQLD030OHtxJT__fey35w84ZmbxPuRWGT2aVrSbpi0CfBsxs_IhOeXUHwRy4oVMNUtDs74VTRGvyOPayX8HGY5fkGqsC_7Fo2pzdd4YWYheqhBrOSdKsF9RQzRW4p1UqRqcw9h_qDd-b8j50GKHQyxYbtVe9Jujru-Vk-WqzyM0ETSPz47m79C2KECIZ1ZY8mYNWfbyDCsq4W423I8sQmG_E6t4B9as7kwhpIIPNYPAHhP6t0"
+    },
+    // Nuevos productos "Interes" para Niñas (ID 5)
+    {
+        id: 510,
+        categoryId: 5,
+        subcategory: "Interes",
+        title: "Patines Retro",
+        price: 55.00,
+        category: "Deportes",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDr010zdWNBFi_Gfr76vUna1x-tcNqpVYrN9t0-OMTSpIGpBOVb3BeJvC5WEtAecFMSOJCa-bj5H0J7YQSVAKCJQSJfGDG9nC-OcoiKPL2Vl8LHbFflzztxtQnJNiXao2nFeDa2Zxp7gPzE_YOuHCWvRDAs7Yi2QJDktJJ_imbmZHJiZr8ytCkxqRaRdduZDIz0W-rhwRYYfiqBojDCt-XsZAiswAMqEo3-BmZAs4boB8F6z9n-2OcLhidtpqp8WSnFmCYda_qUPdg"
+    },
+    {
+        id: 511,
+        categoryId: 5,
+        subcategory: "Interes",
+        title: "Cámara Instantánea",
+        price: 79.00,
+        category: "Fotografía",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtJbDgBMRbSuRfuli5reM5fNU3FqdqoljoYIX0auaH8JT8YOTYufGPAEr1GWurFXuUID6Xx9EkSGvB_KCY6TA2pEwkjPS0-I0vFCy_DeggrRIKWnG_qb_8fha-X1iO86dvsWihwAmfy_z4uOSoI-hakcq4w3s8FFsgNiThZlxSvW4e-atxIuIT9x9Hct8002vwuldlSrItBU4den1dfv9d_5Q9w_C2bcUBhPmYE242CaaSFvcZ3bIA3KW4cWSiU1_43NjgJZCk5vc"
+    },
+    {
+        id: 512,
+        categoryId: 5,
+        subcategory: "Interes",
+        title: "Libro de Cuentos",
+        price: 19.99,
+        category: "Lectura",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBcnEtjkqNu8wh_qzpesuqkhPLhQ-HQLD030OHtxJT__fey35w84ZmbxPuRWGT2aVrSbpi0CfBsxs_IhOeXUHwRy4oVMNUtDs74VTRGvyOPayX8HGY5fkGqsC_7Fo2pzdd4YWYheqhBrOSdKsF9RQzRW4p1UqRqcw9h_qDd-b8j50GKHQyxYbtVe9Jujru-Vk-WqzyM0ETSPz47m79C2KECIZ1ZY8mYNWfbyDCsq4W423I8sQmG_E6t4B9as7kwhpIIPNYPAHhP6t0"
+    },
+    // New Tech 2025 Products (ID 6)
+    {
+        id: 601,
+        categoryId: 6,
+        subcategory: "Smart Home",
+        title: "Asistente Robot IA",
+        price: 499.00,
+        category: "Robótica",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCygOsmWJjMJPfHGfuZP64fV3PnkcvaotFyxYX2iEuarAQpCqyRiLRNCbRMMgGlhIWXDK3xVqvDllaBYGySnIIHAh9Mo6IXiKH-UaEgGT8Wcq9EG48eyOEB1oolyVZXU50mdSifW_IEBQzwAbnHNrtJ9s8O6WPDRlYlb7hsf04FcuLatr5Ie-5-ra2tZeGruLMCSbHZV51RoNdzs_Dcqfeuu3Y6cpXZt0QIp9jjN03wHYja3jNYi9uZLBW3OsW75vWF7oeZWp_DNjk"
+    },
+    {
+        id: 602,
+        categoryId: 6,
+        subcategory: "Smart Home",
+        title: "Luces Nanoleaf 4D",
+        price: 199.00,
+        category: "Iluminación",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCygOsmWJjMJPfHGfuZP64fV3PnkcvaotFyxYX2iEuarAQpCqyRiLRNCbRMMgGlhIWXDK3xVqvDllaBYGySnIIHAh9Mo6IXiKH-UaEgGT8Wcq9EG48eyOEB1oolyVZXU50mdSifW_IEBQzwAbnHNrtJ9s8O6WPDRlYlb7hsf04FcuLatr5Ie-5-ra2tZeGruLMCSbHZV51RoNdzs_Dcqfeuu3Y6cpXZt0QIp9jjN03wHYja3jNYi9uZLBW3OsW75vWF7oeZWp_DNjk"
+    },
+    {
+        id: 603,
+        categoryId: 6,
+        subcategory: "Gaming",
+        title: "Consola Portátil X",
+        price: 350.00,
+        category: "Gaming",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB95I5g5kwB3RgzfM4qkw9zxxhlinYH9uNt2YAGm4cdC-z_NY4A_9POPmzFA5c17TI6TcKKwqJ5n8h8rQM-UYRyjbFL_R38l_gT97zLGpckwlFYNNvtO6y2FfjeL3MHUkNv7LAv3Dl5r3TvZY4MZDZ0Q3VdQ3av0cJwsAeIeCF07W9ahIRYs8E7Z6XjvVZo00WHXgJiAYniwL31tqUiJ7pYT5QcLtr-cyE-hCmbVkN8TM5-RQq9NhGACmQaHv143UI7i_mD3fNPvWw"
+    },
+    {
+        id: 604,
+        categoryId: 6,
+        subcategory: "Gaming",
+        title: "Teclado Mecánico RGB",
+        price: 120.00,
+        category: "Periféricos",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB95I5g5kwB3RgzfM4qkw9zxxhlinYH9uNt2YAGm4cdC-z_NY4A_9POPmzFA5c17TI6TcKKwqJ5n8h8rQM-UYRyjbFL_R38l_gT97zLGpckwlFYNNvtO6y2FfjeL3MHUkNv7LAv3Dl5r3TvZY4MZDZ0Q3VdQ3av0cJwsAeIeCF07W9ahIRYs8E7Z6XjvVZo00WHXgJiAYniwL31tqUiJ7pYT5QcLtr-cyE-hCmbVkN8TM5-RQq9NhGACmQaHv143UI7i_mD3fNPvWw"
+    },
+    {
+        id: 605,
+        categoryId: 6,
+        subcategory: "Movilidad",
+        title: "Scooter Eléctrico Pro",
+        price: 450.00,
+        category: "Transporte",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCTSNpW5tL-bx7Owz63idZNyxr-sirOvFnK7PO6jFEqxdjdbQnEa1IFB1Ji6R_C0uxeNcH9SY2l7h6shf6_KFWy8km1HYopgxcwkBaU0nNr6dnhDvLLSvXImOLCzYqNTlJHb38MwTWkHTco3D4u_w_ycKnvyT2XorxkqW-NpZhahbmZ73p66bHpNUwhzsLFTTv1CY5QsiXRZbR0_m43WmuthXOamC4HTpNiRG9FO3CXBOuE7F3Tg0qSbehoN94a9FXZ_J0CRTcK6zk"
+    },
+    {
+        id: 606,
+        categoryId: 6,
+        subcategory: "Movilidad",
+        title: "Casco Inteligente",
+        price: 89.00,
+        category: "Seguridad",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCTSNpW5tL-bx7Owz63idZNyxr-sirOvFnK7PO6jFEqxdjdbQnEa1IFB1Ji6R_C0uxeNcH9SY2l7h6shf6_KFWy8km1HYopgxcwkBaU0nNr6dnhDvLLSvXImOLCzYqNTlJHb38MwTWkHTco3D4u_w_ycKnvyT2XorxkqW-NpZhahbmZ73p66bHpNUwhzsLFTTv1CY5QsiXRZbR0_m43WmuthXOamC4HTpNiRG9FO3CXBOuE7F3Tg0qSbehoN94a9FXZ_J0CRTcK6zk"
     }
 ];
