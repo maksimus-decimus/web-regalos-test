@@ -9,6 +9,7 @@ interface CategoryPageProps {
     onToggleFavorite: (id: number) => void;
 }
 
+//hola
 const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack, favoriteIds, onToggleFavorite }) => {
     const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null);
     const [showMobileFilters, setShowMobileFilters] = useState(false);
