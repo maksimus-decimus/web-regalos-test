@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+    onCategorySelect: (id: number) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onCategorySelect }) => {
     const [email, setEmail] = useState('');
     const [subscribed, setSubscribed] = useState(false);
 
@@ -12,6 +16,11 @@ const Footer: React.FC = () => {
                 setEmail('');
             }, 3000);
         }
+    };
+
+    const handleStaticLink = (e: React.MouseEvent) => {
+        e.preventDefault();
+        alert("Esta sección estará disponible muy pronto.");
     };
 
     return (
@@ -29,17 +38,18 @@ const Footer: React.FC = () => {
                 
                 <div className="flex flex-col gap-2">
                     <h4 className="font-bold text-white mb-2">Comprar</h4>
-                    <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">Para Papá</a>
-                    <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">Para Mamá</a>
-                    <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">Niños y Niñas</a>
-                    <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">Tecnología</a>
+                    <button onClick={() => onCategorySelect(2)} className="text-left text-sm text-gray-400 hover:text-primary transition-colors">Para Papá</button>
+                    <button onClick={() => onCategorySelect(3)} className="text-left text-sm text-gray-400 hover:text-primary transition-colors">Para Mamá</button>
+                    <button onClick={() => onCategorySelect(4)} className="text-left text-sm text-gray-400 hover:text-primary transition-colors">Niños (Aventura)</button>
+                    <button onClick={() => onCategorySelect(5)} className="text-left text-sm text-gray-400 hover:text-primary transition-colors">Niñas (Fantasía)</button>
+                    <button onClick={() => onCategorySelect(6)} className="text-left text-sm text-gray-400 hover:text-primary transition-colors">Tecnología</button>
                 </div>
                 
                 <div className="flex flex-col gap-2">
                     <h4 className="font-bold text-white mb-2">Soporte</h4>
-                    <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">Centro de Ayuda</a>
-                    <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">Devoluciones</a>
-                    <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">Envíos</a>
+                    <a href="#" onClick={handleStaticLink} className="text-sm text-gray-400 hover:text-primary transition-colors">Centro de Ayuda</a>
+                    <a href="#" onClick={handleStaticLink} className="text-sm text-gray-400 hover:text-primary transition-colors">Devoluciones</a>
+                    <a href="#" onClick={handleStaticLink} className="text-sm text-gray-400 hover:text-primary transition-colors">Envíos</a>
                 </div>
                 
                 <div className="flex flex-col gap-2">
@@ -66,8 +76,8 @@ const Footer: React.FC = () => {
             <div className="mx-auto max-w-[1280px] mt-10 border-t border-[#28392e] pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
                 <p>© 2025 Regalos Inc. Todos los derechos reservados.</p>
                 <div className="flex gap-4 mt-2 md:mt-0">
-                    <a href="#" className="hover:text-gray-400">Privacidad</a>
-                    <a href="#" className="hover:text-gray-400">Términos</a>
+                    <a href="#" onClick={handleStaticLink} className="hover:text-gray-400">Privacidad</a>
+                    <a href="#" onClick={handleStaticLink} className="hover:text-gray-400">Términos</a>
                 </div>
             </div>
         </footer>

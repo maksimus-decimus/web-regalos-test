@@ -4,9 +4,21 @@ interface HeaderProps {
     searchTerm: string;
     onSearchChange: (val: string) => void;
     onGoHome: () => void;
+    onShowOffers: () => void;
+    onShowCategories: () => void;
+    onShowWishlist: () => void;
+    wishlistCount: number;
 }
 
-const Header: React.FC<HeaderProps> = ({ searchTerm, onSearchChange, onGoHome }) => {
+const Header: React.FC<HeaderProps> = ({ 
+    searchTerm, 
+    onSearchChange, 
+    onGoHome, 
+    onShowOffers, 
+    onShowCategories,
+    onShowWishlist,
+    wishlistCount
+}) => {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-[#28392e] bg-background-dark/80 backdrop-blur-md px-6 py-4">
             <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-6">
@@ -38,11 +50,27 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, onSearchChange, onGoHome })
                 <div className="flex items-center gap-6">
                     <div className="hidden lg:flex items-center gap-6">
                         <button onClick={onGoHome} className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Inicio</button>
-                        <a href="#" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Categorías</a>
-                        <a href="#" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Ofertas</a>
+                        <button onClick={onShowCategories} className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Categorías</button>
+                        <button onClick={onShowOffers} className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Ofertas</button>
                     </div>
                     <div className="flex gap-3">
-                        <button className="flex h-10 w-10 items-center justify-center rounded-full bg-[#28392e] text-white hover:bg-[#344a3b] transition-colors">
+                        <button 
+                            onClick={onShowWishlist}
+                            className="flex relative h-10 w-10 items-center justify-center rounded-full bg-[#28392e] text-white hover:bg-[#344a3b] transition-colors tooltip-trigger"
+                            title="Lista de Deseados"
+                        >
+                            <span className="material-symbols-outlined text-[20px] text-red-400">favorite</span>
+                            {wishlistCount > 0 && (
+                                <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white">
+                                    {wishlistCount}
+                                </span>
+                            )}
+                        </button>
+                        <button 
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#28392e] text-white hover:bg-[#344a3b] transition-colors tooltip-trigger"
+                            title="Perfil de Usuario"
+                            onClick={() => alert("El inicio de sesión estará disponible próximamente.")}
+                        >
                             <span className="material-symbols-outlined text-[20px]">account_circle</span>
                         </button>
                     </div>

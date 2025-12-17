@@ -5,10 +5,13 @@ interface CategoryPageProps {
     category: Category;
     products: Product[];
     onBack: () => void;
+    favoriteIds: number[];
+    onToggleFavorite: (id: number) => void;
 }
 
-const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack }) => {
+const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack, favoriteIds, onToggleFavorite }) => {
     const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null);
+    const [showMobileFilters, setShowMobileFilters] = useState(false);
     
     // Config for categories that use the Sectioned Layout (Fathers: 2, Mothers: 3, Kids: 4, Girls: 5, Tech: 6)
     const getLayoutConfig = (id: number) => {
@@ -91,6 +94,23 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack 
 
     const config = getLayoutConfig(category.id);
 
+    // Render helper for favorite button logic with props
+    const FavoriteButton = ({ productId, colorClass = "" }: { productId: number, colorClass?: string }) => {
+        const isFav = favoriteIds.includes(productId);
+        return (
+            <button 
+                onClick={(e) => { e.stopPropagation(); onToggleFavorite(productId); }}
+                className={`absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full backdrop-blur-sm transition-colors ${
+                    isFav 
+                    ? 'bg-red-500 text-white' 
+                    : (colorClass || 'bg-black/40 text-white hover:bg-white hover:text-black')
+                }`}
+            >
+                <span className={`material-symbols-outlined text-[18px] ${isFav ? 'fill-current' : ''}`}>favorite</span>
+            </button>
+        );
+    };
+
     // If it's a category with a custom landing page layout
     if (config) {
         
@@ -131,9 +151,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack 
                                                 {product.tag}
                                             </span>
                                         )}
-                                        <button className={`absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full backdrop-blur-sm transition-colors ${config.darkMode ? 'bg-black/40 text-white hover:bg-white hover:text-black' : 'bg-white/80 text-black hover:bg-black hover:text-white'}`}>
-                                            <span className="material-symbols-outlined text-[18px]">favorite</span>
-                                        </button>
+                                        <FavoriteButton productId={product.id} colorClass={config.darkMode ? 'bg-black/40 text-white hover:bg-white hover:text-black' : 'bg-white/80 text-black hover:bg-black hover:text-white'} />
                                         <div 
                                             className="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" 
                                             style={{backgroundImage: `url("${product.image}")`}}>
@@ -195,7 +213,13 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack 
                                     {category.id === 6 && "El futuro hoy. Descubre la última tecnología que transformará tu vida."}
                                 </p>
                                 <div className="flex gap-4 mt-2">
-                                    <button className={`flex items-center justify-center gap-2 rounded-full h-12 px-8 ${config.buttonColor} text-base font-bold transition-transform active:scale-95 shadow-lg`}>
+                                    <button 
+                                        onClick={() => {
+                                            const firstSection = document.querySelector('section');
+                                            firstSection?.scrollIntoView({ behavior: 'smooth' });
+                                        }}
+                                        className={`flex items-center justify-center gap-2 rounded-full h-12 px-8 ${config.buttonColor} text-base font-bold transition-transform active:scale-95 shadow-lg`}
+                                    >
                                         Explorar Guía
                                         <span className="material-symbols-outlined">arrow_downward</span>
                                     </button>
@@ -236,9 +260,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack 
                                                         {product.tag}
                                                     </span>
                                                 )}
-                                                <button className={`absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full backdrop-blur-sm transition-colors ${config.darkMode ? 'bg-black/40 text-white hover:bg-white hover:text-black' : 'bg-white/80 text-black hover:bg-black hover:text-white'}`}>
-                                                    <span className="material-symbols-outlined text-[18px]">favorite</span>
-                                                </button>
+                                                <FavoriteButton productId={product.id} colorClass={config.darkMode ? 'bg-black/40 text-white hover:bg-white hover:text-black' : 'bg-white/80 text-black hover:bg-black hover:text-white'} />
                                                 <div 
                                                     className="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" 
                                                     style={{backgroundImage: `url("${product.image}")`}}>
@@ -308,12 +330,31 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack 
                         Explora nuestra selección especial de {category.title.toLowerCase()}.
                     </p>
                 </div>
-                {/* Quick Sort for Mobile */}
-                <div className="md:hidden w-full">
-                    <button className="w-full flex items-center justify-between bg-[#1A2C20] px-4 py-3 rounded-xl text-white font-medium">
+                {/* Quick Sort for Mobile - Now Functional */}
+                <div className="md:hidden w-full relative">
+                    <button 
+                        onClick={() => setShowMobileFilters(!showMobileFilters)}
+                        className="w-full flex items-center justify-between bg-[#1A2C20] px-4 py-3 rounded-xl text-white font-medium active:scale-95 transition-transform"
+                    >
                         <span>Filtros y Ordenar</span>
-                        <span className="material-symbols-outlined">tune</span>
+                        <span className="material-symbols-outlined">{showMobileFilters ? 'close' : 'tune'}</span>
                     </button>
+                    {/* Mobile Filters Dropdown */}
+                    {showMobileFilters && (
+                        <div className="absolute top-full left-0 right-0 mt-2 bg-[#1A2C20] border border-gray-700 rounded-xl p-4 z-20 shadow-2xl animate-fade-in-up">
+                             <div className="flex flex-col gap-4">
+                                <h3 className="font-bold text-white border-b border-gray-700 pb-2">Mostrar</h3>
+                                <label className="flex items-center gap-3 cursor-pointer">
+                                    <input type="checkbox" defaultChecked className="rounded border-gray-500 bg-transparent text-primary focus:ring-primary" />
+                                    <span className="text-white">Todos los productos</span>
+                                </label>
+                                <label className="flex items-center gap-3 cursor-pointer">
+                                    <input type="checkbox" className="rounded border-gray-500 bg-transparent text-primary focus:ring-primary" />
+                                    <span className="text-gray-400">Solo Ofertas</span>
+                                </label>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
 
@@ -353,9 +394,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack 
                                             {product.discount}
                                         </span>
                                     )}
-                                    <button className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-primary hover:text-background-dark">
-                                        <span className="material-symbols-outlined text-[18px]">favorite</span>
-                                    </button>
+                                    <FavoriteButton productId={product.id} />
                                     <img 
                                         alt={product.title} 
                                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" 

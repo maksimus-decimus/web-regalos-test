@@ -1,9 +1,10 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import CategoryCard from './components/CategoryCard';
 import ProductCard from './components/ProductCard';
 import CategoryPage from './components/CategoryPage';
+import WishlistPage from './components/WishlistPage';
 import Footer from './components/Footer';
 import { CATEGORIES, PRODUCTS } from './constants';
 import { Category } from './types';
@@ -11,70 +12,146 @@ import { Category } from './types';
 const App: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
+    const [showOffers, setShowOffers] = useState(false);
+    const [showWishlist, setShowWishlist] = useState(false);
+    
+    // Global Favorites State
+    const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
+
+    const handleToggleFavorite = (id: number) => {
+        setFavoriteIds(prev => 
+            prev.includes(id) 
+                ? prev.filter(favId => favId !== id) 
+                : [...prev, id]
+        );
+    };
+
+    // Navigation Handlers
+    const resetViews = () => {
+        setSelectedCategory(null);
+        setShowOffers(false);
+        setShowWishlist(false);
+        window.scrollTo(0, 0);
+    };
+
+    const handleSearchChange = (term: string) => {
+        setSearchTerm(term);
+        if (term.trim() !== '') {
+            resetViews();
+        }
+    };
 
     const handleGoHome = () => {
-        setSelectedCategory(null);
         setSearchTerm('');
-        window.scrollTo(0, 0);
+        resetViews();
     };
 
     const handleSelectCategory = (category: Category) => {
+        setSearchTerm('');
+        resetViews(); // Reset others first
         setSelectedCategory(category);
-        window.scrollTo(0, 0);
     };
 
-    // Filter products for the main home page (exclude category specific if needed, or show all mixed)
-    // For now, let's keep showing the mixed generic ones on Home, or all.
-    // The design implies Home has "Te puede interesar" which is generic.
-    // And Category Page has specific ones.
+    const handleShowOffers = () => {
+        setSearchTerm('');
+        resetViews(); // Reset others first
+        setShowOffers(true);
+    };
+
+    const handleShowWishlist = () => {
+        setSearchTerm('');
+        resetViews(); // Reset others first
+        setShowWishlist(true);
+    };
+
+    const handleScrollToCategories = () => {
+        handleGoHome();
+        setTimeout(() => {
+            const element = document.getElementById('categories-section');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 100);
+    };
+
+    const handleCategorySelectById = (id: number) => {
+        const category = CATEGORIES.find(c => c.id === id);
+        if (category) {
+            handleSelectCategory(category);
+        }
+    };
+
+    // Main Content Logic
     const homeProducts = useMemo(() => {
-        // If searching, search EVERYTHING
+        // 1. Search Mode
         if (searchTerm) {
             const lowerTerm = searchTerm.toLowerCase();
             return PRODUCTS.filter(p => 
                 p.title.toLowerCase().includes(lowerTerm) || 
-                p.category.toLowerCase().includes(lowerTerm)
+                p.category.toLowerCase().includes(lowerTerm) ||
+                (p.subcategory && p.subcategory.toLowerCase().includes(lowerTerm))
             );
         }
-        // If not searching, just show the generic ones (those without categoryId or a specific set)
-        // For simplicity, we show the first 5 generic ones as before
-        return PRODUCTS.filter(p => !p.categoryId).slice(0, 5);
-    }, [searchTerm]);
+
+        // 2. Offers Mode
+        if (showOffers) {
+            return PRODUCTS.filter(p => p.discount || p.oldPrice);
+        }
+
+        // 3. Default Home Mode (Generic Interest)
+        return PRODUCTS.filter(p => !p.categoryId || p.subcategory === 'Interes').slice(0, 10);
+    }, [searchTerm, showOffers]);
 
     const categoryProducts = useMemo(() => {
         if (!selectedCategory) return [];
         return PRODUCTS.filter(p => p.categoryId === selectedCategory.id);
     }, [selectedCategory]);
 
+    // Section Title Logic
+    const getSectionTitle = () => {
+        if (searchTerm) return `Resultados para "${searchTerm}"`;
+        if (showOffers) return "Mejores Ofertas y Descuentos";
+        return "Te puede interesar...";
+    };
+
     return (
         <>
             <Header 
                 searchTerm={searchTerm} 
-                onSearchChange={setSearchTerm} 
+                onSearchChange={handleSearchChange} 
                 onGoHome={handleGoHome}
+                onShowOffers={handleShowOffers}
+                onShowCategories={handleScrollToCategories}
+                onShowWishlist={handleShowWishlist}
+                wishlistCount={favoriteIds.length}
             />
             
-            {selectedCategory ? (
+            {showWishlist ? (
+                <WishlistPage 
+                    products={PRODUCTS}
+                    favoriteIds={favoriteIds}
+                    onToggleFavorite={handleToggleFavorite}
+                    onBack={handleGoHome}
+                />
+            ) : selectedCategory ? (
                 <CategoryPage 
                     category={selectedCategory} 
                     products={categoryProducts} 
+                    favoriteIds={favoriteIds}
+                    onToggleFavorite={handleToggleFavorite}
                     onBack={handleGoHome}
                 />
             ) : (
                 <main className="flex-1 w-full max-w-[1280px] mx-auto px-6 py-8 flex flex-col gap-12">
                     
-                    {/* Hero Section */}
-                    <Hero />
+                    {/* Hero Section - Only show on pure home */}
+                    {!searchTerm && !showOffers && <Hero />}
                     
-                    {/* Categories Grid - Only show if not searching */}
-                    {searchTerm === '' && (
-                        <section>
+                    {/* Categories Grid - Only show if not searching/offers */}
+                    {!searchTerm && !showOffers && (
+                        <section id="categories-section">
                             <div className="flex items-center justify-between mb-6">
                                 <h2 className="text-2xl font-bold text-white">Explora Categorías</h2>
-                                <button className="text-sm font-medium text-primary hover:text-white transition-colors flex items-center gap-1">
-                                    Ver todas
-                                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                                </button>
                             </div>
                             
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -89,14 +166,15 @@ const App: React.FC = () => {
                         </section>
                     )}
 
-                    {/* Products Section */}
-                    <section className="py-6">
+                    {/* Products Section (Search Results, Offers, or Interests) */}
+                    <section className="py-6 min-h-[50vh]">
                         <h2 className="text-2xl font-bold text-white mb-2">
-                            {searchTerm ? `Resultados para "${searchTerm}"` : "Te puede interesar..."}
+                            {getSectionTitle()}
                         </h2>
-                        {!searchTerm && (
+                        
+                        {!searchTerm && !showOffers && (
                             <p className="text-gray-400 mb-6 text-sm">
-                                Basado en tus últimas búsquedas de tecnología y hogar.
+                                Basado en tendencias globales y tus preferencias.
                             </p>
                         )}
                         
@@ -104,22 +182,31 @@ const App: React.FC = () => {
                             {homeProducts.map(product => (
                                 <ProductCard 
                                     key={product.id} 
-                                    product={product} 
+                                    product={product}
+                                    isFavorite={favoriteIds.includes(product.id)}
+                                    onToggleFavorite={() => handleToggleFavorite(product.id)}
                                 />
                             ))}
                         </div>
                         
                         {homeProducts.length === 0 && (
-                            <div className="text-center py-12 text-gray-500">
-                                <span className="material-symbols-outlined text-4xl mb-2">sentiment_dissatisfied</span>
-                                <p>No se encontraron productos.</p>
+                            <div className="flex flex-col items-center justify-center py-20 text-gray-500">
+                                <span className="material-symbols-outlined text-6xl mb-4 opacity-50">search_off</span>
+                                <h3 className="text-xl font-bold mb-2">No encontramos resultados</h3>
+                                <p className="text-sm">Intenta con otros términos o explora nuestras categorías.</p>
+                                <button 
+                                    onClick={handleGoHome}
+                                    className="mt-6 px-6 py-2 bg-primary text-black font-bold rounded-full hover:bg-white transition-colors"
+                                >
+                                    Ver todo
+                                </button>
                             </div>
                         )}
                     </section>
                 </main>
             )}
             
-            <Footer />
+            <Footer onCategorySelect={handleCategorySelectById} />
         </>
     );
 };
