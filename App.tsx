@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import CategoryCard from './components/CategoryCard';
@@ -6,12 +6,18 @@ import ProductCard from './components/ProductCard';
 import CategoryPage from './components/CategoryPage';
 import WishlistPage from './components/WishlistPage';
 import Footer from './components/Footer';
+<<<<<<< Updated upstream
 import AuthModal from './components/AuthModal';
 import FilterSidebar from './components/FilterSidebar';
 import { CATEGORIES, PRODUCTS } from './constants';
 import { Category } from './types';
 import { useAuth } from './AuthContext';
 import { getUserFavorites, addFavorite, removeFavorite } from './favoritesService';
+=======
+import ProductQuickView from './components/ProductQuickView';
+import { CATEGORIES, PRODUCTS } from './constants';
+import { Category, Product } from './types';
+>>>>>>> Stashed changes
 
 const App: React.FC = () => {
     const { user } = useAuth();
@@ -19,6 +25,7 @@ const App: React.FC = () => {
     const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
     const [showOffers, setShowOffers] = useState(false);
     const [showWishlist, setShowWishlist] = useState(false);
+<<<<<<< Updated upstream
     const [showAuthModal, setShowAuthModal] = useState(false);
     const [showAllCategories, setShowAllCategories] = useState(false);
     
@@ -26,6 +33,9 @@ const App: React.FC = () => {
     const [priceRange, setPriceRange] = useState<[number, number]>([0, 20000]);
     const [selectedRecipient, setSelectedRecipient] = useState<string | null>(null);
     const [selectedFilterCategories, setSelectedFilterCategories] = useState<number[]>([]);
+=======
+    const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
+>>>>>>> Stashed changes
     
     // Global Favorites State
     const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
@@ -236,6 +246,7 @@ const App: React.FC = () => {
                     favoriteIds={favoriteIds}
                     onToggleFavorite={handleToggleFavorite}
                     onBack={handleGoHome}
+                    onOpenProduct={(product) => setQuickViewProduct(product)}
                 />
             ) : selectedCategory ? (
                 <CategoryPage 
@@ -244,6 +255,7 @@ const App: React.FC = () => {
                     favoriteIds={favoriteIds}
                     onToggleFavorite={handleToggleFavorite}
                     onBack={handleGoHome}
+                    onOpenProduct={(product) => setQuickViewProduct(product)}
                 />
             ) : (
                 <main className="flex-1 w-full max-w-[1280px] mx-auto px-6 py-8">
@@ -316,6 +328,7 @@ const App: React.FC = () => {
                                     product={product}
                                     isFavorite={favoriteIds.includes(product.id)}
                                     onToggleFavorite={() => handleToggleFavorite(product.id)}
+                                    onOpen={() => setQuickViewProduct(product)}
                                 />
                             ))}
                         </div>
@@ -340,6 +353,13 @@ const App: React.FC = () => {
                 </main>
             )}
             
+            {quickViewProduct && (
+                <ProductQuickView 
+                    product={quickViewProduct}
+                    onClose={() => setQuickViewProduct(null)}
+                />
+            )}
+
             <Footer onCategorySelect={handleCategorySelectById} />
         </>
     );

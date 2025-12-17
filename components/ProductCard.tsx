@@ -1,13 +1,15 @@
 import React from 'react';
 import { Product } from '../types';
+import { getProductImage } from '../utils/images';
 
 interface ProductCardProps {
     product: Product;
     isFavorite: boolean;
     onToggleFavorite: () => void;
+    onOpen?: () => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggleFavorite }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggleFavorite, onOpen }) => {
     
     const handleFavoriteClick = (e: React.MouseEvent) => {
         e.stopPropagation();
@@ -15,11 +17,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggle
     };
 
     return (
-        <div className="group flex flex-col gap-3 cursor-pointer">
+        <div className="group flex flex-col gap-3 cursor-pointer" onClick={onOpen}>
             <div className="relative aspect-square w-full rounded-2xl bg-surface-dark overflow-hidden">
                 <img
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    src={product.image}
+                    src={getProductImage(product)}
                     alt={product.title}
                 />
                 
@@ -63,6 +65,22 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggle
                         <span className="text-xs text-gray-600 line-through">€{product.oldPrice.toFixed(2)}</span>
                     )}
                 </div>
+                {product.description && (
+                    <p className="mt-1 text-sm text-gray-400 line-clamp-2">{product.description}</p>
+                )}
+                {product.url && (
+                    <a
+                        href={product.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 inline-flex items-center gap-1 text-sm font-bold text-primary hover:underline"
+                        aria-label={`Abrir en Amazon: ${product.title}`}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        Ver en Amazon
+                        <span className="material-symbols-outlined text-base">open_in_new</span>
+                    </a>
+                )}
             </div>
         </div>
     );

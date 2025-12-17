@@ -1,5 +1,6 @@
 import React from 'react';
 import { Category } from '../types';
+import { getCategoryImageSet } from '../utils/images';
 
 interface CategoryCardProps {
     category: Category;
@@ -7,6 +8,7 @@ interface CategoryCardProps {
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ category, onClick }) => {
+    const localImages = getCategoryImageSet(category);
     return (
         <button 
             onClick={() => onClick(category)} 
@@ -16,7 +18,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, onClick }) => {
                 {/* Main Large Image */}
                 <div
                     className="col-span-2 h-full bg-cover bg-center"
-                    style={{ backgroundImage: `url('${category.images[0]}')` }}
+                    style={{ backgroundImage: `url('${localImages[0]}')` }}
                     role="img"
                     aria-label={category.title}
                 />
@@ -25,13 +27,13 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, onClick }) => {
                 <div className="col-span-1 flex flex-col h-full gap-[2px]">
                     <div
                         className="h-full w-full bg-cover bg-center"
-                        style={{ backgroundImage: `url('${category.images[1]}')` }}
+                        style={{ backgroundImage: `url('${localImages[1]}')` }}
                         role="img"
                         aria-label={`${category.title} detail 1`}
                     />
                     <div
                         className="h-full w-full bg-cover bg-center"
-                        style={{ backgroundImage: `url('${category.images[2]}')` }}
+                        style={{ backgroundImage: `url('${localImages[2]}')` }}
                         role="img"
                         aria-label={`${category.title} detail 2`}
                     />

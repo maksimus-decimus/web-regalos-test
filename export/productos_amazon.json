@@ -1,0 +1,137 @@
+[
+  {
+    "id": 201,
+    "nombre": "GUGGIARI Cartera de Hombre con Monedero y Tarjetero",
+    "categoria": "Hombre",
+    "link": "https://amzn.to/4rYJsJM",
+    "precio": 289.99,
+    "imagen": "/images/cartera.jpg",
+    "descripcion": "Cartera compacta con monedero y múltiples ranuras para tarjetas; diseño pensado para el día a día."
+  },
+  {
+    "id": 202,
+    "nombre": "Tommy Hilfiger Reloj Analógico de Acero Inoxidable",
+    "categoria": "Hombre",
+    "link": "https://amzn.to/3YpHaGa",
+    "precio": 319.99,
+    "imagen": "/images/hombre2.jpg",
+    "descripcion": "Reloj clásico de acero con estilo atemporal y esfera analógica; ideal para uso diario o regalo."
+  },
+  {
+    "id": 203,
+    "nombre": "HP Prelude Mochila 15,6'' de Carga Superior",
+    "categoria": "Hombre",
+    "link": "https://amzn.to/3L1ZWjN",
+    "precio": 129.99,
+    "imagen": "/images/hombre3.jpg",
+    "descripcion": "Mochila ligera con compartimento para portátil de 15,6'' y organización práctica para trabajo o estudio."
+  },
+  {
+    "id": 301,
+    "nombre": "Skechers Keepsakes Pantuflas para Mujer",
+    "categoria": "Mujer",
+    "link": "https://amzn.to/48EyWA7",
+    "precio": 79.99,
+    "imagen": "/images/mujer2.jpg",
+    "descripcion": "Pantuflas acolchadas de estilo botín, cálidas y cómodas para el hogar."
+  },
+  {
+    "id": 302,
+    "nombre": "Loop Quiet Tapones para Oídos",
+    "categoria": "Mujer",
+    "link": "https://amzn.to/4iZ0VxU",
+    "precio": 39.99,
+    "imagen": "/images/mujer3.jpg",
+    "descripcion": "Tapones reutilizables y ultracómodos para reducir ruido y mejorar concentración y descanso."
+  },
+  {
+    "id": 303,
+    "nombre": "L'Occitane Aceite de Ducha de Almendra (250 ml)",
+    "categoria": "Mujer",
+    "link": "https://amzn.to/4q7Sbrx",
+    "precio": 109.99,
+    "imagen": "/images/mujer1.jpg",
+    "descripcion": "Aceite de ducha que limpia suavemente y deja la piel suave y con aroma a almendra."
+  },
+  {
+    "id": 401,
+    "nombre": "Peluche Simba Licencia Oficial",
+    "categoria": "Niño",
+    "link": "https://amzn.to/3XVbMze",
+    "precio": 41.99,
+    "imagen": "/images/nino2.jpg",
+    "descripcion": "Peluche suave y ligero, perfecto para acompañar el juego y el descanso."
+  },
+  {
+    "id": 402,
+    "nombre": "Marvel Spiderman Mochila Infantil",
+    "categoria": "Niño",
+    "link": "https://amzn.to/44tcreU",
+    "precio": 31.99,
+    "imagen": "/images/nino3.jpg",
+    "descripcion": "Mochila con compartimentos y tirantes ajustables para el cole y actividades."
+  },
+  {
+    "id": 403,
+    "nombre": "Bluey Botella de Plástico",
+    "categoria": "Niño",
+    "link": "https://amzn.to/3YtBDhO",
+    "precio": 26.99,
+    "imagen": "/images/nino1.jpg",
+    "descripcion": "Botella resistente y reutilizable con diseño de Bluey; práctica para el día a día."
+  },
+  {
+    "id": 501,
+    "nombre": "Muñeca con Funciones y Accesorios",
+    "categoria": "Niña",
+    "link": "https://amzn.to/4rYtK1r",
+    "precio": 32.99,
+    "imagen": "/images/nina1.jpg",
+    "descripcion": "Muñeca interactiva con accesorios para fomentar el juego imaginativo."
+  },
+  {
+    "id": 502,
+    "nombre": "Play-Doh Camión de Helados",
+    "categoria": "Niña",
+    "link": "https://amzn.to/4pWM0Hj",
+    "precio": 22.99,
+    "imagen": "/images/nina2.jpg",
+    "descripcion": "Set Play-Doh con camión y moldes para crear helados y figuras divertidas."
+  },
+  {
+    "id": 503,
+    "nombre": "Amazon Essentials Chaqueta con Cremallera",
+    "categoria": "Niña",
+    "link": "https://amzn.to/44tQc8z",
+    "precio": 36.99,
+    "imagen": "/images/nina3.jpg",
+    "descripcion": "Chaqueta ligera con cierre completo, cómoda para uso diario."
+  },
+  {
+    "id": 601,
+    "nombre": "Luces Solares de Navidad para Exterior (Yorezcop)",
+    "categoria": "Tecnología",
+    "link": "https://amzn.to/4pDBnZz",
+    "precio": 469.99,
+    "imagen": "/images/tecnologia2.jpg",
+    "descripcion": "Guirnaldas solares impermeables para decoración exterior, fáciles de instalar."
+  },
+  {
+    "id": 602,
+    "nombre": "Echo Pop | Altavoz Inteligente con Alexa",
+    "categoria": "Tecnología",
+    "link": "https://amzn.to/48SFUQN",
+    "precio": 179.99,
+    "imagen": "/images/tecnologia3.jpg",
+    "descripcion": "Altavoz compacto con Alexa para música, control por voz y hogar conectado."
+  },
+  {
+    "id": 603,
+    "nombre": "Auriculares Inalámbricos Impermeables",
+    "categoria": "Tecnología",
+    "link": "https://amzn.to/4aWxLx8",
+    "precio": 329.99,
+    "imagen": "/images/tecnologia1.jpg",
+    "descripcion": "Auriculares Bluetooth con diseño resistente al agua y estuche de carga."
+  }
+]

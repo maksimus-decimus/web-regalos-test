@@ -1,0 +1,14 @@
+[
+  {
+    "id": 201,
+    "url": "https://www.amazon.es/dp/XXXXXXXX",
+    "title": "Título oficial en Amazon",
+    "description": "Descripción breve del producto sacada de Amazon (1-2 frases)."
+  },
+  {
+    "id": 202,
+    "url": "https://www.amazon.es/dp/YYYYYYYY",
+    "title": "Otro título oficial",
+    "description": "Otra descripción breve."
+  }
+]

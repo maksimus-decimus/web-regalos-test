@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Category, Product } from '../types';
+import { getHeroBackgroundImage, getProductImage } from '../utils/images';
 
 interface CategoryPageProps {
     category: Category;
@@ -7,9 +8,10 @@ interface CategoryPageProps {
     onBack: () => void;
     favoriteIds: number[];
     onToggleFavorite: (id: number) => void;
+    onOpenProduct?: (product: Product) => void;
 }
 
-const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack, favoriteIds, onToggleFavorite }) => {
+const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack, favoriteIds, onToggleFavorite, onOpenProduct }) => {
     const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null);
     const [showMobileFilters, setShowMobileFilters] = useState(false);
     
@@ -19,7 +21,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
             case 2: // Padres
                 return {
                     darkMode: true,
-                    heroImage: 'linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(16, 34, 22, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4YvcYpX4LUzDdnGuQCKXT9ThzgCBWUKi3IdwS2GRa-zHicSyY-on5V9I4e4PSAIFLQ8qBcg7wUuksyCMrMZt5Xc0TGP76o1ktS4XWka6NlqF6VWEJTTTOSG8O30JFwKAsHHCn6ZSzZOWBqkHKBTGzDG9A3nP9tOcNuQv7BOIV0yQmvfBmlKuAkRK5vwUgXN4PNo8F1IDFu2_uV5ZpPQxxJlp6Lt1fb34Ww7gHe3WKJgbiXHBAzQBRj5jm_bKmGyzk_HQWRRbgZiI")',
+                    heroImage: getHeroBackgroundImage(id),
                     accentColor: 'text-primary',
                     buttonColor: 'bg-primary text-background-dark hover:bg-white',
                     bgColor: 'bg-background-light dark:bg-background-dark',
@@ -33,7 +35,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
             case 3: // Madres - Updated to Dark Mode style
                 return {
                     darkMode: true,
-                    heroImage: 'linear-gradient(rgba(0,0,0,0.2), rgba(31, 10, 16, 0.95)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBdsWLUGiicHou6i2n9VVGWZ4MksCA_ZYppDi1TN8-BKz8HvW5vCGlzjzBzzuzy0Wbt1TIT5liebR6bhBqT6-HLllg7Iz6jCyebx0o1IaIZ0OIyouFGXMjOFLZ6KcpS0Gpz1rG1BAKPCmqnqOuo4vfKkOOyS4PBRGjrpLNU-pzWwJpOrpRtpqMl6oj9AU7hhf3GVuyoif-b3X17u4b9KBhM6pR07ib51PEHOFCoIgLl4vx-9lLadiwIKQvbR6ZIWmNgJN5ZloGlW7s")',
+                    heroImage: getHeroBackgroundImage(id),
                     accentColor: 'text-rose-400',
                     buttonColor: 'bg-rose-500 text-white hover:bg-rose-400',
                     bgColor: 'bg-[#1f0a10]', // Deep Dark Rose/Burgundy
@@ -48,7 +50,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
             case 4: // Niños - Updated to Dark Mode style
                 return {
                     darkMode: true,
-                    heroImage: 'linear-gradient(rgba(0,0,0,0.2), rgba(15, 23, 42, 0.95)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA7vwjQS3xo75FXODFG97dxwgq8GzUrOVRKj1K3CRKFG5Had7Ml5TQDCBCVoFy74_dTzmY5vIAU-rAK3mQ9H92JpEPB9jp2CI-UcBGgd9E9FTdoHkVSMpH0syUvHeFFm1xXE_EuK5hdQqvtBYsZ68lG_FQciJNJbI0lINjG_MFjcqN8Fd_Gu2RcmsPSn2d7P048qQpwo74ew9fUR9o0olivEu2pavfNMxVVHlyCa1yNru_yQV0K9ECaDnf2NECffSj9pWwZRS9U8SM")',
+                    heroImage: getHeroBackgroundImage(id),
                     accentColor: 'text-blue-400',
                     buttonColor: 'bg-blue-500 text-white hover:bg-blue-400',
                     bgColor: 'bg-[#0f172a]', // Slate 900
@@ -62,7 +64,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
             case 5: // Niñas - Updated to Dark Mode style
                 return {
                     darkMode: true,
-                    heroImage: 'linear-gradient(rgba(0,0,0,0.2), rgba(38, 10, 30, 0.95)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDr010zdWNBFi_Gfr76vUna1x-tcNqpVYrN9t0-OMTSpIGpBOVb3BeJvC5WEtAecFMSOJCa-bj5H0J7YQSVAKCJQSJfGDG9nC-OcoiKPL2Vl8LHbFflzztxtQnJNiXao2nFeDa2Zxp7gPzE_YOuHCWvRDAs7Yi2QJDktJJ_imbmZHJiZr8ytCkxqRaRdduZDIz0W-rhwRYYfiqBojDCt-XsZAiswAMqEo3-BmZAs4boB8F6z9n-2OcLhidtpqp8WSnFmCYda_qUPdg")',
+                    heroImage: getHeroBackgroundImage(id),
                     accentColor: 'text-pink-400',
                     buttonColor: 'bg-pink-500 text-white hover:bg-pink-400',
                     bgColor: 'bg-[#290d23]', // Deep Purple/Dark Pink
@@ -76,7 +78,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
             case 6: // Tecnología
                 return {
                     darkMode: true,
-                    heroImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, #0f172a 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCygOsmWJjMJPfHGfuZP64fV3PnkcvaotFyxYX2iEuarAQpCqyRiLRNCbRMMgGlhIWXDK3xVqvDllaBYGySnIIHAh9Mo6IXiKH-UaEgGT8Wcq9EG48eyOEB1oolyVZXU50mdSifW_IEBQzwAbnHNrtJ9s8O6WPDRlYlb7hsf04FcuLatr5Ie-5-ra2tZeGruLMCSbHZV51RoNdzs_Dcqfeuu3Y6cpXZt0QIp9jjN03wHYja3jNYi9uZLBW3OsW75vWF7oeZWp_DNjk")',
+                    heroImage: getHeroBackgroundImage(id),
                     accentColor: 'text-cyan-400',
                     buttonColor: 'bg-cyan-500 text-black hover:bg-cyan-400',
                     bgColor: 'bg-slate-900',
@@ -143,7 +145,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
                             {subcategoryProducts.map(product => (
-                                <div key={product.id} className={`group flex flex-col gap-4 rounded-2xl p-4 transition-all hover:-translate-y-1 hover:shadow-xl cursor-pointer border border-transparent 
+                                <div key={product.id} onClick={() => onOpenProduct?.(product)} className={`group flex flex-col gap-4 rounded-2xl p-4 transition-all hover:-translate-y-1 hover:shadow-xl cursor-pointer border border-transparent 
                                     ${config.darkMode ? 'bg-[#1e293b] hover:bg-[#334155] hover:border-white/10' : 'bg-white hover:border-black/5 hover:bg-gray-50'}`}>
                                     <div className={`relative w-full aspect-[4/3] overflow-hidden rounded-xl ${config.darkMode ? 'bg-black/20' : 'bg-gray-100'}`}>
                                         {product.tag && (
@@ -154,18 +156,34 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
                                         <FavoriteButton productId={product.id} colorClass={config.darkMode ? 'bg-black/40 text-white hover:bg-white hover:text-black' : 'bg-white/80 text-black hover:bg-black hover:text-white'} />
                                         <div 
                                             className="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" 
-                                            style={{backgroundImage: `url("${product.image}")`}}>
+                                            style={{backgroundImage: `url("${getProductImage(product)}")`}}>
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-1">
                                         <h3 className={`${config.textColor} text-lg font-bold truncate transition-colors`}>{product.title}</h3>
                                         <p className="opacity-60 text-sm line-clamp-2">{product.category}</p>
+                                        {product.description && (
+                                            <p className="opacity-60 text-sm line-clamp-2">{product.description}</p>
+                                        )}
                                         <div className="flex items-center justify-between mt-2">
                                             <div className="flex flex-col">
                                                 {product.oldPrice && <span className="opacity-40 text-xs line-through">€{product.oldPrice.toFixed(2)}</span>}
                                                 <span className={`${config.textColor} text-xl font-bold`}>€{product.price.toFixed(2)}</span>
                                             </div>
                                         </div>
+                                        {product.url && (
+                                            <a
+                                                href={product.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className={`mt-1 inline-flex items-center gap-1 text-sm font-bold ${config.accentColor} hover:underline`}
+                                                aria-label={`Abrir en Amazon: ${product.title}`}
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                Ver en Amazon
+                                                <span className="material-symbols-outlined text-base">open_in_new</span>
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
                             ))}
@@ -252,7 +270,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                                     {sectionProducts.slice(0, 3).map(product => (
-                                        <div key={product.id} className={`group flex flex-col gap-4 rounded-2xl p-4 transition-all hover:-translate-y-1 hover:shadow-xl cursor-pointer border border-transparent 
+                                        <div key={product.id} onClick={() => onOpenProduct?.(product)} className={`group flex flex-col gap-4 rounded-2xl p-4 transition-all hover:-translate-y-1 hover:shadow-xl cursor-pointer border border-transparent 
                                             ${config.darkMode ? 'bg-[#1e293b] hover:bg-[#334155] hover:border-white/10' : 'bg-white hover:border-black/5 hover:bg-gray-50'}`}>
                                             <div className={`relative w-full aspect-[4/3] overflow-hidden rounded-xl ${config.darkMode ? 'bg-black/20' : 'bg-gray-100'}`}>
                                                 {product.tag && (
@@ -263,18 +281,34 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
                                                 <FavoriteButton productId={product.id} colorClass={config.darkMode ? 'bg-black/40 text-white hover:bg-white hover:text-black' : 'bg-white/80 text-black hover:bg-black hover:text-white'} />
                                                 <div 
                                                     className="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" 
-                                                    style={{backgroundImage: `url("${product.image}")`}}>
+                                                    style={{backgroundImage: `url("${getProductImage(product)}")`}}>
                                                 </div>
                                             </div>
                                             <div className="flex flex-col gap-1">
                                                 <h3 className={`${config.textColor} text-lg font-bold truncate transition-colors`}>{product.title}</h3>
                                                 <p className="opacity-60 text-sm line-clamp-2">{product.category}</p>
+                                                {product.description && (
+                                                    <p className="opacity-60 text-sm line-clamp-2">{product.description}</p>
+                                                )}
                                                 <div className="flex items-center justify-between mt-2">
                                                     <div className="flex flex-col">
                                                         {product.oldPrice && <span className="opacity-40 text-xs line-through">€{product.oldPrice.toFixed(2)}</span>}
                                                         <span className={`${config.textColor} text-xl font-bold`}>€{product.price.toFixed(2)}</span>
                                                     </div>
                                                 </div>
+                                                {product.url && (
+                                                    <a
+                                                        href={product.url}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className={`mt-1 inline-flex items-center gap-1 text-sm font-bold ${config.accentColor} hover:underline`}
+                                                        aria-label={`Abrir en Amazon: ${product.title}`}
+                                                        onClick={(e) => e.stopPropagation()}
+                                                    >
+                                                        Ver en Amazon
+                                                        <span className="material-symbols-outlined text-base">open_in_new</span>
+                                                    </a>
+                                                )}
                                             </div>
                                         </div>
                                     ))}
@@ -292,10 +326,10 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
                         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                             {/* Generic Interest Items */}
                             {products.filter(p => !p.subcategory || p.subcategory === 'Interes').slice(0, 6).map(product => (
-                                <div key={product.id} className={`flex flex-col gap-2 p-2 rounded-xl transition-colors cursor-pointer group ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-black/5'}`}>
+                                <div key={product.id} onClick={() => onOpenProduct?.(product)} className={`flex flex-col gap-2 p-2 rounded-xl transition-colors cursor-pointer group ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-black/5'}`}>
                                     <div 
                                         className={`aspect-square rounded-lg bg-cover bg-center relative ${config.darkMode ? 'bg-white/5' : 'bg-black/5'}`}
-                                        style={{backgroundImage: `url("${product.image}")`}}>
+                                        style={{backgroundImage: `url("${getProductImage(product)}")`}}>
                                     </div>
                                     <p className={`${config.textColor} text-sm font-medium leading-tight truncate`}>{product.title}</p>
                                     <p className="opacity-60 text-xs">€{product.price.toFixed(2)}</p>
@@ -382,7 +416,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
                     {/* Products Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {products.map(product => (
-                            <div key={product.id} className="group relative flex flex-col rounded-2xl bg-white dark:bg-[#1A2C20] p-4 transition-all hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-primary/5 border border-transparent hover:border-primary/50">
+                            <div key={product.id} onClick={() => onOpenProduct?.(product)} className="group relative flex flex-col rounded-2xl bg-white dark:bg-[#1A2C20] p-4 transition-all hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-primary/5 border border-transparent hover:border-primary/50">
                                 <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-gray-100 dark:bg-[#111813] mb-4">
                                     {product.tag && (
                                         <span className="absolute left-3 top-3 z-10 rounded-full bg-primary px-2.5 py-1 text-xs font-bold text-background-dark">
@@ -398,18 +432,34 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, products, onBack,
                                     <img 
                                         alt={product.title} 
                                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" 
-                                        src={product.image}
+                                        src={getProductImage(product)}
                                     />
                                 </div>
                                 <div className="flex flex-col flex-1 gap-2">
                                     <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">{product.title}</h3>
                                     <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">{product.category}</p>
+                                    {product.description && (
+                                        <p className="text-sm text-gray-400 dark:text-gray-400 line-clamp-2">{product.description}</p>
+                                    )}
                                     <div className="mt-auto flex items-center justify-between pt-4">
                                         <div className="flex flex-col">
                                             {product.oldPrice && <span className="text-xs text-gray-500 line-through">€{product.oldPrice.toFixed(2)}</span>}
                                             <span className="text-xl font-bold text-slate-900 dark:text-white">€{product.price.toFixed(2)}</span>
                                         </div>
                                     </div>
+                                    {product.url && (
+                                        <a
+                                            href={product.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`mt-1 inline-flex items-center gap-1 text-sm font-bold ${config.accentColor} hover:underline`}
+                                            aria-label={`Abrir en Amazon: ${product.title}`}
+                                            onClick={(e) => e.stopPropagation()}
+                                        >
+                                            Ver en Amazon
+                                            <span className="material-symbols-outlined text-base">open_in_new</span>
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         ))}
