@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import CategoryCard from './components/CategoryCard';
@@ -6,18 +6,13 @@ import ProductCard from './components/ProductCard';
 import CategoryPage from './components/CategoryPage';
 import WishlistPage from './components/WishlistPage';
 import Footer from './components/Footer';
-<<<<<<< Updated upstream
 import AuthModal from './components/AuthModal';
 import FilterSidebar from './components/FilterSidebar';
-import { CATEGORIES, PRODUCTS } from './constants';
-import { Category } from './types';
-import { useAuth } from './AuthContext';
-import { getUserFavorites, addFavorite, removeFavorite } from './favoritesService';
-=======
 import ProductQuickView from './components/ProductQuickView';
 import { CATEGORIES, PRODUCTS } from './constants';
 import { Category, Product } from './types';
->>>>>>> Stashed changes
+import { useAuth } from './AuthContext';
+import { getUserFavorites, addFavorite, removeFavorite } from './favoritesService';
 
 const App: React.FC = () => {
     const { user } = useAuth();
@@ -25,17 +20,14 @@ const App: React.FC = () => {
     const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
     const [showOffers, setShowOffers] = useState(false);
     const [showWishlist, setShowWishlist] = useState(false);
-<<<<<<< Updated upstream
     const [showAuthModal, setShowAuthModal] = useState(false);
     const [showAllCategories, setShowAllCategories] = useState(false);
+    const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
     
     // Filter States
     const [priceRange, setPriceRange] = useState<[number, number]>([0, 20000]);
     const [selectedRecipient, setSelectedRecipient] = useState<string | null>(null);
     const [selectedFilterCategories, setSelectedFilterCategories] = useState<number[]>([]);
-=======
-    const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
->>>>>>> Stashed changes
     
     // Global Favorites State
     const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
@@ -284,71 +276,71 @@ const App: React.FC = () => {
                         {/* Contenido principal */}
                         <div className="flex-1">
                     
-                    {/* Categories Grid - Only show if not searching/offers/all categories */}
-                    {!searchTerm && !showOffers && !showAllCategories && (
-                        <section id="categories-section">
-                            <div className="flex items-center justify-between mb-6">
-                                <h2 className="text-2xl font-bold text-white">Explora Categorías</h2>
-                            </div>
-                            
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {CATEGORIES.map(cat => (
-                                    <CategoryCard 
-                                        key={cat.id} 
-                                        category={cat} 
-                                        onClick={handleSelectCategory}
-                                    />
-                                ))}
-                            </div>
-                        </section>
-                    )}
+                            {/* Categories Grid - Only show if not searching/offers/all categories */}
+                            {!searchTerm && !showOffers && !showAllCategories && (
+                                <section id="categories-section">
+                                    <div className="flex items-center justify-between mb-6">
+                                        <h2 className="text-2xl font-bold text-white">Explora Categorías</h2>
+                                    </div>
+                                    
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        {CATEGORIES.map(cat => (
+                                            <CategoryCard 
+                                                key={cat.id} 
+                                                category={cat} 
+                                                onClick={handleSelectCategory}
+                                            />
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
 
-                    {/* Products Section (Search Results, Offers, or Interests) */}
-                    <section className="py-6 min-h-[50vh]">
-                        <h2 className="text-2xl font-bold text-white mb-2">
-                            {getSectionTitle()}
-                        </h2>
-                        
-                        {!searchTerm && !showOffers && !showAllCategories && (
-                            <p className="text-gray-400 mb-6 text-sm">
-                                Basado en tendencias globales y tus preferencias.
-                            </p>
-                        )}
-                        
-                        {showAllCategories && (
-                            <p className="text-gray-400 mb-6 text-sm">
-                                Explora todos nuestros productos. Usa los filtros para encontrar exactamente lo que buscas.
-                            </p>
-                        )}
-                        
-                        <div className={`grid ${(searchTerm || showAllCategories) ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5'} gap-4`}>
-                            {homeProducts.map(product => (
-                                <ProductCard 
-                                    key={product.id} 
-                                    product={product}
-                                    isFavorite={favoriteIds.includes(product.id)}
-                                    onToggleFavorite={() => handleToggleFavorite(product.id)}
-                                    onOpen={() => setQuickViewProduct(product)}
-                                />
-                            ))}
-                        </div>
-                        
-                        {homeProducts.length === 0 && (
-                            <div className="flex flex-col items-center justify-center py-20 text-gray-500">
-                                <span className="material-symbols-outlined text-6xl mb-4 opacity-50">search_off</span>
-                                <h3 className="text-xl font-bold mb-2">No encontramos resultados</h3>
-                                <p className="text-sm">Intenta con otros términos o explora nuestras categorías.</p>
-                                <button 
-                                    onClick={handleGoHome}
-                                    className="mt-6 px-6 py-2 bg-primary text-black font-bold rounded-full hover:bg-white transition-colors"
-                                >
-                                    Ver todo
-                                </button>
-                            </div>
-                        )}
-                    </section>
+                            {/* Products Section (Search Results, Offers, or Interests) */}
+                            <section className="py-6 min-h-[50vh]">
+                                <h2 className="text-2xl font-bold text-white mb-2">
+                                    {getSectionTitle()}
+                                </h2>
+                                
+                                {!searchTerm && !showOffers && !showAllCategories && (
+                                    <p className="text-gray-400 mb-6 text-sm">
+                                        Basado en tendencias globales y tus preferencias.
+                                    </p>
+                                )}
+                                
+                                {showAllCategories && (
+                                    <p className="text-gray-400 mb-6 text-sm">
+                                        Explora todos nuestros productos. Usa los filtros para encontrar exactamente lo que buscas.
+                                    </p>
+                                )}
+                                
+                                <div className={`grid ${(searchTerm || showAllCategories) ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5'} gap-4`}>
+                                    {homeProducts.map(product => (
+                                        <ProductCard 
+                                            key={product.id} 
+                                            product={product}
+                                            isFavorite={favoriteIds.includes(product.id)}
+                                            onToggleFavorite={() => handleToggleFavorite(product.id)}
+                                            onOpen={() => setQuickViewProduct(product)}
+                                        />
+                                    ))}
+                                </div>
+                                
+                                {homeProducts.length === 0 && (
+                                    <div className="flex flex-col items-center justify-center py-20 text-gray-500">
+                                        <span className="material-symbols-outlined text-6xl mb-4 opacity-50">search_off</span>
+                                        <h3 className="text-xl font-bold mb-2">No encontramos resultados</h3>
+                                        <p className="text-sm">Intenta con otros términos o explora nuestras categorías.</p>
+                                        <button 
+                                            onClick={handleGoHome}
+                                            className="mt-6 px-6 py-2 bg-primary text-black font-bold rounded-full hover:bg-white transition-colors"
+                                        >
+                                            Ver todo
+                                        </button>
+                                    </div>
+                                )}
+                            </section>
                     
-                    </div> {/* Cierre del contenido principal */}
+                        </div> {/* Cierre del contenido principal */}
                     </div> {/* Cierre del layout con sidebar */}
                 </main>
             )}
