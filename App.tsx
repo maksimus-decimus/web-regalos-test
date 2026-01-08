@@ -24,6 +24,12 @@ const App: React.FC = () => {
     const [showAllCategories, setShowAllCategories] = useState(false);
     const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
     
+    // Theme State - Default to light mode
+    const [darkMode, setDarkMode] = useState(() => {
+        const saved = localStorage.getItem('darkMode');
+        return saved ? JSON.parse(saved) : false;
+    });
+    
     // Filter States
     const [priceRange, setPriceRange] = useState<[number, number]>([0, 20000]);
     const [selectedRecipient, setSelectedRecipient] = useState<string | null>(null);
@@ -31,6 +37,11 @@ const App: React.FC = () => {
     
     // Global Favorites State
     const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
+
+    // Guardar preferencia de tema
+    useEffect(() => {
+        localStorage.setItem('darkMode', JSON.stringify(darkMode));
+    }, [darkMode]);
 
     // Cargar favoritos del usuario cuando inicie sesión
     useEffect(() => {
@@ -215,7 +226,7 @@ const App: React.FC = () => {
     };
 
     return (
-        <>
+        <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-background-dark' : 'bg-white'}`}>
             <Header 
                 searchTerm={searchTerm} 
                 onSearchChange={handleSearchChange} 
@@ -225,6 +236,8 @@ const App: React.FC = () => {
                 onShowWishlist={handleShowWishlist}
                 wishlistCount={favoriteIds.length}
                 onOpenAuth={() => setShowAuthModal(true)}
+                darkMode={darkMode}
+                onToggleDarkMode={() => setDarkMode(!darkMode)}
             />
             
             <AuthModal 
@@ -239,6 +252,7 @@ const App: React.FC = () => {
                     onToggleFavorite={handleToggleFavorite}
                     onBack={handleGoHome}
                     onOpenProduct={(product) => setQuickViewProduct(product)}
+                    darkMode={darkMode}
                 />
             ) : selectedCategory ? (
                 <CategoryPage 
@@ -248,6 +262,7 @@ const App: React.FC = () => {
                     onToggleFavorite={handleToggleFavorite}
                     onBack={handleGoHome}
                     onOpenProduct={(product) => setQuickViewProduct(product)}
+                    darkMode={darkMode}
                 />
             ) : (
                 <main className="flex-1 w-full max-w-[1280px] mx-auto px-6 py-8">
@@ -377,8 +392,8 @@ const App: React.FC = () => {
                 />
             )}
 
-            <Footer onCategorySelect={handleCategorySelectById} />
-        </>
+            <Footer onCategorySelect={handleCategorySelectById} darkMode={darkMode} />
+        </div>
     );
 };
 

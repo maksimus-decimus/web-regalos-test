@@ -8,9 +8,10 @@ interface WishlistPageProps {
     onToggleFavorite: (id: number) => void;
     onBack: () => void;
     onOpenProduct?: (product: Product) => void;
+    darkMode?: boolean;
 }
 
-const WishlistPage: React.FC<WishlistPageProps> = ({ products, favoriteIds, onToggleFavorite, onBack, onOpenProduct }) => {
+const WishlistPage: React.FC<WishlistPageProps> = ({ products, favoriteIds, onToggleFavorite, onBack, onOpenProduct, darkMode = false }) => {
     // Filter products that are in the favorites list
     const wishlistProducts = products.filter(p => favoriteIds.includes(p.id));
 
@@ -26,15 +27,17 @@ const WishlistPage: React.FC<WishlistPageProps> = ({ products, favoriteIds, onTo
             {/* Header */}
             <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div className="max-w-2xl">
-                    <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white mb-4 flex items-center gap-3">
+                    <h1 className={`text-4xl md:text-5xl font-black tracking-tight mb-4 flex items-center gap-3 ${
+                        darkMode ? 'text-white' : 'text-gray-900'
+                    }`}>
                         <span className="material-symbols-outlined text-4xl md:text-5xl text-red-500 fill-current">favorite</span>
                         Tus Favoritos
                     </h1>
-                    <p className="text-lg text-gray-400">
+                    <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                         Aquí guardamos todo lo que te encanta para que no lo pierdas de vista.
                     </p>
                 </div>
-                <div className="text-gray-400 text-sm font-medium">
+                <div className={`text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                     {wishlistProducts.length} {wishlistProducts.length === 1 ? 'producto guardado' : 'productos guardados'}
                 </div>
             </div>
@@ -54,11 +57,13 @@ const WishlistPage: React.FC<WishlistPageProps> = ({ products, favoriteIds, onTo
                 </div>
             ) : (
                 <div className="flex flex-col items-center justify-center py-20 text-center animate-fade-in-up">
-                    <div className="h-24 w-24 rounded-full bg-surface-dark flex items-center justify-center mb-6">
+                    <div className={`h-24 w-24 rounded-full flex items-center justify-center mb-6 ${
+                        darkMode ? 'bg-surface-dark' : 'bg-gray-100'
+                    }`}>
                         <span className="material-symbols-outlined text-5xl text-gray-600">favorite_border</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Tu lista está vacía</h3>
-                    <p className="text-gray-400 max-w-md mb-8">
+                    <h3 className={`text-2xl font-bold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Tu lista está vacía</h3>
+                    <p className={`max-w-md mb-8 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                         Aún no has guardado nada. Explora nuestras categorías y dale al corazón en los productos que te gusten.
                     </p>
                     <button 

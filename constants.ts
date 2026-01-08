@@ -90,7 +90,7 @@ export const PRODUCTS: Product[] = [
         subcategory: "Gadgets",
         price: 319.99,
         category: "Relojes",
-        image: "/images/hombre2.jpg",
+        image: "/images/hombre1.jpg",
         url: "https://amzn.to/3YpHaGa",
         description: "Reloj clásico de acero con estilo atemporal y esfera analógica; ideal para uso diario o regalo."
     },
@@ -102,7 +102,7 @@ export const PRODUCTS: Product[] = [
         price: 129.99,
         oldPrice: 180.00,
         category: "Mochilas",
-        image: "/images/hombre3.jpg",
+        image: "/images/hombre2.jpg",
         url: "https://amzn.to/3L1ZWjN",
         description: "Mochila ligera con compartimento para portátil de 15,6'' y organización práctica para trabajo o estudio.",
         discount: "-20%"
@@ -239,7 +239,7 @@ export const PRODUCTS: Product[] = [
         title: "Skechers Keepsakes Pantuflas para Mujer",
         price: 79.99,
         category: "Calzado",
-        image: "/images/mujer2.jpg",
+        image: "/images/mujer1.jpg",
         url: "https://amzn.to/48EyWA7",
         description: "Pantuflas acolchadas de estilo botín, cálidas y cómodas para el hogar."
     },
@@ -250,7 +250,7 @@ export const PRODUCTS: Product[] = [
         title: "Loop Quiet Tapones para Oídos",
         price: 39.99,
         category: "Cuidado Personal",
-        image: "/images/mujer3.jpg",
+        image: "/images/mujer2.jpg",
         url: "https://amzn.to/4iZ0VxU",
         description: "Tapones reutilizables y ultracómodos para reducir ruido y mejorar concentración y descanso."
     },
@@ -261,7 +261,7 @@ export const PRODUCTS: Product[] = [
         title: "L'Occitane Aceite de Ducha de Almendra (250 ml)",
         price: 109.99,
         category: "Belleza",
-        image: "/images/mujer1.jpg",
+        image: "/images/mujer3.jpg",
         url: "https://amzn.to/4q7Sbrx",
         description: "Aceite de ducha que limpia suavemente y deja la piel suave y con aroma a almendra."
     },
@@ -328,7 +328,7 @@ export const PRODUCTS: Product[] = [
         title: "Peluche Simba Licencia Oficial",
         price: 41.99,
         category: "Juguetes",
-        image: "/images/nino2.jpg",
+        image: "/images/nino1.jpg",
         url: "https://amzn.to/3XVbMze",
         description: "Peluche suave y ligero, perfecto para acompañar el juego y el descanso."
     },
@@ -339,7 +339,7 @@ export const PRODUCTS: Product[] = [
         title: "Marvel Spiderman Mochila Infantil",
         price: 31.99,
         category: "Accesorios",
-        image: "/images/nino3.jpg",
+        image: "/images/nino2.jpg",
         url: "https://amzn.to/44tcreU",
         description: "Mochila con compartimentos y tirantes ajustables para el cole y actividades."
     },
@@ -350,7 +350,7 @@ export const PRODUCTS: Product[] = [
         title: "Bluey Botella de Plástico",
         price: 26.99,
         category: "Hidratación",
-        image: "/images/nino1.jpg",
+        image: "/images/nino3.jpg",
         url: "https://amzn.to/3YtBDhO",
         description: "Botella resistente y reutilizable con diseño de Bluey; práctica para el día a día."
     },
@@ -497,7 +497,7 @@ export const PRODUCTS: Product[] = [
         title: "Luces Solares de Navidad para Exterior (Yorezcop)",
         price: 469.99,
         category: "Iluminación",
-        image: "/images/tecnologia2.jpg",
+        image: "/images/tecnologia1.jpg",
         url: "https://amzn.to/4pDBnZz",
         description: "Guirnaldas solares impermeables para decoración exterior, fáciles de instalar."
     },
@@ -508,7 +508,7 @@ export const PRODUCTS: Product[] = [
         title: "Echo Pop | Altavoz Inteligente con Alexa",
         price: 179.99,
         category: "Smart Home",
-        image: "/images/tecnologia3.jpg",
+        image: "/images/tecnologia2.jpg",
         url: "https://amzn.to/48SFUQN",
         description: "Altavoz compacto con Alexa para música, control por voz y hogar conectado."
     },
@@ -519,7 +519,7 @@ export const PRODUCTS: Product[] = [
         title: "Auriculares Inalámbricos Impermeables",
         price: 329.99,
         category: "Audio",
-        image: "/images/tecnologia1.jpg",
+        image: "/images/tecnologia3.jpg",
         url: "https://amzn.to/4aWxLx8",
         description: "Auriculares Bluetooth con diseño resistente al agua y estuche de carga."
     },
