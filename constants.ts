@@ -73,32 +73,38 @@ export const PRODUCTS: Product[] = [
     {
         id: 201,
         categoryId: 2,
-        title: "Smartwatch Pro 2025",
+        title: "GUGGIARI Cartera de Hombre con Monedero y Tarjetero",
         subcategory: "Gadgets",
-        price: 299.00,
+        price: 289.99,
         oldPrice: 349.00,
-        category: "Wearables",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAoHyTMeEStgeLNadfL86--t8Dop7GF71vtE4MzG5pQumrLMEgV8K6_NgkwOvSF4QFO8qEG36sCCnaFnlxvbG9hX1lJp-Gq-GTEV5qCdbixIPjuhlYkiqQCIEXJleKsu_tkm0g-hGhZy06XVlCaujcqB4YV3CNHM_aZKcpXqbEFM0cMzOD8n7jNhPbl4zVQJqseKZ2KsxkpJKkkpQL-5rXPqJlfVVbcUo71wPjhhXsbOg6wM24xRU2LNfVuS82j-cPxHRngYEyaVmU",
+        category: "Accesorios",
+        image: "/images/cartera.jpg",
+        url: "https://amzn.to/4rYJsJM",
+        description: "Cartera compacta con monedero y múltiples ranuras para tarjetas; diseño pensado para el día a día.",
         tag: "Más Vendido"
     },
     {
         id: 202,
         categoryId: 2,
-        title: "Auriculares Silence X",
+        title: "Tommy Hilfiger Reloj Analógico de Acero Inoxidable",
         subcategory: "Gadgets",
-        price: 349.00,
-        category: "Audio",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCm_8ukEzOB8SDuF8mGuXPkUs-1RmmMkUgpvYZKzFd8awguapFcNGkjr2JSmJCkH5lX_Shm_BkKi8oMFNfT6ThuBFbgvlAz4G9sz0iHX84cR5GbH1jdaPLCVx7gSGcWcyilmcnsiWiLaBzWGRSO73uS_0w_8RCruDKhW3igkFewKQEDZlVoKuwa-DK1lTrs3bxZwmKjRuE1pjyTC4wojPhoHVuNb-CGXqJBswczj2ucAH1jWEr98BqtKE29TrNGaNJ7Oom8VWJI3zc"
+        price: 319.99,
+        category: "Relojes",
+        image: "/images/hombre2.jpg",
+        url: "https://amzn.to/3YpHaGa",
+        description: "Reloj clásico de acero con estilo atemporal y esfera analógica; ideal para uso diario o regalo."
     },
     {
         id: 203,
         categoryId: 2,
         subcategory: "Gadgets",
-        title: "Termómetro Grill Master",
-        price: 144.00,
+        title: "HP Prelude Mochila 15,6'' de Carga Superior",
+        price: 129.99,
         oldPrice: 180.00,
-        category: "Herramientas",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCvZ8GybuBUy5v6AIaSrFCj-rACZYa7RszlFS2BRhH1RYpN_qc_6VXwdo2-bYYVJl_4gd4oFT0yY9h3eINQtENaTDZZ-u8Jfw2Bgdv31wb8tpX2jsw6RU6uIZXhE7vjEJLacLUJHdrJGiN11uSuHLDCmcy9OxGbhEZi7aoQh10M_Skesuf2yd4uotJCvWvwxvhNz-D8D-XJ0G5yAwTleE5nbvpOTpsu9Nb8d2hShHr3zs4Kb5tOM_IzWThk5KcnD_41t6PPvf7F4nY",
+        category: "Mochilas",
+        image: "/images/hombre3.jpg",
+        url: "https://amzn.to/3L1ZWjN",
+        description: "Mochila ligera con compartimento para portátil de 15,6'' y organización práctica para trabajo o estudio.",
         discount: "-20%"
     },
     {
@@ -230,28 +236,34 @@ export const PRODUCTS: Product[] = [
         id: 301,
         categoryId: 3,
         subcategory: "Belleza",
-        title: "Set de Skincare Premium",
-        price: 85.00,
-        category: "Cuidado Personal",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCpo_vm6ZwEG8BNJ5hsx7va_N6vwPAXCrDtRHwqHKu36oDQ4Tr3PjMlnoMgF6rgfxqQB4GF7nqPzWsW86MvTjYMlIqO88AtC_R_kVe-5vS76IwlwBT8fFzAO2NnDbrQaDSQm61yxRFFtlgQFRZMb0HTdDwOIwMvFFNJM5336ktnvGCAp5rZ_EdMdZnys5RVseMT9J3zfQ9CVBsbjnx_fz3DUzaa3dCJALXVYzxt9ePmIEwQCC6iOMVmi5uyM981cpJHExFviVOS07I"
+        title: "Skechers Keepsakes Pantuflas para Mujer",
+        price: 79.99,
+        category: "Calzado",
+        image: "/images/mujer2.jpg",
+        url: "https://amzn.to/48EyWA7",
+        description: "Pantuflas acolchadas de estilo botín, cálidas y cómodas para el hogar."
     },
     {
         id: 302,
         categoryId: 3,
         subcategory: "Belleza",
-        title: "Masajeador Facial de Jade",
-        price: 45.00,
-        category: "Belleza",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDAWR1ltb7HoJN8Hgd5MfSEnCeh-GAYFyTqZ3vL_UWNtWr3kfh0tz0SjjcvukNoefN5OQb6ALMyAGCCy2l7Q8JNgARM6XGRKTQCEGKtOxz5sinwg3AWFMBKIttcnNPqpZRGfOQQjzD5QIJFfwDLxKNAlBSPhDePqVPE2yOzIdD9oJhfS-_a9t6flutCXyGfvIV9HW68F5FrHi1KnGJ8Q61loszUFnbxJMcArI0CEJHGKdDU9t1V7uiJVkF8NERuNhrIg5XYL-RGMYg"
+        title: "Loop Quiet Tapones para Oídos",
+        price: 39.99,
+        category: "Cuidado Personal",
+        image: "/images/mujer3.jpg",
+        url: "https://amzn.to/4iZ0VxU",
+        description: "Tapones reutilizables y ultracómodos para reducir ruido y mejorar concentración y descanso."
     },
     {
         id: 303,
         categoryId: 3,
         subcategory: "Belleza",
-        title: "Eau de Parfum Floral",
-        price: 120.00,
-        category: "Fragancias",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAElcARZxX1ec7dGnfm7OXMjAkb_bApi-2nGqQZludMpMS-r3gnN1q3-c4HMbQOdKGe3VAopae2wFt2OqExTLaEGkzpgEIVE_l_KYbc5kP_fo2PILOUomC6gzRPAanzx4ucL2gSnLU9h5S_eeQvxN6vwToC8tzi0xLzvQ48Za38liBKBXissIyTIcZXUOAbpKV9j4aR6JpNc8jeOgYpqdWVUmP8OHfWcfhvmGJMICKKAIRjsf7iqFkMgerlnXndihtUNCs-j8fChjY"
+        title: "L'Occitane Aceite de Ducha de Almendra (250 ml)",
+        price: 109.99,
+        category: "Belleza",
+        image: "/images/mujer1.jpg",
+        url: "https://amzn.to/4q7Sbrx",
+        description: "Aceite de ducha que limpia suavemente y deja la piel suave y con aroma a almendra."
     },
     {
         id: 304,
@@ -313,28 +325,34 @@ export const PRODUCTS: Product[] = [
         id: 401,
         categoryId: 4,
         subcategory: "Acción",
-        title: "Lanzador Nerf Ultra",
-        price: 45.00,
+        title: "Peluche Simba Licencia Oficial",
+        price: 41.99,
         category: "Juguetes",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCW_k_rCqC3MhDqO6pYnZqF2tG1wK5vE8x7jL0yI9h4mB3oA2dF1nE6sJ5rT8uV9iW4qO3lP7zX0mC2kG1yH5bN8vF6dJ9gR3tL1wE4xK7zO2mP5nB8qI1vF0yH6jG9wL3sK5nE7rT9xZ1yU4oM2pQ6wV8tN3kR1jS5hB7vG0xL9yF4wM1pE2zH8qI5nJ6oK9rT3wE4xL7zO1mP2nC5kH8vG3xJ4yF6dI9gR1tL0wE3xK6zO0mP4nB7qI1vF0yH5bN8vF6dJ9gR3tL1w"
+        image: "/images/nino2.jpg",
+        url: "https://amzn.to/3XVbMze",
+        description: "Peluche suave y ligero, perfecto para acompañar el juego y el descanso."
     },
     {
         id: 402,
         categoryId: 4,
         subcategory: "Acción",
-        title: "Walkie Talkies Espía",
-        price: 35.00,
-        category: "Electrónica",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCW_k_rCqC3MhDqO6pYnZqF2tG1wK5vE8x7jL0yI9h4mB3oA2dF1nE6sJ5rT8uV9iW4qO3lP7zX0mC2kG1yH5bN8vF6dJ9gR3tL1wE4xK7zO2mP5nB8qI1vF0yH6jG9wL3sK5nE7rT9xZ1yU4oM2pQ6wV8tN3kR1jS5hB7vG0xL9yF4wM1pE2zH8qI5nJ6oK9rT3wE4xL7zO1mP2nC5kH8vG3xJ4yF6dI9gR1tL0wE3xK6zO0mP4nB7qI1vF0yH5bN8vF6dJ9gR3tL1w" // Reusing random hash for mock
+        title: "Marvel Spiderman Mochila Infantil",
+        price: 31.99,
+        category: "Accesorios",
+        image: "/images/nino3.jpg",
+        url: "https://amzn.to/44tcreU",
+        description: "Mochila con compartimentos y tirantes ajustables para el cole y actividades."
     },
     {
         id: 403,
         categoryId: 4,
         subcategory: "Acción",
-        title: "Set de Arquería",
-        price: 29.99,
-        category: "Aire Libre",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCW_k_rCqC3MhDqO6pYnZqF2tG1wK5vE8x7jL0yI9h4mB3oA2dF1nE6sJ5rT8uV9iW4qO3lP7zX0mC2kG1yH5bN8vF6dJ9gR3tL1wE4xK7zO2mP5nB8qI1vF0yH6jG9wL3sK5nE7rT9xZ1yU4oM2pQ6wV8tN3kR1jS5hB7vG0xL9yF4wM1pE2zH8qI5nJ6oK9rT3wE4xL7zO1mP2nC5kH8vG3xJ4yF6dI9gR1tL0wE3xK6zO0mP4nB7qI1vF0yH5bN8vF6dJ9gR3tL1w"
+        title: "Bluey Botella de Plástico",
+        price: 26.99,
+        category: "Hidratación",
+        image: "/images/nino1.jpg",
+        url: "https://amzn.to/3YtBDhO",
+        description: "Botella resistente y reutilizable con diseño de Bluey; práctica para el día a día."
     },
     {
         id: 404,
@@ -396,28 +414,34 @@ export const PRODUCTS: Product[] = [
         id: 501,
         categoryId: 5,
         subcategory: "Creatividad",
-        title: "Kit de Arte Deluxe",
-        price: 35.00,
-        category: "Arte",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDr010zdWNBFi_Gfr76vUna1x-tcNqpVYrN9t0-OMTSpIGpBOVb3BeJvC5WEtAecFMSOJCa-bj5H0J7YQSVAKCJQSJfGDG9nC-OcoiKPL2Vl8LHbFflzztxtQnJNiXao2nFeDa2Zxp7gPzE_YOuHCWvRDAs7Yi2QJDktJJ_imbmZHJiZr8ytCkxqRaRdduZDIz0W-rhwRYYfiqBojDCt-XsZAiswAMqEo3-BmZAs4boB8F6z9n-2OcLhidtpqp8WSnFmCYda_qUPdg"
+        title: "Muñeca con Funciones y Accesorios",
+        price: 32.99,
+        category: "Juguetes",
+        image: "/images/nina1.jpg",
+        url: "https://amzn.to/4rYtK1r",
+        description: "Muñeca interactiva con accesorios para fomentar el juego imaginativo."
     },
     {
         id: 502,
         categoryId: 5,
         subcategory: "Creatividad",
-        title: "Fábrica de Pulseras",
-        price: 25.00,
-        category: "Moda",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDr010zdWNBFi_Gfr76vUna1x-tcNqpVYrN9t0-OMTSpIGpBOVb3BeJvC5WEtAecFMSOJCa-bj5H0J7YQSVAKCJQSJfGDG9nC-OcoiKPL2Vl8LHbFflzztxtQnJNiXao2nFeDa2Zxp7gPzE_YOuHCWvRDAs7Yi2QJDktJJ_imbmZHJiZr8ytCkxqRaRdduZDIz0W-rhwRYYfiqBojDCt-XsZAiswAMqEo3-BmZAs4boB8F6z9n-2OcLhidtpqp8WSnFmCYda_qUPdg"
+        title: "Play-Doh Camión de Helados",
+        price: 22.99,
+        category: "Creatividad",
+        image: "/images/nina2.jpg",
+        url: "https://amzn.to/4pWM0Hj",
+        description: "Set Play-Doh con camión y moldes para crear helados y figuras divertidas."
     },
     {
         id: 503,
         categoryId: 5,
         subcategory: "Fantasía",
-        title: "Disfraz de Hada",
-        price: 40.00,
-        category: "Disfraces",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtJbDgBMRbSuRfuli5reM5fNU3FqdqoljoYIX0auaH8JT8YOTYufGPAEr1GWurFXuUID6Xx9EkSGvB_KCY6TA2pEwkjPS0-I0vFCy_DeggrRIKWnG_qb_8fha-X1iO86dvsWihwAmfy_z4uOSoI-hakcq4w3s8FFsgNiThZlxSvW4e-atxIuIT9x9Hct8002vwuldlSrItBU4den1dfv9d_5Q9w_C2bcUBhPmYE242CaaSFvcZ3bIA3KW4cWSiU1_43NjgJZCk5vc"
+        title: "Amazon Essentials Chaqueta con Cremallera",
+        price: 36.99,
+        category: "Ropa",
+        image: "/images/nina3.jpg",
+        url: "https://amzn.to/44tQc8z",
+        description: "Chaqueta ligera con cierre completo, cómoda para uso diario."
     },
     {
         id: 504,
@@ -470,28 +494,34 @@ export const PRODUCTS: Product[] = [
         id: 601,
         categoryId: 6,
         subcategory: "Smart Home",
-        title: "Asistente Robot IA",
-        price: 499.00,
-        category: "Robótica",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCygOsmWJjMJPfHGfuZP64fV3PnkcvaotFyxYX2iEuarAQpCqyRiLRNCbRMMgGlhIWXDK3xVqvDllaBYGySnIIHAh9Mo6IXiKH-UaEgGT8Wcq9EG48eyOEB1oolyVZXU50mdSifW_IEBQzwAbnHNrtJ9s8O6WPDRlYlb7hsf04FcuLatr5Ie-5-ra2tZeGruLMCSbHZV51RoNdzs_Dcqfeuu3Y6cpXZt0QIp9jjN03wHYja3jNYi9uZLBW3OsW75vWF7oeZWp_DNjk"
+        title: "Luces Solares de Navidad para Exterior (Yorezcop)",
+        price: 469.99,
+        category: "Iluminación",
+        image: "/images/tecnologia2.jpg",
+        url: "https://amzn.to/4pDBnZz",
+        description: "Guirnaldas solares impermeables para decoración exterior, fáciles de instalar."
     },
     {
         id: 602,
         categoryId: 6,
         subcategory: "Smart Home",
-        title: "Luces Nanoleaf 4D",
-        price: 199.00,
-        category: "Iluminación",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCygOsmWJjMJPfHGfuZP64fV3PnkcvaotFyxYX2iEuarAQpCqyRiLRNCbRMMgGlhIWXDK3xVqvDllaBYGySnIIHAh9Mo6IXiKH-UaEgGT8Wcq9EG48eyOEB1oolyVZXU50mdSifW_IEBQzwAbnHNrtJ9s8O6WPDRlYlb7hsf04FcuLatr5Ie-5-ra2tZeGruLMCSbHZV51RoNdzs_Dcqfeuu3Y6cpXZt0QIp9jjN03wHYja3jNYi9uZLBW3OsW75vWF7oeZWp_DNjk"
+        title: "Echo Pop | Altavoz Inteligente con Alexa",
+        price: 179.99,
+        category: "Smart Home",
+        image: "/images/tecnologia3.jpg",
+        url: "https://amzn.to/48SFUQN",
+        description: "Altavoz compacto con Alexa para música, control por voz y hogar conectado."
     },
     {
         id: 603,
         categoryId: 6,
         subcategory: "Gaming",
-        title: "Consola Portátil X",
-        price: 350.00,
-        category: "Gaming",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB95I5g5kwB3RgzfM4qkw9zxxhlinYH9uNt2YAGm4cdC-z_NY4A_9POPmzFA5c17TI6TcKKwqJ5n8h8rQM-UYRyjbFL_R38l_gT97zLGpckwlFYNNvtO6y2FfjeL3MHUkNv7LAv3Dl5r3TvZY4MZDZ0Q3VdQ3av0cJwsAeIeCF07W9ahIRYs8E7Z6XjvVZo00WHXgJiAYniwL31tqUiJ7pYT5QcLtr-cyE-hCmbVkN8TM5-RQq9NhGACmQaHv143UI7i_mD3fNPvWw"
+        title: "Auriculares Inalámbricos Impermeables",
+        price: 329.99,
+        category: "Audio",
+        image: "/images/tecnologia1.jpg",
+        url: "https://amzn.to/4aWxLx8",
+        description: "Auriculares Bluetooth con diseño resistente al agua y estuche de carga."
     },
     {
         id: 604,

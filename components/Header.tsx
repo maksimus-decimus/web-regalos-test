@@ -30,11 +30,11 @@ const Header: React.FC<HeaderProps> = ({
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary">
                         <span className="material-symbols-outlined text-3xl">redeem</span>
                     </div>
-                    <h2 className="text-xl font-bold tracking-tight">Regalos 2025</h2>
+                    <h2 className="text-xl font-bold tracking-tight">Regaloteca</h2>
                 </button>
 
                 {/* Search Bar */}
-                <div className="hidden md:flex flex-1 max-w-lg">
+                <div className="hidden md:flex flex-1 max-w-lg"> 
                     <label className="relative flex w-full items-center">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-4 text-[#9db9a6]">
                             <span className="material-symbols-outlined">search</span>

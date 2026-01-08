@@ -8,8 +8,9 @@ import WishlistPage from './components/WishlistPage';
 import Footer from './components/Footer';
 import AuthModal from './components/AuthModal';
 import FilterSidebar from './components/FilterSidebar';
+import ProductQuickView from './components/ProductQuickView';
 import { CATEGORIES, PRODUCTS } from './constants';
-import { Category } from './types';
+import { Category, Product } from './types';
 import { useAuth } from './AuthContext';
 import { getUserFavorites, addFavorite, removeFavorite } from './favoritesService';
 
@@ -21,6 +22,7 @@ const App: React.FC = () => {
     const [showWishlist, setShowWishlist] = useState(false);
     const [showAuthModal, setShowAuthModal] = useState(false);
     const [showAllCategories, setShowAllCategories] = useState(false);
+    const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
     
     // Filter States
     const [priceRange, setPriceRange] = useState<[number, number]>([0, 20000]);
@@ -236,6 +238,7 @@ const App: React.FC = () => {
                     favoriteIds={favoriteIds}
                     onToggleFavorite={handleToggleFavorite}
                     onBack={handleGoHome}
+                    onOpenProduct={(product) => setQuickViewProduct(product)}
                 />
             ) : selectedCategory ? (
                 <CategoryPage 
@@ -244,6 +247,7 @@ const App: React.FC = () => {
                     favoriteIds={favoriteIds}
                     onToggleFavorite={handleToggleFavorite}
                     onBack={handleGoHome}
+                    onOpenProduct={(product) => setQuickViewProduct(product)}
                 />
             ) : (
                 <main className="flex-1 w-full max-w-[1280px] mx-auto px-6 py-8">
@@ -272,74 +276,107 @@ const App: React.FC = () => {
                         {/* Contenido principal */}
                         <div className="flex-1">
                     
-                    {/* Categories Grid - Only show if not searching/offers/all categories */}
-                    {!searchTerm && !showOffers && !showAllCategories && (
-                        <section id="categories-section">
-                            <div className="flex items-center justify-between mb-6">
-                                <h2 className="text-2xl font-bold text-white">Explora Categorías</h2>
-                            </div>
-                            
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {CATEGORIES.map(cat => (
-                                    <CategoryCard 
-                                        key={cat.id} 
-                                        category={cat} 
-                                        onClick={handleSelectCategory}
-                                    />
-                                ))}
-                            </div>
-                        </section>
-                    )}
+                            {/* Categories Grid - Only show if not searching/offers/all categories */}
+                            {!searchTerm && !showOffers && !showAllCategories && (
+                                <section id="categories-section" className="mb-12">
+                                    <div className="flex items-center justify-between mb-6">
+                                        <h2 className="text-2xl font-bold text-slate-900">Explora Categorías</h2>
+                                    </div>
+                                    
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        {CATEGORIES.map(cat => (
+                                            <CategoryCard 
+                                                key={cat.id} 
+                                                category={cat} 
+                                                onClick={handleSelectCategory}
+                                            />
+                                        ))}
+                                    </div>
+                                </section>
+                            )}
 
-                    {/* Products Section (Search Results, Offers, or Interests) */}
-                    <section className="py-6 min-h-[50vh]">
-                        <h2 className="text-2xl font-bold text-white mb-2">
-                            {getSectionTitle()}
-                        </h2>
-                        
-                        {!searchTerm && !showOffers && !showAllCategories && (
-                            <p className="text-gray-400 mb-6 text-sm">
-                                Basado en tendencias globales y tus preferencias.
-                            </p>
-                        )}
-                        
-                        {showAllCategories && (
-                            <p className="text-gray-400 mb-6 text-sm">
-                                Explora todos nuestros productos. Usa los filtros para encontrar exactamente lo que buscas.
-                            </p>
-                        )}
-                        
-                        <div className={`grid ${(searchTerm || showAllCategories) ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5'} gap-4`}>
-                            {homeProducts.map(product => (
-                                <ProductCard 
-                                    key={product.id} 
-                                    product={product}
-                                    isFavorite={favoriteIds.includes(product.id)}
-                                    onToggleFavorite={() => handleToggleFavorite(product.id)}
-                                />
-                            ))}
-                        </div>
-                        
-                        {homeProducts.length === 0 && (
-                            <div className="flex flex-col items-center justify-center py-20 text-gray-500">
-                                <span className="material-symbols-outlined text-6xl mb-4 opacity-50">search_off</span>
-                                <h3 className="text-xl font-bold mb-2">No encontramos resultados</h3>
-                                <p className="text-sm">Intenta con otros términos o explora nuestras categorías.</p>
-                                <button 
-                                    onClick={handleGoHome}
-                                    className="mt-6 px-6 py-2 bg-primary text-black font-bold rounded-full hover:bg-white transition-colors"
-                                >
-                                    Ver todo
-                                </button>
-                            </div>
-                        )}
-                    </section>
+                            {/* Products Section (Search Results, Offers, or Interests) */}
+                            <section className="py-6 min-h-[50vh] bg-gradient-to-b from-white to-gray-50/50 rounded-3xl p-6">
+                                <h2 className="text-2xl font-bold text-slate-900 mb-2">
+                                    {getSectionTitle()}
+                                </h2>
+                                
+                                {!searchTerm && !showOffers && !showAllCategories && (
+                                    <p className="text-gray-600 mb-6 text-sm">
+                                        Basado en tendencias globales y tus preferencias.
+                                    </p>
+                                )}
+                                
+                                {showAllCategories && (
+                                    <p className="text-gray-600 mb-6 text-sm">
+                                        Explora todos nuestros productos. Usa los filtros para encontrar exactamente lo que buscas.
+                                    </p>
+                                )}
+                                
+                                <div className={`grid ${(searchTerm || showAllCategories) ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5'} gap-4`}>
+                                    {homeProducts.map((product, index) => (
+                                        <div key={product.id} className="relative">
+                                            {/* Destacar los primeros productos en la sección "Te puede interesar" */}
+                                            {index < 3 && !searchTerm && !showOffers && !showAllCategories && (
+                                                <div className="absolute -top-2 -left-2 z-20">
+                                                    <span className="px-3 py-1 bg-gradient-to-r from-primary to-green-400 text-white text-xs font-bold rounded-full shadow-lg">
+                                                        ¡TOP {index + 1}!
+                                                    </span>
+                                                </div>
+                                            )}
+                                            
+                                            <ProductCard 
+                                                product={product}
+                                                isFavorite={favoriteIds.includes(product.id)}
+                                                onToggleFavorite={() => handleToggleFavorite(product.id)}
+                                                onOpen={() => setQuickViewProduct(product)}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                                
+                                {homeProducts.length === 0 && (
+                                    <div className="flex flex-col items-center justify-center py-20 text-gray-600">
+                                        <span className="material-symbols-outlined text-6xl mb-4 opacity-50">search_off</span>
+                                        <h3 className="text-xl font-bold mb-2 text-slate-900">No encontramos resultados</h3>
+                                        <p className="text-sm">Intenta con otros términos o explora nuestras categorías.</p>
+                                        <button 
+                                            onClick={handleGoHome}
+                                            className="mt-6 px-6 py-2 bg-primary text-black font-bold rounded-full hover:bg-primary/90 transition-colors"
+                                        >
+                                            Ver todo
+                                        </button>
+                                    </div>
+                                )}
+                                
+                                {/* Mostrar botón de "Ver más" si hay muchos productos */}
+                                {homeProducts.length > 0 && !searchTerm && !showOffers && !showAllCategories && (
+                                    <div className="mt-8 text-center">
+                                        <button 
+                                            onClick={handleScrollToCategories}
+                                            className="px-8 py-3 bg-gradient-to-r from-primary to-green-400 text-black font-bold rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                                        >
+                                            <span className="flex items-center gap-2">
+                                                Ver más productos
+                                                <span className="material-symbols-outlined">arrow_forward</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                )}
+                            </section>
                     
-                    </div> {/* Cierre del contenido principal */}
+                        </div> {/* Cierre del contenido principal */}
                     </div> {/* Cierre del layout con sidebar */}
                 </main>
             )}
             
+            {quickViewProduct && (
+                <ProductQuickView 
+                    product={quickViewProduct}
+                    onClose={() => setQuickViewProduct(null)}
+                />
+            )}
+
             <Footer onCategorySelect={handleCategorySelectById} />
         </>
     );
