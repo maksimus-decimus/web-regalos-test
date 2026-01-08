@@ -12,8 +12,9 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, onClick }) => {
     return (
         <button 
             onClick={() => onClick(category)} 
-            className="group relative block w-full text-left aspect-[4/3] overflow-hidden rounded-2xl bg-surface-dark transition-transform hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10"
+            className="group relative block w-full text-left aspect-[4/3] overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 border-2 border-gray-300 hover:border-primary"
         >
+            {/* Fondo de imágenes */}
             <div className="absolute inset-0 grid grid-cols-3 h-full gap-[2px]">
                 {/* Main Large Image */}
                 <div
@@ -40,13 +41,37 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category, onClick }) => {
                 </div>
             </div>
             
-            {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+            {/* Overlay Gradient - Mejorado para más contraste */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-95 group-hover:opacity-100 transition-opacity"></div>
             
-            {/* Text Content */}
-            <div className="absolute bottom-0 left-0 p-6">
-                <p className="text-sm font-medium text-primary uppercase tracking-wider mb-1">{category.subtitle}</p>
-                <h3 className="text-2xl font-bold text-white">{category.title}</h3>
+            {/* Borde interior para destacar */}
+            <div className="absolute inset-0 border-2 border-white/10 group-hover:border-primary/30 rounded-2xl transition-colors"></div>
+            
+            {/* Glow effect en hover */}
+            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-primary/5 to-transparent"></div>
+            
+            {/* Text Content - Mejorado para más legibilidad */}
+            <div className="absolute bottom-0 left-0 p-6 z-10">
+                <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-1 drop-shadow-lg">
+                    {category.subtitle}
+                </p>
+                <h3 className="text-2xl font-bold text-white drop-shadow-lg">
+                    {category.title}
+                </h3>
+            </div>
+            
+            {/* Badge indicador */}
+            <div className="absolute top-4 right-4 z-10">
+                <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white group-hover:bg-primary/80 transition-colors">
+                    Ver más
+                </span>
+            </div>
+            
+            {/* Flecha indicadora */}
+            <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <span className="material-symbols-outlined text-primary text-2xl bg-white/20 backdrop-blur-sm rounded-full p-1">
+                    arrow_forward
+                </span>
             </div>
         </button>
     );
