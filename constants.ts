@@ -90,7 +90,7 @@ export const PRODUCTS: Product[] = [
         id: 201,
         categoryId: 2,
         title: "TEMPUR Original Almohada cervical",
-        price: 95.28
+        price: 95.28,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B00UVQPD28?tag=sitio200181",
@@ -100,7 +100,7 @@ export const PRODUCTS: Product[] = [
         id: 202,
         categoryId: 2,
         title: "Pistola de masaje muscular",
-        price: 84.99
+        price: 84.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B09QPGTLG8?tag=sitio200181",
@@ -110,7 +110,7 @@ export const PRODUCTS: Product[] = [
         id: 203,
         categoryId: 2,
         title: "Cecotec Freidora de Aire",
-        price: 49.90
+        price: 49.90,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B0BPYVNW3L?tag=sitio200181",
@@ -120,7 +120,7 @@ export const PRODUCTS: Product[] = [
         id: 204,
         categoryId: 2,
         title: "Garmin Vívoactive 5",
-        price: 185.50
+        price: 185.50,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B0CY2QBKNS?tag=sitio200181",
@@ -130,7 +130,7 @@ export const PRODUCTS: Product[] = [
         id: 205,
         categoryId: 2,
         title: "Kindle",
-        price: 169.00
+        price: 169.00,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B0CFPXBJ9Y?tag=sitio200181",
@@ -140,7 +140,7 @@ export const PRODUCTS: Product[] = [
         id: 206,
         categoryId: 2,
         title: "OPPO Reno13",
-        price: 367.26
+        price: 367.26,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B0DVH12PT3?tag=sitio200181",
@@ -150,7 +150,7 @@ export const PRODUCTS: Product[] = [
         id: 207,
         categoryId: 2,
         title: "Cámara instantánea",
-        price: 27.50
+        price: 27.50,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B08H887HNJ?tag=sitio200181",
@@ -160,7 +160,7 @@ export const PRODUCTS: Product[] = [
         id: 208,
         categoryId: 2,
         title: "Xiaomi Redmi Pad Pro",
-        price: 314.94
+        price: 314.94,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B0D31XB4ST?tag=sitio200181",
@@ -170,7 +170,7 @@ export const PRODUCTS: Product[] = [
         id: 209,
         categoryId: 2,
         title: "Taza",
-        price: 8.95
+        price: 8.95,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B0DJPFRWPF?tag=sitio200181",
@@ -180,7 +180,7 @@ export const PRODUCTS: Product[] = [
         id: 210,
         categoryId: 2,
         title: "Kit barba",
-        price: 24.99
+        price: 24.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B08GYDSD72?tag=sitio200181",
@@ -190,7 +190,7 @@ export const PRODUCTS: Product[] = [
         id: 211,
         categoryId: 2,
         title: "Maquinilla Gillette",
-        price: 18.99
+        price: 18.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B0DTTNGTP7?tag=sitio200181",
@@ -200,7 +200,7 @@ export const PRODUCTS: Product[] = [
         id: 212,
         categoryId: 2,
         title: "Smartbox – 2 días con encanto",
-        price: 69.90
+        price: 69.90,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B07Z5LKRMF?tag=sitio200181",
@@ -210,7 +210,7 @@ export const PRODUCTS: Product[] = [
         id: 213,
         categoryId: 2,
         title: "Taza personalizada",
-        price: 4.90
+        price: 4.90,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B089GY91MH?tag=sitio200181",
@@ -220,7 +220,7 @@ export const PRODUCTS: Product[] = [
         id: 214,
         categoryId: 2,
         title: "Libro biografía papá",
-        price: 15.10
+        price: 15.10,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/8401022509?tag=sitio200181",
@@ -230,7 +230,7 @@ export const PRODUCTS: Product[] = [
         id: 215,
         categoryId: 2,
         title: "Manta Día del Padre",
-        price: 16.99
+        price: 16.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B0F14RWPT3?tag=sitio200181",
@@ -240,7 +240,7 @@ export const PRODUCTS: Product[] = [
         id: 216,
         categoryId: 2,
         title: "Destornillador multipuntas",
-        price: 25.99
+        price: 25.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B0D2HGJFL2?tag=sitio200181",
@@ -250,7 +250,7 @@ export const PRODUCTS: Product[] = [
         id: 217,
         categoryId: 2,
         title: "Navaja multiusos",
-        price: 19.99
+        price: 19.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B0BYRN75WT?tag=sitio200181",
@@ -260,7 +260,7 @@ export const PRODUCTS: Product[] = [
         id: 218,
         categoryId: 2,
         title: "Tocadiscos",
-        price: 139.00
+        price: 139.00,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B0BHT39Q3J?tag=sitio200181",
@@ -270,7 +270,7 @@ export const PRODUCTS: Product[] = [
         id: 219,
         categoryId: 2,
         title: "Set de whisky",
-        price: 29.99
+        price: 29.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B0FL2GS63J?tag=sitio200181",
@@ -280,7 +280,7 @@ export const PRODUCTS: Product[] = [
         id: 220,
         categoryId: 2,
         title: "Altavoz Bluetooth portátil",
-        price: 115.00
+        price: 115.00,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/dp/B0DXKNBQS6?tag=sitio200181",
@@ -294,7 +294,7 @@ export const PRODUCTS: Product[] = [
         id: 301,
         categoryId: 3,
         title: "Set de Cuidado Facial QUIYUM",
-        price: 29.79
+        price: 29.79,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/QUIYUM-Cuidado-Regalo-Skincare-Limpiadora/dp/B0DK5GFXPF/?tag=sitio200181-21",
@@ -304,7 +304,7 @@ export const PRODUCTS: Product[] = [
         id: 302,
         categoryId: 3,
         title: "Taza divertida para madres MUGFFINS",
-        price: 12.95
+        price: 12.95,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/MUGFFINS-Siempre-Español-divertido-cumpleaños/dp/B0FW28HGD7/?tag=sitio200181-21",
@@ -314,7 +314,7 @@ export const PRODUCTS: Product[] = [
         id: 303,
         categoryId: 3,
         title: "Caja Regalo Smartbox Relax & Wellness",
-        price: 37.90
+        price: 37.90,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/Smartbox-relaxation-parents-wellness-activity/dp/B07Z5LKT1Q/?tag=sitio200181-21",
@@ -324,7 +324,7 @@ export const PRODUCTS: Product[] = [
         id: 304,
         categoryId: 3,
         title: "Bombones de Chocolate Amatller",
-        price: 13.47
+        price: 13.47,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/Chocolate-Amatller-Original-Chocolates-Assorted/dp/B0756HHDKT/?tag=sitio200181-21",
@@ -334,7 +334,7 @@ export const PRODUCTS: Product[] = [
         id: 305,
         categoryId: 3,
         title: "Mochila femenina multifuncional Leathario",
-        price: 21.99
+        price: 21.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/Leathario-Backpack-Multi-Pockets-Multifunctional-University/dp/B0CH8KFBK5/?tag=sitio200181-21",
@@ -344,7 +344,7 @@ export const PRODUCTS: Product[] = [
         id: 306,
         categoryId: 3,
         title: "Smartwatch Popglory para mujer",
-        price: 31.40
+        price: 31.40,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/Popglory-Pressure-Smartwatch-Respiratory-Android/dp/B0CGJ8P6VC/?tag=sitio200181-21",
@@ -354,7 +354,7 @@ export const PRODUCTS: Product[] = [
         id: 307,
         categoryId: 3,
         title: "Camiseta térmica sin costuras CLOSEMATE",
-        price: 14.99
+        price: 14.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/CLOSEMATE-Thermal-Seamless-Extreme-Earthtones-Brown/dp/B0DDQ4FBDX/?tag=sitio200181-21",
@@ -364,7 +364,7 @@ export const PRODUCTS: Product[] = [
         id: 308,
         categoryId: 3,
         title: "Set de invierno WEASIC (bufanda, guantes, orejeras)",
-        price: 21.99
+        price: 21.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/WEASIC-Scarf-Earmuffs-Touch-Gloves/dp/B0B2JKN53B/?tag=sitio200181-21",
@@ -374,7 +374,7 @@ export const PRODUCTS: Product[] = [
         id: 309,
         categoryId: 3,
         title: "Rosa preservada decorativa Yamonic",
-        price: 15.99
+        price: 15.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/Yamonic-Preserved-Birthday-Christmas-Valentines/dp/B0D129W8B5/?tag=sitio200181-21",
@@ -384,7 +384,7 @@ export const PRODUCTS: Product[] = [
         id: 310,
         categoryId: 3,
         title: "Pulsera bohemia de acero inoxidable",
-        price: 17.99
+        price: 17.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/Bracelet-Bohemian-Stainless-Birthday-Gemstone/dp/B0CNYTHC5V/?tag=sitio200181-21",
@@ -394,7 +394,7 @@ export const PRODUCTS: Product[] = [
         id: 311,
         categoryId: 3,
         title: "Sudadera oversize Disney Stitch",
-        price: 33.19
+        price: 33.19,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/Disney-Stitch-Womens-Sweatshirt-Oversize/dp/B09D55GFR2/?tag=sitio200181-21",
@@ -404,7 +404,7 @@ export const PRODUCTS: Product[] = [
         id: 312,
         categoryId: 3,
         title: "Perfume femenino gourmand Eau de Toilette",
-        price: 15.80
+        price: 15.80,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/Seductive-Toilette-Gourmand-Cologne-Fragrance/dp/B09GKJ77WD/?tag=sitio200181-21",
@@ -414,7 +414,7 @@ export const PRODUCTS: Product[] = [
         id: 313,
         categoryId: 3,
         title: "Cuaderno vintage de piel LEATHER Journal",
-        price: 19.99
+        price: 19.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/LEATHER-Vintage-Leather-Journal-Notebook/dp/B0CS6XB4D9/?tag=sitio200181-21",
@@ -424,7 +424,7 @@ export const PRODUCTS: Product[] = [
         id: 314,
         categoryId: 3,
         title: "Vela aromática decorativa",
-        price: 18.99
+        price: 18.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/Scented-Decorative-Aromatherapy-Birthdays-Christmas/dp/B092VP2KQX/?tag=sitio200181-21",
@@ -434,7 +434,7 @@ export const PRODUCTS: Product[] = [
         id: 315,
         categoryId: 3,
         title: "Espejo de aumento con luz GRIFEMA",
-        price: 15.15
+        price: 15.15,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/GRIFEMA-GF1001W-Magnification-Adjustable-Rotation/dp/B09QLVRZPC/?tag=sitio200181-21",
@@ -444,7 +444,7 @@ export const PRODUCTS: Product[] = [
         id: 316,
         categoryId: 3,
         title: "Bolso para portátil Tibora Lindsay",
-        price: 105.00
+        price: 105.00,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/Tibora-Lindsay-Laptop-Woman-195890153/dp/B071VK7CT8/?tag=sitio200181-21",
@@ -454,7 +454,7 @@ export const PRODUCTS: Product[] = [
         id: 317,
         categoryId: 3,
         title: "Manta térmica con peso para hombros Comfytemp",
-        price: 49.99
+        price: 49.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/Comfytemp-Weighted-Thermal-Shoulders-Levels/dp/B0FB2XQLFV/?tag=sitio200181-21",
@@ -464,7 +464,7 @@ export const PRODUCTS: Product[] = [
         id: 318,
         categoryId: 3,
         title: "Depiladora eléctrica Silk-épil",
-        price: 85.89
+        price: 85.89,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/Silk-épil-Electric-Epilator-Removal-Flamingo/dp/B0CQRTB5J2/?tag=sitio200181-21",
@@ -474,7 +474,7 @@ export const PRODUCTS: Product[] = [
         id: 319,
         categoryId: 3,
         title: "Set de regalo de belleza y autocuidado para mujer",
-        price: 53.99
+        price: 53.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/gp/aw/d/B098QTS954/?tag=sitio200181-21",
@@ -484,7 +484,7 @@ export const PRODUCTS: Product[] = [
         id: 320,
         categoryId: 3,
         title: "Regalo personalizado de metacrilato transparente",
-        price: 14.99
+        price: 14.99,
         category: "Varios",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.es/-/en/Transparent-Personalised-Anniversary-Personalized-Valentines/dp/B0DW4CJ9FR/?tag=sitio200181-21",
@@ -499,7 +499,7 @@ export const PRODUCTS: Product[] = [
         id: 401,
         categoryId: 4,
         title: "LEGO Classic Caja de Ladrillos Creativos Mediana",
-        price: 39.99
+        price: 39.99,
         category: "Construcción",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/49IWd2X",
@@ -509,7 +509,7 @@ export const PRODUCTS: Product[] = [
         id: 402,
         categoryId: 4,
         title: "GKTZ Cámara Infantil Impermeable 1080P",
-        price: 24.99
+        price: 24.99,
         category: "Cámara infantil",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/4b98EHI",
@@ -519,7 +519,7 @@ export const PRODUCTS: Product[] = [
         id: 403,
         categoryId: 4,
         title: "Ushining Cámara Subacuática para Niños 1080P",
-        price: 37.99
+        price: 37.99,
         category: "Fotografía subacuática",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/4qVS2b0",
@@ -529,7 +529,7 @@ export const PRODUCTS: Product[] = [
         id: 404,
         categoryId: 4,
         title: "Olvy Bloques de Construcción Magnéticos Montessori",
-        price: 29.99
+        price: 29.99,
         category: "Magnéticos Montessori",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/4jOQmh3",
@@ -539,7 +539,7 @@ export const PRODUCTS: Product[] = [
         id: 405,
         categoryId: 4,
         title: "KRAFUN Mi primer animal de costura",
-        price: 19.99
+        price: 19.99,
         category: "Costura fieltro",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/45jnw2u",
@@ -549,7 +549,7 @@ export const PRODUCTS: Product[] = [
         id: 406,
         categoryId: 4,
         title: "WSNDM Kit de Costura de Animales",
-        price: 8.99
+        price: 8.99,
         category: "Costura animales",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/4b4I6rb",
@@ -559,7 +559,7 @@ export const PRODUCTS: Product[] = [
         id: 407,
         categoryId: 4,
         title: "DeFieltro Kit Costura Niños",
-        price: 16.99
+        price: 16.99,
         category: "Maletín costura",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/49wUJtX",
@@ -569,7 +569,7 @@ export const PRODUCTS: Product[] = [
         id: 408,
         categoryId: 4,
         title: "Juguete de Tarjetas Flash Parlantes",
-        price: 19.99
+        price: 19.99,
         category: "Tarjetas parlantes",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/4be9KCd",
@@ -579,7 +579,7 @@ export const PRODUCTS: Product[] = [
         id: 409,
         categoryId: 4,
         title: "AHJ Tarjetas Flash Parlantes Español",
-        price: 19.99
+        price: 19.99,
         category: "Tarjetas español",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/4jSKMdN",
@@ -589,7 +589,7 @@ export const PRODUCTS: Product[] = [
         id: 410,
         categoryId: 4,
         title: "Almaxi Busy Board Montessori",
-        price: 21.99
+        price: 21.99,
         category: "Tablero sensorial",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/49GJkX5",
@@ -599,7 +599,7 @@ export const PRODUCTS: Product[] = [
         id: 411,
         categoryId: 4,
         title: "HILAND Bicicleta Infantil",
-        price: 159.99
+        price: 159.99,
         category: "Bicicleta infantil",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/4jMdoFn",
@@ -609,7 +609,7 @@ export const PRODUCTS: Product[] = [
         id: 412,
         categoryId: 4,
         title: "Olvy Bloques Magnéticos Montessori (95 piezas)",
-        price: 29.99
+        price: 29.99,
         category: "Bloques magnéticos",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/3LIrsmI",
@@ -619,7 +619,7 @@ export const PRODUCTS: Product[] = [
         id: 413,
         categoryId: 4,
         title: "Wootoyz Cubos Magnéticos (100 piezas)",
-        price: 21.99
+        price: 21.99,
         category: "Cubos magnéticos",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/4r2vBRA",
@@ -629,7 +629,7 @@ export const PRODUCTS: Product[] = [
         id: 414,
         categoryId: 4,
         title: "FMKLDENA Guantes Lanzatelarañas (juego de 3)",
-        price: 13.99
+        price: 13.99,
         category: "Accesorios superhéroe",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/49JRE8F",
@@ -639,7 +639,7 @@ export const PRODUCTS: Product[] = [
         id: 415,
         categoryId: 4,
         title: "Lansay Blopens Centro de Actividades",
-        price: 10.99
+        price: 10.99,
         category: "Aerografía infantil",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/45kGx4N",
@@ -649,7 +649,7 @@ export const PRODUCTS: Product[] = [
         id: 416,
         categoryId: 4,
         title: "Ravensburger Memory Mini Peppa Pig",
-        price: 9.99
+        price: 9.99,
         category: "Memoria imágenes",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/3LIKVUv",
@@ -669,7 +669,7 @@ export const PRODUCTS: Product[] = [
         id: 418,
         categoryId: 4,
         title: "BONNYCO Puzle XXL Animales de la Jungla (48 piezas)",
-        price: 13.99
+        price: 13.99,
         category: "Puzle XXL",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/3LWvzf7",
@@ -679,7 +679,7 @@ export const PRODUCTS: Product[] = [
         id: 419,
         categoryId: 4,
         title: "Hahaland Kit de Manualidades de Costura para Niños",
-        price: 20.99
+        price: 20.99,
         category: "Costura guiada",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/4beb6Nj",
@@ -689,7 +689,7 @@ export const PRODUCTS: Product[] = [
         id: 420,
         categoryId: 4,
         title: "DeFieltro Maletín de Costura Infantil",
-        price: 19.99
+        price: 19.99,
         category: "Maletín infantil",
         image: "https://placehold.co/600x400",
         url: "https://amzn.to/4jLQYUM",
@@ -704,7 +704,7 @@ export const PRODUCTS: Product[] = [
         id: 501,
         categoryId: 5,
         title: "Estudio de arte de uñas",
-        price: 14.52
+        price: 14.52,
         category: "Moda y maquillaje",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0B4BRLFF9?tag=sitio200181-21",
@@ -714,7 +714,7 @@ export const PRODUCTS: Product[] = [
         id: 502,
         categoryId: 5,
         title: "Jackinthebox Poke Poke Art",
-        price: 18.79
+        price: 18.79,
         category: "Manualidades, prensador de flores",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0D839DLTL?tag=sitio200181-21",
@@ -724,7 +724,7 @@ export const PRODUCTS: Product[] = [
         id: 503,
         categoryId: 5,
         title: "Mini máquina de karaoke",
-        price: 23.06
+        price: 23.06,
         category: "Electrónico",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0CHS2VNHC?tag=sitio200181-21",
@@ -734,7 +734,7 @@ export const PRODUCTS: Product[] = [
         id: 504,
         categoryId: 5,
         title: "Kit de sellos de gemas para el cabello",
-        price: 17.06
+        price: 17.06,
         category: "Moda y maquillaje",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0CDH69RMR?tag=sitio200181-21",
@@ -744,7 +744,7 @@ export const PRODUCTS: Product[] = [
         id: 505,
         categoryId: 5,
         title: "Kit de fabricación de pulseras",
-        price: 17.08
+        price: 17.08,
         category: "Manualidades",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0B4BX6SY2?tag=sitio200181-21",
@@ -754,7 +754,7 @@ export const PRODUCTS: Product[] = [
         id: 506,
         categoryId: 5,
         title: "Rueda de cerámica",
-        price: 25.63
+        price: 25.63,
         category: "Cerámica",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0FLDJ3WJS?tag=sitio200181-21",
@@ -764,7 +764,7 @@ export const PRODUCTS: Product[] = [
         id: 507,
         categoryId: 5,
         title: "Walkie Talkies",
-        price: 25.63
+        price: 25.63,
         category: "Electrónico",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0FZGRNPLM?tag=sitio200181-21",
@@ -774,7 +774,7 @@ export const PRODUCTS: Product[] = [
         id: 508,
         categoryId: 5,
         title: "Juguetes de Unicornio",
-        price: 29.04
+        price: 29.04,
         category: "Peluches",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0DF7PRCQ6?tag=sitio200181-21",
@@ -784,7 +784,7 @@ export const PRODUCTS: Product[] = [
         id: 509,
         categoryId: 5,
         title: "Patinete Infantil",
-        price: 32.47
+        price: 32.47,
         category: "Patinete",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0CCYMV1T1?tag=sitio200181-21",
@@ -794,7 +794,7 @@ export const PRODUCTS: Product[] = [
         id: 510,
         categoryId: 5,
         title: "Kit de fabricación de diademas",
-        price: 12.97
+        price: 12.97,
         category: "Moda y maquillaje",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0B3WTSVSV?tag=sitio200181-21",
@@ -804,7 +804,7 @@ export const PRODUCTS: Product[] = [
         id: 511,
         categoryId: 5,
         title: "Coche de Control Remoto",
-        price: 25.63
+        price: 25.63,
         category: "Autos trepadores",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0CTTYRJJY?tag=sitio200181-21",
@@ -814,7 +814,7 @@ export const PRODUCTS: Product[] = [
         id: 512,
         categoryId: 5,
         title: "Crayola Color Wonder",
-        price: 23.22
+        price: 23.22,
         category: "Arte y manualidades",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B084Y3DLFJ?tag=sitio200181-21",
@@ -824,7 +824,7 @@ export const PRODUCTS: Product[] = [
         id: 513,
         categoryId: 5,
         title: "Kit médico de juguete",
-        price: 24.18
+        price: 24.18,
         category: "Juego de imitación médicos",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B09PD6YWF1?tag=sitio200181-21",
@@ -834,7 +834,7 @@ export const PRODUCTS: Product[] = [
         id: 514,
         categoryId: 5,
         title: "6 Pack de Slimes",
-        price: 11.61
+        price: 11.61,
         category: "Masa viscosa para jugar",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0CYT6D2ZS?tag=sitio200181-21",
@@ -844,7 +844,7 @@ export const PRODUCTS: Product[] = [
         id: 515,
         categoryId: 5,
         title: "Tiza para Cabello",
-        price: 13.66
+        price: 13.66,
         category: "Tintes para cabello",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B07FTGLWDR?tag=sitio200181-21",
@@ -854,7 +854,7 @@ export const PRODUCTS: Product[] = [
         id: 516,
         categoryId: 5,
         title: "Joyero musical",
-        price: 14.52
+        price: 14.52,
         category: "Caja de joyería para niños",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0CHKLZ7PJ?tag=sitio200181-21",
@@ -864,7 +864,7 @@ export const PRODUCTS: Product[] = [
         id: 517,
         categoryId: 5,
         title: "Kit de maquillaje",
-        price: 18.36
+        price: 18.36,
         category: "Maquillaje",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B095LT69HN?tag=sitio200181-21",
@@ -874,7 +874,7 @@ export const PRODUCTS: Product[] = [
         id: 518,
         categoryId: 5,
         title: "Kit de terrario de sirena",
-        price: 8.54
+        price: 8.54,
         category: "Manualidades",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B083Z3JMGP?tag=sitio200181-21",
@@ -884,7 +884,7 @@ export const PRODUCTS: Product[] = [
         id: 519,
         categoryId: 5,
         title: "Lego",
-        price: 16.94
+        price: 16.94,
         category: "Juguetes de construcción",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0BRBMNN93?tag=sitio200181-21",
@@ -894,7 +894,7 @@ export const PRODUCTS: Product[] = [
         id: 520,
         categoryId: 5,
         title: "Tapete de baile de unicornio",
-        price: 34.17
+        price: 34.17,
         category: "Electrónico",
         image: "https://placehold.co/600x400",
         url: "https://www.amazon.com/dp/B0BJPFZ6MV?tag=sitio200181-21",
@@ -911,7 +911,7 @@ export const PRODUCTS: Product[] = [
         categoryId: 6,
         subcategory: "Smart Home",
         title: "Luces Solares de Navidad para Exterior (Yorezcop)",
-        price: 18.69
+        price: 18.69,
         category: "Iluminación",
         image: "/images/tecnologia1.jpg",
         url: "https://amzn.to/4pDBnZz",
@@ -922,7 +922,7 @@ export const PRODUCTS: Product[] = [
         categoryId: 6,
         subcategory: "Smart Home",
         title: "Echo Pop | Altavoz Inteligente con Alexa",
-        price: 54.99
+        price: 54.99,
         category: "Smart Home",
         image: "/images/tecnologia2.jpg",
         url: "https://amzn.to/48SFUQN",
@@ -935,7 +935,7 @@ export const PRODUCTS: Product[] = [
         categoryId: 6,
         subcategory: "Gaming",
         title: "Auriculares Inalámbricos Impermeables",
-        price: 23.99
+        price: 23.99,
         category: "Audio",
         image: "/images/tecnologia3.jpg",
         url: "https://amzn.to/4aWxLx8",
