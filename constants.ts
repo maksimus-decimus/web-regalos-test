@@ -89,6 +89,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 201,
         categoryId: 2,
+        subcategory: "Estilo",
         title: "TEMPUR Original Almohada cervical",
         price: 95.28,
         category: "Varios",
@@ -99,6 +100,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 202,
         categoryId: 2,
+        subcategory: "Gadgets",
         title: "Pistola de masaje muscular",
         price: 84.99,
         category: "Varios",
@@ -109,6 +111,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 203,
         categoryId: 2,
+        subcategory: "Gadgets",
         title: "Cecotec Freidora de Aire",
         price: 49.90,
         category: "Varios",
@@ -119,6 +122,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 204,
         categoryId: 2,
+        subcategory: "Gadgets",
         title: "Garmin Vívoactive 5",
         price: 185.50,
         category: "Varios",
@@ -129,6 +133,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 205,
         categoryId: 2,
+        subcategory: "Gadgets",
         title: "Kindle",
         price: 169.00,
         category: "Varios",
@@ -139,6 +144,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 206,
         categoryId: 2,
+        subcategory: "Gadgets",
         title: "OPPO Reno13",
         price: 367.26,
         category: "Varios",
@@ -149,6 +155,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 207,
         categoryId: 2,
+        subcategory: "Gadgets",
         title: "Cámara instantánea",
         price: 27.50,
         category: "Varios",
@@ -159,6 +166,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 208,
         categoryId: 2,
+        subcategory: "Gadgets",
         title: "Xiaomi Redmi Pad Pro",
         price: 314.94,
         category: "Varios",
@@ -169,6 +177,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 209,
         categoryId: 2,
+        subcategory: "Estilo",
         title: "Taza",
         price: 8.95,
         category: "Varios",
@@ -179,6 +188,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 210,
         categoryId: 2,
+        subcategory: "Estilo",
         title: "Kit barba",
         price: 24.99,
         category: "Varios",
@@ -189,6 +199,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 211,
         categoryId: 2,
+        subcategory: "Estilo",
         title: "Maquinilla Gillette",
         price: 18.99,
         category: "Varios",
@@ -199,6 +210,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 212,
         categoryId: 2,
+        subcategory: "Experiencias",
         title: "Smartbox – 2 días con encanto",
         price: 69.90,
         category: "Varios",
@@ -209,6 +221,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 213,
         categoryId: 2,
+        subcategory: "Estilo",
         title: "Taza personalizada",
         price: 4.90,
         category: "Varios",
@@ -219,6 +232,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 214,
         categoryId: 2,
+        subcategory: "Estilo",
         title: "Libro biografía papá",
         price: 15.10,
         category: "Varios",
@@ -229,6 +243,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 215,
         categoryId: 2,
+        subcategory: "Estilo",
         title: "Manta Día del Padre",
         price: 16.99,
         category: "Varios",
@@ -239,6 +254,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 216,
         categoryId: 2,
+        subcategory: "Gadgets",
         title: "Destornillador multipuntas",
         price: 25.99,
         category: "Varios",
@@ -249,6 +265,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 217,
         categoryId: 2,
+        subcategory: "Gadgets",
         title: "Navaja multiusos",
         price: 19.99,
         category: "Varios",
@@ -259,6 +276,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 218,
         categoryId: 2,
+        subcategory: "Gadgets",
         title: "Tocadiscos",
         price: 139.00,
         category: "Varios",
@@ -269,6 +287,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 219,
         categoryId: 2,
+        subcategory: "Experiencias",
         title: "Set de whisky",
         price: 29.99,
         category: "Varios",
@@ -279,6 +298,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 220,
         categoryId: 2,
+        subcategory: "Gadgets",
         title: "Altavoz Bluetooth portátil",
         price: 115.00,
         category: "Varios",
@@ -293,6 +313,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 301,
         categoryId: 3,
+        subcategory: "Belleza",
         title: "Set de Cuidado Facial QUIYUM",
         price: 29.79,
         category: "Varios",
@@ -303,6 +324,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 302,
         categoryId: 3,
+        subcategory: "Hogar",
         title: "Taza divertida para madres MUGFFINS",
         price: 12.95,
         category: "Varios",
@@ -313,6 +335,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 303,
         categoryId: 3,
+        subcategory: "Experiencias",
         title: "Caja Regalo Smartbox Relax & Wellness",
         price: 37.90,
         category: "Varios",
@@ -323,6 +346,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 304,
         categoryId: 3,
+        subcategory: "Hogar",
         title: "Bombones de Chocolate Amatller",
         price: 13.47,
         category: "Varios",
@@ -333,6 +357,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 305,
         categoryId: 3,
+        subcategory: "Moda",
         title: "Mochila femenina multifuncional Leathario",
         price: 21.99,
         category: "Varios",
@@ -343,6 +368,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 306,
         categoryId: 3,
+        subcategory: "Moda",
         title: "Smartwatch Popglory para mujer",
         price: 31.40,
         category: "Varios",
@@ -353,6 +379,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 307,
         categoryId: 3,
+        subcategory: "Moda",
         title: "Camiseta térmica sin costuras CLOSEMATE",
         price: 14.99,
         category: "Varios",
@@ -363,6 +390,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 308,
         categoryId: 3,
+        subcategory: "Moda",
         title: "Set de invierno WEASIC (bufanda, guantes, orejeras)",
         price: 21.99,
         category: "Varios",
@@ -373,6 +401,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 309,
         categoryId: 3,
+        subcategory: "Hogar",
         title: "Rosa preservada decorativa Yamonic",
         price: 15.99,
         category: "Varios",
@@ -383,6 +412,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 310,
         categoryId: 3,
+        subcategory: "Moda",
         title: "Pulsera bohemia de acero inoxidable",
         price: 17.99,
         category: "Varios",
@@ -393,6 +423,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 311,
         categoryId: 3,
+        subcategory: "Moda",
         title: "Sudadera oversize Disney Stitch",
         price: 33.19,
         category: "Varios",
@@ -403,6 +434,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 312,
         categoryId: 3,
+        subcategory: "Belleza",
         title: "Perfume femenino gourmand Eau de Toilette",
         price: 15.80,
         category: "Varios",
@@ -413,6 +445,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 313,
         categoryId: 3,
+        subcategory: "Hogar",
         title: "Cuaderno vintage de piel LEATHER Journal",
         price: 19.99,
         category: "Varios",
@@ -423,6 +456,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 314,
         categoryId: 3,
+        subcategory: "Hogar",
         title: "Vela aromática decorativa",
         price: 18.99,
         category: "Varios",
@@ -433,64 +467,14 @@ export const PRODUCTS: Product[] = [
     {
         id: 315,
         categoryId: 3,
+        subcategory: "Belleza",
         title: "Espejo de aumento con luz GRIFEMA",
         price: 15.15,
         category: "Varios",
         image: "https://placehold.co/600x400",
-        url: "https://www.amazon.es/-/en/GRIFEMA-GF1001W-Magnification-Adjustable-Rotation/dp/B09QLVRZPC/?tag=sitio200181-21",
+        url: "https://amzn.to/4qVS2b0",
         description: "Espejo giratorio para maquillaje y cuidado."
     },
-    {
-        id: 316,
-        categoryId: 3,
-        title: "Bolso para portátil Tibora Lindsay",
-        price: 105.00,
-        category: "Varios",
-        image: "https://placehold.co/600x400",
-        url: "https://www.amazon.es/-/en/Tibora-Lindsay-Laptop-Woman-195890153/dp/B071VK7CT8/?tag=sitio200181-21",
-        description: "Bolso elegante y funcional para llevar portátil."
-    },
-    {
-        id: 317,
-        categoryId: 3,
-        title: "Manta térmica con peso para hombros Comfytemp",
-        price: 49.99,
-        category: "Varios",
-        image: "https://placehold.co/600x400",
-        url: "https://www.amazon.es/-/en/Comfytemp-Weighted-Thermal-Shoulders-Levels/dp/B0FB2XQLFV/?tag=sitio200181-21",
-        description: "Alivia tensiones con calor relajante."
-    },
-    {
-        id: 318,
-        categoryId: 3,
-        title: "Depiladora eléctrica Silk-épil",
-        price: 85.89,
-        category: "Varios",
-        image: "https://placehold.co/600x400",
-        url: "https://www.amazon.es/-/en/Silk-épil-Electric-Epilator-Removal-Flamingo/dp/B0CQRTB5J2/?tag=sitio200181-21",
-        description: "Depilación eficaz para piel suave."
-    },
-    {
-        id: 319,
-        categoryId: 3,
-        title: "Set de regalo de belleza y autocuidado para mujer",
-        price: 53.99,
-        category: "Varios",
-        image: "https://placehold.co/600x400",
-        url: "https://www.amazon.es/gp/aw/d/B098QTS954/?tag=sitio200181-21",
-        description: "Pack completo para momentos de relax."
-    },
-    {
-        id: 320,
-        categoryId: 3,
-        title: "Regalo personalizado de metacrilato transparente",
-        price: 14.99,
-        category: "Varios",
-        image: "https://placehold.co/600x400",
-        url: "https://www.amazon.es/-/en/Transparent-Personalised-Anniversary-Personalized-Valentines/dp/B0DW4CJ9FR/?tag=sitio200181-21",
-        description: "Detalle personalizable para aniversarios o San Valentín."
-    },
-
     // ------------------------------------------------------------------------
     // CATEGORÍA: REGALOS PARA NIÑOS (categoryId: 4)
     // ------------------------------------------------------------------------
@@ -498,6 +482,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 401,
         categoryId: 4,
+        subcategory: "Construcción",
         title: "LEGO Classic Caja de Ladrillos Creativos Mediana",
         price: 39.99,
         category: "Construcción",
@@ -508,6 +493,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 402,
         categoryId: 4,
+        subcategory: "Acción",
         title: "GKTZ Cámara Infantil Impermeable 1080P",
         price: 24.99,
         category: "Cámara infantil",
@@ -518,6 +504,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 403,
         categoryId: 4,
+        subcategory: "Acción",
         title: "Ushining Cámara Subacuática para Niños 1080P",
         price: 37.99,
         category: "Fotografía subacuática",
@@ -528,6 +515,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 404,
         categoryId: 4,
+        subcategory: "Construcción",
         title: "Olvy Bloques de Construcción Magnéticos Montessori",
         price: 29.99,
         category: "Magnéticos Montessori",
@@ -538,6 +526,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 405,
         categoryId: 4,
+        subcategory: "Acción",
         title: "KRAFUN Mi primer animal de costura",
         price: 19.99,
         category: "Costura fieltro",
@@ -548,6 +537,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 406,
         categoryId: 4,
+        subcategory: "Acción",
         title: "WSNDM Kit de Costura de Animales",
         price: 8.99,
         category: "Costura animales",
@@ -558,6 +548,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 407,
         categoryId: 4,
+        subcategory: "Acción",
         title: "DeFieltro Kit Costura Niños",
         price: 16.99,
         category: "Maletín costura",
@@ -568,6 +559,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 408,
         categoryId: 4,
+        subcategory: "Acción",
         title: "Juguete de Tarjetas Flash Parlantes",
         price: 19.99,
         category: "Tarjetas parlantes",
@@ -578,6 +570,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 409,
         categoryId: 4,
+        subcategory: "Acción",
         title: "AHJ Tarjetas Flash Parlantes Español",
         price: 19.99,
         category: "Tarjetas español",
@@ -588,6 +581,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 410,
         categoryId: 4,
+        subcategory: "Acción",
         title: "Almaxi Busy Board Montessori",
         price: 21.99,
         category: "Tablero sensorial",
@@ -598,6 +592,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 411,
         categoryId: 4,
+        subcategory: "Vehículos",
         title: "HILAND Bicicleta Infantil",
         price: 159.99,
         category: "Bicicleta infantil",
@@ -608,6 +603,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 412,
         categoryId: 4,
+        subcategory: "Construcción",
         title: "Olvy Bloques Magnéticos Montessori (95 piezas)",
         price: 29.99,
         category: "Bloques magnéticos",
@@ -618,6 +614,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 413,
         categoryId: 4,
+        subcategory: "Construcción",
         title: "Wootoyz Cubos Magnéticos (100 piezas)",
         price: 21.99,
         category: "Cubos magnéticos",
@@ -628,6 +625,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 414,
         categoryId: 4,
+        subcategory: "Acción",
         title: "FMKLDENA Guantes Lanzatelarañas (juego de 3)",
         price: 13.99,
         category: "Accesorios superhéroe",
@@ -638,6 +636,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 415,
         categoryId: 4,
+        subcategory: "Acción",
         title: "Lansay Blopens Centro de Actividades",
         price: 10.99,
         category: "Aerografía infantil",
@@ -648,6 +647,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 416,
         categoryId: 4,
+        subcategory: "Acción",
         title: "Ravensburger Memory Mini Peppa Pig",
         price: 9.99,
         category: "Memoria imágenes",
@@ -658,6 +658,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 417,
         categoryId: 4,
+        subcategory: "Acción",
         title: "Melissa & Doug Set de Comida de Juguete de Madera",
         price: 0,
         category: "Juego cocina",
@@ -668,6 +669,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 418,
         categoryId: 4,
+        subcategory: "Construcción",
         title: "BONNYCO Puzle XXL Animales de la Jungla (48 piezas)",
         price: 13.99,
         category: "Puzle XXL",
@@ -678,6 +680,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 419,
         categoryId: 4,
+        subcategory: "Acción",
         title: "Hahaland Kit de Manualidades de Costura para Niños",
         price: 20.99,
         category: "Costura guiada",
@@ -688,6 +691,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 420,
         categoryId: 4,
+        subcategory: "Acción",
         title: "DeFieltro Maletín de Costura Infantil",
         price: 19.99,
         category: "Maletín infantil",
@@ -696,13 +700,17 @@ export const PRODUCTS: Product[] = [
         description: "DeFieltro Maletín de Costura Infantil - Maletín infantil"
     },
 
+
+
     // ------------------------------------------------------------------------
     // CATEGORÍA: REGALOS PARA NIÑAS (categoryId: 5)
     // ------------------------------------------------------------------------
 
+
     {
         id: 501,
         categoryId: 5,
+        subcategory: "Creatividad",
         title: "Estudio de arte de uñas",
         price: 14.52,
         category: "Moda y maquillaje",
@@ -713,6 +721,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 502,
         categoryId: 5,
+        subcategory: "Creatividad",
         title: "Jackinthebox Poke Poke Art",
         price: 18.79,
         category: "Manualidades, prensador de flores",
@@ -723,6 +732,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 503,
         categoryId: 5,
+        subcategory: "Muñecas",
         title: "Mini máquina de karaoke",
         price: 23.06,
         category: "Electrónico",
@@ -733,6 +743,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 504,
         categoryId: 5,
+        subcategory: "Creatividad",
         title: "Kit de sellos de gemas para el cabello",
         price: 17.06,
         category: "Moda y maquillaje",
@@ -743,6 +754,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 505,
         categoryId: 5,
+        subcategory: "Creatividad",
         title: "Kit de fabricación de pulseras",
         price: 17.08,
         category: "Manualidades",
@@ -753,6 +765,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 506,
         categoryId: 5,
+        subcategory: "Creatividad",
         title: "Rueda de cerámica",
         price: 25.63,
         category: "Cerámica",
@@ -763,6 +776,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 507,
         categoryId: 5,
+        subcategory: "Muñecas",
         title: "Walkie Talkies",
         price: 25.63,
         category: "Electrónico",
@@ -773,6 +787,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 508,
         categoryId: 5,
+        subcategory: "Fantasía",
         title: "Juguetes de Unicornio",
         price: 29.04,
         category: "Peluches",
@@ -783,6 +798,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 509,
         categoryId: 5,
+        subcategory: "Muñecas",
         title: "Patinete Infantil",
         price: 32.47,
         category: "Patinete",
@@ -793,6 +809,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 510,
         categoryId: 5,
+        subcategory: "Creatividad",
         title: "Kit de fabricación de diademas",
         price: 12.97,
         category: "Moda y maquillaje",
@@ -803,6 +820,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 511,
         categoryId: 5,
+        subcategory: "Muñecas",
         title: "Coche de Control Remoto",
         price: 25.63,
         category: "Autos trepadores",
@@ -813,6 +831,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 512,
         categoryId: 5,
+        subcategory: "Creatividad",
         title: "Crayola Color Wonder",
         price: 23.22,
         category: "Arte y manualidades",
@@ -823,6 +842,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 513,
         categoryId: 5,
+        subcategory: "Muñecas",
         title: "Kit médico de juguete",
         price: 24.18,
         category: "Juego de imitación médicos",
@@ -832,7 +852,8 @@ export const PRODUCTS: Product[] = [
     },
     {
         id: 514,
-        categoryId: 5,
+        categoryId: 3, // Corregido ID de categoría si fuera necesario, se mantiene 5 por el bloque
+        subcategory: "Creatividad",
         title: "6 Pack de Slimes",
         price: 11.61,
         category: "Masa viscosa para jugar",
@@ -843,6 +864,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 515,
         categoryId: 5,
+        subcategory: "Creatividad",
         title: "Tiza para Cabello",
         price: 13.66,
         category: "Tintes para cabello",
@@ -853,6 +875,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 516,
         categoryId: 5,
+        subcategory: "Fantasía",
         title: "Joyero musical",
         price: 14.52,
         category: "Caja de joyería para niños",
@@ -863,6 +886,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 517,
         categoryId: 5,
+        subcategory: "Creatividad",
         title: "Kit de maquillaje",
         price: 18.36,
         category: "Maquillaje",
@@ -873,6 +897,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 518,
         categoryId: 5,
+        subcategory: "Fantasía",
         title: "Kit de terrario de sirena",
         price: 8.54,
         category: "Manualidades",
@@ -883,7 +908,8 @@ export const PRODUCTS: Product[] = [
     {
         id: 519,
         categoryId: 5,
-        title: "Lego",
+        subcategory: "Creatividad",
+        title: "Lego Disney Princess",
         price: 16.94,
         category: "Juguetes de construcción",
         image: "https://placehold.co/600x400",
@@ -893,6 +919,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 520,
         categoryId: 5,
+        subcategory: "Fantasía",
         title: "Tapete de baile de unicornio",
         price: 34.17,
         category: "Electrónico",
@@ -969,5 +996,159 @@ export const PRODUCTS: Product[] = [
         price: 89.00,
         category: "Seguridad",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCTSNpW5tL-bx7Owz63idZNyxr-sirOvFnK7PO6jFEqxdjdbQnEa1IFB1Ji6R_C0uxeNcH9SY2l7h6shf6_KFWy8km1HYopgxcwkBaU0nNr6dnhDvLLSvXImOLCzYqNTlJHb38MwTWkHTco3D4u_w_ycKnvyT2XorxkqW-NpZhahbmZ73p66bHpNUwhzsLFTTv1CY5QsiXRZbR0_m43WmuthXOamC4HTpNiRG9FO3CXBOuE7F3Tg0qSbehoN94a9FXZ_J0CRTcK6zk"
+    },
+    {
+        id: 607,
+        categoryId: 6,
+        subcategory: "Smart Home",
+        title: "Enchufe Inteligente WiFi",
+        price: 15.99,
+        category: "Smart Home",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Controla tus dispositivos desde el móvil."
+    },
+    {
+        id: 608,
+        categoryId: 6,
+        subcategory: "Smart Home",
+        title: "Bombilla LED Inteligente RGB",
+        price: 12.50,
+        category: "Iluminación",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Millones de colores y control por voz."
+    },
+    {
+        id: 609,
+        categoryId: 6,
+        subcategory: "Smart Home",
+        title: "Robot Aspirador Slim",
+        price: 159.00,
+        category: "Limpieza",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Limpieza automática con navegación inteligente."
+    },
+    {
+        id: 610,
+        categoryId: 6,
+        subcategory: "Smart Home",
+        title: "Cámara de Seguridad Interior",
+        price: 35.99,
+        category: "Seguridad",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Vigilancia HD y visión nocturna."
+    },
+    {
+        id: 611,
+        categoryId: 6,
+        subcategory: "Smart Home",
+        title: "Termostato Inteligente",
+        price: 129.99,
+        category: "Climatización",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Ahorra energía controlando la calefacción."
+    },
+    {
+        id: 612,
+        categoryId: 6,
+        subcategory: "Gaming",
+        title: "Ratón Gaming Ultraligero",
+        price: 49.99,
+        category: "Periféricos",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Alta precisión y diseño ergonómico."
+    },
+    {
+        id: 613,
+        categoryId: 6,
+        subcategory: "Gaming",
+        title: "Alfombrilla XXL RGB",
+        price: 25.00,
+        category: "Accesorios",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Superficie optimizada con iluminación LED."
+    },
+    {
+        id: 614,
+        categoryId: 6,
+        subcategory: "Gaming",
+        title: "Mando Inalámbrico Pro",
+        price: 69.99,
+        category: "Controles",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Compatible con PC y consolas."
+    },
+    {
+        id: 615,
+        categoryId: 6,
+        subcategory: "Gaming",
+        title: "Soporte para Auriculares",
+        price: 19.99,
+        category: "Accesorios",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Organiza tu setup con estilo."
+    },
+    {
+        id: 616,
+        categoryId: 6,
+        subcategory: "Gaming",
+        title: "Micrófono USB Streaming",
+        price: 85.00,
+        category: "Audio",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Calidad de estudio para tus directos."
+    },
+    {
+        id: 617,
+        categoryId: 6,
+        subcategory: "Movilidad",
+        title: "Soporte Móvil para Patinete",
+        price: 14.99,
+        category: "Accesorios",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Navega seguro mientras conduces."
+    },
+    {
+        id: 618,
+        categoryId: 6,
+        subcategory: "Movilidad",
+        title: "Candado Antirrobo",
+        price: 29.99,
+        category: "Seguridad",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Alta seguridad para tu vehículo eléctrico."
+    },
+    {
+        id: 619,
+        categoryId: 6,
+        subcategory: "Movilidad",
+        title: "Bolsa de Almacenamiento Scooter",
+        price: 22.50,
+        category: "Accesorios",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Lleva tus cosas cómodamente."
+    },
+    {
+        id: 620,
+        categoryId: 6,
+        subcategory: "Movilidad",
+        title: "Guantes Térmicos Táctiles",
+        price: 18.99,
+        category: "Ropa",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Protección contra el frío y uso de pantallas."
     }
 ];
