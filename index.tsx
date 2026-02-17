@@ -1,7 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import { AuthProvider } from './AuthContext';
+import ProductPage from './src/pages/ProductPage';
+import SEOCategoryPage from './src/pages/SEOCategoryPage';
+import { initializeProducts } from './src/data/initProducts';
+
+// Inicializar productos al cargar la aplicación
+initializeProducts();
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -12,7 +19,20 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <AuthProvider>
-      <App />
+      <BrowserRouter>
+        <Routes>
+          {/* Ruta principal */}
+          <Route path="/" element={<App />} />
+          
+          {/* Rutas SEO para productos */}
+          {/* Patrón: /padres/[categoria-seo]/[slug-producto] */}
+          <Route path="/:category/:seoCategory/:productSlug" element={<ProductPage />} />
+          
+          {/* Rutas SEO para categorías */}
+          {/* Patrón: /padres/[categoria-seo] */}
+          <Route path="/:category/:seoCategory" element={<SEOCategoryPage />} />
+        </Routes>
+      </BrowserRouter>
     </AuthProvider>
   </React.StrictMode>
 );
