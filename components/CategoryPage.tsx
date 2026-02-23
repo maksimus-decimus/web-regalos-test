@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Category, Product } from '../types';
 import { getHeroBackgroundImage, getProductImage } from '../utils/images';
+import { SEO_CATEGORIES_PADRES } from '../src/config/seo-categories';
 
 interface CategoryPageProps {
     category: Category;
@@ -21,7 +22,36 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
 }) => {
     const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null);
     const [showMobileFilters, setShowMobileFilters] = useState(false);
+<<<<<<< Updated upstream
     
+=======
+    const [selectedSeoCategory, setSelectedSeoCategory] = useState<string | null>(null);
+
+    // Agrupar productos por seoCategory para Padres
+    const productsBySeoCategory = useMemo(() => {
+        if (category.id !== 2) return {}; // Solo para Padres por ahora
+        
+        const grouped: Record<string, Product[]> = {};
+        products.forEach(product => {
+            if (product.seoCategory) {
+                if (!grouped[product.seoCategory]) {
+                    grouped[product.seoCategory] = [];
+                }
+                grouped[product.seoCategory].push(product);
+            }
+        });
+        return grouped;
+    }, [products, category.id]);
+
+    // Filtrar categorías SEO que tengan productos
+    const categoriesWithProducts = useMemo(() => {
+        if (category.id !== 2) return [];
+        return SEO_CATEGORIES_PADRES.filter(cat => 
+            productsBySeoCategory[cat.slug]?.length > 0
+        );
+    }, [productsBySeoCategory, category.id]);
+
+>>>>>>> Stashed changes
     // Config for categories that use the Sectioned Layout
     const getLayoutConfig = (id: number) => {
         switch(id) {
@@ -254,10 +284,9 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                 <ProductCard
                                     key={product.id}
                                     product={product}
-                                    isDarkMode={config.darkMode}
-                                    buttonColor={config.buttonColor}
-                                    textColor={config.textColor}
-                                    accentColor={config.accentColor}
+                                    isFavorite={favoriteIds.includes(product.id)}
+                                    onToggleFavorite={() => onToggleFavorite(product.id)}
+                                    onOpen={() => onOpenProduct?.(product)}
                                 />
                             ))}
                             {subcategoryProducts.length === 0 && (
@@ -329,6 +358,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                         </div>
                     </div>
 
+<<<<<<< Updated upstream
                     {/* Dynamic Sections */}
                     {config.sections.map((section, idx) => {
                         const sectionProducts = products.filter(p => p.subcategory === section.subcategory);
@@ -351,12 +381,46 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                             onClick={() => setActiveSubcategory(section.subcategory)}
                                             className="hidden md:flex items-center gap-1 opacity-60 hover:opacity-100 transition-all text-sm font-medium group"
                                             aria-label={`Ver todos los productos de ${section.subcategory}`}
+=======
+                    {/* Sistema de Carruseles con Sidebar para Padres */}
+                    {category.id === 2 ? (
+                        <div className="flex gap-6 px-4 mt-8">
+                            {/* Sidebar de filtros */}
+                            <aside className={`hidden lg:block w-64 flex-shrink-0 ${config.darkMode ? 'bg-white/5' : 'bg-gray-50'} rounded-2xl p-4 h-fit sticky top-4`}>
+                                <h3 className={`${config.textColor} text-lg font-bold mb-4 flex items-center gap-2`}>
+                                    <span className="material-symbols-outlined">tune</span>
+                                    Categorías
+                                </h3>
+                                <div className="flex flex-col gap-2">
+                                    <button
+                                        onClick={() => setSelectedSeoCategory(null)}
+                                        className={`text-left px-4 py-2 rounded-lg transition-all ${
+                                            selectedSeoCategory === null
+                                                ? `${config.accentColor} bg-primary/10 font-bold`
+                                                : `opacity-60 hover:opacity-100 ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`
+                                        }`}
+                                    >
+                                        Ver todas
+                                    </button>
+                                    {categoriesWithProducts.map(cat => (
+                                        <button
+                                            key={cat.id}
+                                            onClick={() => setSelectedSeoCategory(cat.slug)}
+                                            className={`text-left px-4 py-2 rounded-lg transition-all text-sm ${
+                                                selectedSeoCategory === cat.slug
+                                                    ? `${config.accentColor} bg-primary/10 font-bold`
+                                                    : `opacity-60 hover:opacity-100 ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`
+                                            }`}
+>>>>>>> Stashed changes
                                         >
-                                            Ver todos
-                                            <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
-                                                arrow_forward
-                                            </span>
+                                            <div className="flex items-center gap-2">
+                                                <span className="material-symbols-outlined text-sm">
+                                                    {cat.icon || 'category'}
+                                                </span>
+                                                <span className="line-clamp-2">{cat.name}</span>
+                                            </div>
                                         </button>
+<<<<<<< Updated upstream
                                     )}
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -369,11 +433,183 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                             textColor={config.textColor}
                                             accentColor={config.accentColor}
                                         />
+=======
+>>>>>>> Stashed changes
                                     ))}
                                 </div>
-                            </section>
-                        );
-                    })}
+                            </aside>
+
+                            {/* Contenido principal con carruseles */}
+                            <div className="flex-1 flex flex-col gap-8">
+                                {/* Filtro móvil */}
+                                <div className="lg:hidden">
+                                    <button
+                                        onClick={() => setShowMobileFilters(!showMobileFilters)}
+                                        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl ${config.darkMode ? 'bg-white/5' : 'bg-gray-100'}`}
+                                    >
+                                        <span className="flex items-center gap-2">
+                                            <span className="material-symbols-outlined">tune</span>
+                                            <span className="font-medium">
+                                                {selectedSeoCategory 
+                                                    ? categoriesWithProducts.find(c => c.slug === selectedSeoCategory)?.name
+                                                    : 'Ver todas las categorías'
+                                                }
+                                            </span>
+                                        </span>
+                                        <span className="material-symbols-outlined">
+                                            {showMobileFilters ? 'expand_less' : 'expand_more'}
+                                        </span>
+                                    </button>
+                                    
+                                    {showMobileFilters && (
+                                        <div className={`mt-2 p-4 rounded-xl ${config.darkMode ? 'bg-white/5' : 'bg-gray-50'}`}>
+                                            <button
+                                                onClick={() => {
+                                                    setSelectedSeoCategory(null);
+                                                    setShowMobileFilters(false);
+                                                }}
+                                                className={`w-full text-left px-4 py-2 rounded-lg mb-2 transition-all ${
+                                                    selectedSeoCategory === null 
+                                                        ? `${config.accentColor} bg-primary/10 font-bold`
+                                                        : `opacity-60 ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`
+                                                }`}
+                                            >
+                                                Ver todas
+                                            </button>
+                                            {categoriesWithProducts.map(cat => (
+                                                <button
+                                                    key={cat.id}
+                                                    onClick={() => {
+                                                        setSelectedSeoCategory(cat.slug);
+                                                        setShowMobileFilters(false);
+                                                    }}
+                                                    className={`w-full text-left px-4 py-2 rounded-lg mb-2 transition-all text-sm ${
+                                                        selectedSeoCategory === cat.slug
+                                                            ? `${config.accentColor} bg-primary/10 font-bold`
+                                                            : `opacity-60 ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`
+                                                    }`}
+                                                >
+                                                    <div className="flex items-center gap-2">
+                                                        <span className="material-symbols-outlined text-sm">
+                                                            {cat.icon || 'category'}
+                                                        </span>
+                                                        <span>{cat.name}</span>
+                                                    </div>
+                                                </button>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+
+                                {/* Carruseles por categoría */}
+                                {categoriesWithProducts
+                                    .filter(cat => selectedSeoCategory === null || cat.slug === selectedSeoCategory)
+                                    .map(cat => {
+                                        const categoryProducts = productsBySeoCategory[cat.slug] || [];
+                                        if (categoryProducts.length === 0) return null;
+
+                                        return (
+                                            <section key={cat.id} className="flex flex-col gap-4">
+                                                <div className={`flex items-center justify-between border-b pb-3 ${config.darkMode ? 'border-white/10' : 'border-black/10'}`}>
+                                                    <div className="flex flex-col gap-1">
+                                                        <div className={`flex items-center gap-2 ${config.accentColor} font-bold uppercase tracking-wider text-xs`}>
+                                                            <span className="material-symbols-outlined text-sm">
+                                                                {cat.icon || 'category'}
+                                                            </span>
+                                                            Categoría
+                                                        </div>
+                                                        <h2 className={`${config.textColor} text-2xl md:text-3xl font-bold tracking-tight`}>
+                                                            {cat.name}
+                                                        </h2>
+                                                        {cat.metaDescription && (
+                                                            <p className="opacity-60 text-sm mt-1">
+                                                                {cat.metaDescription}
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${config.darkMode ? 'bg-white/10' : 'bg-black/5'}`}>
+                                                        {categoryProducts.length} productos
+                                                    </span>
+                                                </div>
+
+                                                {/* Carrusel horizontal scrollable */}
+                                                <div className="relative group/carousel">
+                                                    <div className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
+                                                        <div className="flex gap-4" style={{ minWidth: 'min-content' }}>
+                                                            {categoryProducts.map(product => (
+                                                                <div key={product.id} className="w-[280px] flex-shrink-0">
+                                                                    <ProductCard
+                                                                        product={product}
+                                                                        isFavorite={favoriteIds.includes(product.id)}
+                                                                        onToggleFavorite={() => onToggleFavorite(product.id)}
+                                                                        onOpen={() => onOpenProduct?.(product)}
+                                                                    />
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        );
+                                    })}
+
+                                {/* Mensaje si no hay productos */}
+                                {categoriesWithProducts.length === 0 && (
+                                    <div className="text-center py-20 opacity-60">
+                                        <span className="material-symbols-outlined text-5xl mb-4">inventory_2</span>
+                                        <p className="text-lg">No hay productos disponibles en esta categoría.</p>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    ) : (
+                        <>
+                            {/* Dynamic Sections para otras categorías */}
+                            {config.sections.map((section, idx) => {
+                                const sectionProducts = products.filter(p => p.subcategory === section.subcategory);
+                                if (sectionProducts.length === 0) return null;
+
+                                return (
+                                    <section key={idx} className="flex flex-col gap-6 px-4 mt-8" id={`section-${idx}`}>
+                                        <div className={`flex items-end justify-between border-b pb-4 ${config.darkMode ? 'border-white/10' : 'border-black/10'}`}>
+                                            <div className="flex flex-col gap-1">
+                                                <div className={`flex items-center gap-2 ${config.accentColor} font-bold uppercase tracking-wider text-xs`}>
+                                                    <span className="material-symbols-outlined text-sm">{section.icon}</span>
+                                                    {section.subcategory}
+                                                </div>
+                                                <h2 className={`${config.textColor} text-3xl font-bold tracking-tight`}>
+                                                    {section.title}
+                                                </h2>
+                                            </div>
+                                            {sectionProducts.length > 3 && (
+                                                <button
+                                                    onClick={() => setActiveSubcategory(section.subcategory)}
+                                                    className="hidden md:flex items-center gap-1 opacity-60 hover:opacity-100 transition-all text-sm font-medium group"
+                                                    aria-label={`Ver todos los productos de ${section.subcategory}`}
+                                                >
+                                                    Ver todos
+                                                    <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
+                                                        arrow_forward
+                                                    </span>
+                                                </button>
+                                            )}
+                                        </div>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                            {sectionProducts.map(product => (
+                                                <ProductCard
+                                                    key={product.id}
+                                                    product={product}
+                                                    isFavorite={favoriteIds.includes(product.id)}
+                                                    onToggleFavorite={() => onToggleFavorite(product.id)}
+                                                    onOpen={() => onOpenProduct?.(product)}
+                                                />
+                                            ))}
+                                        </div>
+                                    </section>
+                                );
+                            })}
+                        </>
+                    )}
 
                     {/* Algorithmic Footer Section */}
                     <section className={`mt-12 px-4 pt-10 border-t ${config.darkMode ? 'border-white/10' : 'border-black/10'}`}>

@@ -1,0 +1,51 @@
+{
+  "id_producto": "8401022509",
+  "url": "https://www.amazon.es/dp/8401022509?tag=sitio200181",
+  "titulo": "Papá, ¿me cuentas tu historia? (edición oficial) (¿Me cuentas tu historia? 3): Un regalo personalizable para el Día del Padre: Un libro para recordar, escribir y compartir (Obras diversas)",
+  "precio": "15,",
+  "descripcion": null,
+  "caracteristicas": {
+    "Editorial :": "PLAZA & JANES",
+    "Fecha de publicación :": "14 febrero 2019",
+    "Edición :": "001",
+    "Idioma :": "Español",
+    "Longitud de impresión :": "160 páginas",
+    "ISBN-10 :": "8401022509",
+    "ISBN-13 :": "978-8401022500",
+    "Peso del producto :": "590 g",
+    "Dimensiones :": "17.73 x 1.85 x 24.69 cm",
+    "Parte de la serie :": "¿ME CUENTAS TU HISTORIA?",
+    "Clasificación en los más vendidos de Amazon": "nº11 enLibros para colorear para adultos",
+    "Opiniones de los clientes": "4,64,6 de 5 estrellas"
+  },
+  "puntuacion": "4,6 de 5 estrellas",
+  "numero_reviews": "(312)",
+  "reviews_positivos": [
+    {
+      "titulo": "",
+      "estrellas": "5,0 de 5 estrellas",
+      "contenido": "Ha sido un regalo y ha encantado. Ahora toca que lo rellenen",
+      "autor": "María",
+      "fecha": "Reseñado en España el 8 de enero de 2026"
+    },
+    {
+      "titulo": "",
+      "estrellas": "5,0 de 5 estrellas",
+      "contenido": "Cómo se describe en la foto, tiene mucho espacio para rellenar con preguntas, modo libre, espacio para fotos… creo que le gustará.",
+      "autor": "Vera",
+      "fecha": "Reseñado en España el 8 de enero de 2026"
+    },
+    {
+      "titulo": "",
+      "estrellas": "5,0 de 5 estrellas",
+      "contenido": "Un regalo maravilloso ! Perfecto para el día del padre , cumpleaños etc. Es un regalo para el futuro !",
+      "autor": "Isidro r.",
+      "fecha": "Reseñado en España el 3 de enero de 2026"
+    }
+  ],
+  "imagenes_descargadas": [
+    "imagen_01.jpg",
+    "imagen_02.jpg"
+  ],
+  "carpeta_imagenes": "C:\\Users\\maxyf\\Desktop\\Cole\\practicas\\web-regalos-test\\productos_afiliados\\producto_8401022509"
+}

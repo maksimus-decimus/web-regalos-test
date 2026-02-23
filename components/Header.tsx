@@ -35,17 +35,43 @@ const Header: React.FC<HeaderProps> = ({
 
                 {/* Search Bar */}
                 <div className="hidden md:flex flex-1 max-w-lg"> 
+<<<<<<< Updated upstream
                     <label className="relative flex w-full items-center">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-4 text-[#9db9a6]">
+=======
+                    <label className="relative flex w-full items-center group">
+                        <div className={`absolute inset-y-0 left-0 flex items-center pl-4 transition-colors ${
+                            darkMode ? 'text-[#9db9a6] group-focus-within:text-primary' : 'text-gray-400 group-focus-within:text-primary'
+                        }`}>
+>>>>>>> Stashed changes
                             <span className="material-symbols-outlined">search</span>
                         </div>
                         <input
-                            type="text"
+                            type="search"
                             value={searchTerm}
                             onChange={(e) => onSearchChange(e.target.value)}
+<<<<<<< Updated upstream
                             className="h-12 w-full rounded-full border-none bg-[#28392e] pl-12 pr-4 text-white placeholder-[#9db9a6] focus:ring-2 focus:ring-primary/50 transition-all focus:outline-none"
                             placeholder="Buscar el regalo perfecto..."
+=======
+                            className={`h-12 w-full rounded-full border-2 pl-12 pr-4 transition-all focus:outline-none ${
+                                darkMode 
+                                    ? 'bg-[#28392e] text-white placeholder-[#9db9a6] border-transparent focus:border-primary/50 focus:bg-[#1f2e25]' 
+                                    : 'bg-gray-50 text-gray-900 placeholder-gray-400 border-gray-200 focus:border-primary/50 focus:bg-white'
+                            }`}
+                            placeholder="¿Qué regalo estás buscando?"
+>>>>>>> Stashed changes
                         />
+                        {searchTerm && (
+                            <button
+                                onClick={() => onSearchChange('')}
+                                className={`absolute right-3 p-1 rounded-full transition-colors ${
+                                    darkMode ? 'hover:bg-white/10 text-gray-400' : 'hover:bg-gray-100 text-gray-500'
+                                }`}
+                            >
+                                <span className="material-symbols-outlined text-[20px]">close</span>
+                            </button>
+                        )}
                     </label>
                 </div>
 

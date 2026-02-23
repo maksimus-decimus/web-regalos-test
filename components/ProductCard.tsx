@@ -18,27 +18,28 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggle
 
     return (
         <div 
-            className="group flex flex-col gap-3 cursor-pointer bg-white border-2 border-gray-200 rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary"
+            className="group flex flex-col gap-3 cursor-pointer bg-white border border-gray-200 rounded-2xl p-3 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-primary/50 hover:scale-[1.02]"
             onClick={onOpen}
         >
             {/* Contenedor de imagen */}
-            <div className="relative aspect-square w-full rounded-xl bg-gray-100 overflow-hidden">
+            <div className="relative aspect-square w-full rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
                 <img
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-105"
                     src={getProductImage(product)}
                     alt={product.title}
+                    loading="lazy"
                 />
                 
                 {/* Badge destacado */}
                 {product.tag && (
-                    <div className="absolute top-3 left-3 bg-primary text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                    <div className="absolute top-2 left-2 bg-primary text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg backdrop-blur-sm">
                         {product.tag}
                     </div>
                 )}
                 
                 {/* Badge de descuento */}
                 {product.discount && (
-                    <div className="absolute top-3 right-3 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                    <div className="absolute top-2 right-2 bg-gradient-to-r from-red-500 to-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
                         -{product.discount}%
                     </div>
                 )}
@@ -46,10 +47,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggle
                 {/* Botón de favoritos */}
                 <button 
                     onClick={handleFavoriteClick}
-                    className={`absolute top-3 ${product.discount ? 'right-12' : 'right-3'} z-10 flex h-8 w-8 items-center justify-center rounded-full backdrop-blur-sm transition-all hover:scale-110 ${
+                    className={`absolute bottom-2 right-2 z-10 flex h-9 w-9 items-center justify-center rounded-full backdrop-blur-md transition-all hover:scale-110 active:scale-95 ${
                         isFavorite 
-                        ? 'bg-red-500 text-white shadow-lg' 
-                        : 'bg-white/80 text-gray-700 hover:bg-white hover:shadow-lg'
+                        ? 'bg-red-500 text-white shadow-lg shadow-red-500/50' 
+                        : 'bg-white/90 text-gray-700 hover:bg-white hover:shadow-lg'
                     }`}
                 >
                     <span className={`material-symbols-outlined text-[18px] ${isFavorite ? 'fill-current' : ''}`}>
@@ -62,26 +63,26 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggle
             </div>
             
             {/* Contenido del producto */}
-            <div className="flex-1">
+            <div className="flex-1 flex flex-col">
                 {/* Categoría con estilo destacado */}
                 <div className="mb-2">
-                    <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
+                    <span className="inline-block px-2 py-1 bg-gradient-to-r from-primary/10 to-primary/5 text-primary text-xs font-semibold rounded-lg">
                         {product.category}
                     </span>
                 </div>
                 
                 {/* Título del producto */}
-                <h3 className="font-bold text-slate-900 group-hover:text-primary transition-colors line-clamp-2 mb-2">
+                <h3 className="font-bold text-sm text-slate-900 group-hover:text-primary transition-colors line-clamp-2 mb-auto">
                     {product.title}
                 </h3>
                 
                 {/* Precio destacado */}
-                <div className="flex items-center gap-3 mb-2">
-                    <span className="text-xl font-bold text-slate-900">
+                <div className="flex items-baseline gap-2 mt-3">
+                    <span className="text-2xl font-black text-slate-900 group-hover:text-primary transition-colors">
                         €{product.price.toFixed(2)}
                     </span>
                     {product.oldPrice && (
-                        <span className="text-sm text-gray-500 line-through">
+                        <span className="text-xs text-gray-400 line-through">
                             €{product.oldPrice.toFixed(2)}
                         </span>
                     )}
