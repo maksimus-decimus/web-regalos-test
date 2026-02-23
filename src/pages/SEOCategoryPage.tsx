@@ -2,19 +2,17 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ProductLoader } from '../utils/productLoader';
 import { getSEOCategoryBySlug, SEO_CATEGORIES_PADRES } from '../config/seo-categories';
+import { useTheme } from '../../ThemeContext';
 import ProductCard from '../../components/ProductCard';
 import { PRODUCTS } from '../../constants';
 
-interface SEOCategoryPageProps {
-  darkMode?: boolean;
-}
-
-const SEOCategoryPage: React.FC<SEOCategoryPageProps> = ({ darkMode = false }) => {
+const SEOCategoryPage: React.FC = () => {
   const { category, seoCategory } = useParams<{
     category: string;
     seoCategory: string;
   }>();
   const navigate = useNavigate();
+  const { darkMode, toggleDarkMode } = useTheme();
 
   // Obtener información de la categoría SEO
   const seoCategoryInfo = seoCategory ? getSEOCategoryBySlug(seoCategory) : null;

@@ -7,6 +7,7 @@ interface FeaturedCarouselProps {
     favoriteIds: number[];
     onToggleFavorite: (id: number) => void;
     onProductClick: (product: Product) => void;
+    darkMode?: boolean;
 }
 
 const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({
@@ -14,6 +15,7 @@ const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({
     favoriteIds,
     onToggleFavorite,
     onProductClick,
+    darkMode = false,
 }) => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const containerRef = React.useRef<HTMLDivElement>(null);
@@ -40,10 +42,12 @@ const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({
         <section className="mb-12 relative">
             <div className="flex items-center justify-between mb-6">
                 <div>
-                    <h2 className="text-3xl font-bold text-slate-900 mb-2">
+                    <h2 className={`text-3xl font-bold mb-2 ${
+                        darkMode ? 'text-white' : 'text-slate-900'
+                    }`}>
                         🔥 Los Más Vendidos
                     </h2>
-                    <p className="text-gray-600">
+                    <p className={darkMode ? 'text-gray-400' : 'text-gray-600'}>
                         Productos más populares de nuestra comunidad
                     </p>
                 </div>
@@ -52,14 +56,22 @@ const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({
                 <div className="flex gap-2">
                     <button
                         onClick={() => scroll('left')}
-                        className="p-3 rounded-full bg-white border-2 border-gray-200 hover:border-primary hover:bg-primary/10 transition-all shadow-md hover:shadow-lg"
+                        className={`p-3 rounded-full border-2 transition-all shadow-md hover:shadow-lg ${
+                            darkMode 
+                                ? 'bg-[#1A2C20] border-[#28392e] hover:border-primary hover:bg-primary/20' 
+                                : 'bg-white border-gray-200 hover:border-primary hover:bg-primary/10'
+                        }`}
                         aria-label="Anterior"
                     >
                         <span className="material-symbols-outlined">chevron_left</span>
                     </button>
                     <button
                         onClick={() => scroll('right')}
-                        className="p-3 rounded-full bg-white border-2 border-gray-200 hover:border-primary hover:bg-primary/10 transition-all shadow-md hover:shadow-lg"
+                        className={`p-3 rounded-full border-2 transition-all shadow-md hover:shadow-lg ${
+                            darkMode 
+                                ? 'bg-[#1A2C20] border-[#28392e] hover:border-primary hover:bg-primary/20' 
+                                : 'bg-white border-gray-200 hover:border-primary hover:bg-primary/10'
+                        }`}
                         aria-label="Siguiente"
                     >
                         <span className="material-symbols-outlined">chevron_right</span>
@@ -94,14 +106,19 @@ const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({
                                 isFavorite={favoriteIds.includes(product.id)}
                                 onToggleFavorite={() => onToggleFavorite(product.id)}
                                 onOpen={() => onProductClick(product)}
+                                darkMode={darkMode}
                             />
                         </div>
                     ))}
                 </div>
                 
                 {/* Gradiente de fade en los bordes */}
-                <div className="absolute left-0 top-0 bottom-4 w-8 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none"></div>
-                <div className="absolute right-0 top-0 bottom-4 w-8 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none"></div>
+                <div className={`absolute left-0 top-0 bottom-4 w-8 bg-gradient-to-r pointer-events-none ${
+                    darkMode ? 'from-background-dark' : 'from-gray-50'
+                } to-transparent`}></div>
+                <div className={`absolute right-0 top-0 bottom-4 w-8 bg-gradient-to-l pointer-events-none ${
+                    darkMode ? 'from-background-dark' : 'from-gray-50'
+                } to-transparent`}></div>
             </div>
 
             <style>{`

@@ -7,9 +7,10 @@ interface ProductCardProps {
     isFavorite: boolean;
     onToggleFavorite: () => void;
     onOpen?: () => void;
+    darkMode?: boolean;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggleFavorite, onOpen }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggleFavorite, onOpen, darkMode = false }) => {
     
     const handleFavoriteClick = (e: React.MouseEvent) => {
         e.stopPropagation();
@@ -18,11 +19,19 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggle
 
     return (
         <div 
-            className="group flex flex-col gap-3 cursor-pointer bg-white border border-gray-200 rounded-2xl p-3 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-primary/50 hover:scale-[1.02]"
+            className={`group flex flex-col gap-3 cursor-pointer border rounded-2xl p-3 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-primary/50 hover:scale-[1.02] ${
+                darkMode 
+                    ? 'bg-surface-dark border-[#28392e]' 
+                    : 'bg-white border-gray-200'
+            }`}
             onClick={onOpen}
         >
             {/* Contenedor de imagen */}
-            <div className="relative aspect-square w-full rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
+            <div className={`relative aspect-square w-full rounded-xl overflow-hidden ${
+                darkMode 
+                    ? 'bg-gradient-to-br from-[#1A2C20] to-[#0f2818]' 
+                    : 'bg-gradient-to-br from-gray-50 to-gray-100'
+            }`}>
                 <img
                     className="h-full w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-105"
                     src={getProductImage(product)}
@@ -49,8 +58,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggle
                     onClick={handleFavoriteClick}
                     className={`absolute bottom-2 right-2 z-10 flex h-9 w-9 items-center justify-center rounded-full backdrop-blur-md transition-all hover:scale-110 active:scale-95 ${
                         isFavorite 
-                        ? 'bg-red-500 text-white shadow-lg shadow-red-500/50' 
-                        : 'bg-white/90 text-gray-700 hover:bg-white hover:shadow-lg'
+                            ? 'bg-red-500 text-white shadow-lg shadow-red-500/50' 
+                            : darkMode
+                                ? 'bg-[#1A2C20]/90 text-gray-300 hover:bg-[#1A2C20] hover:shadow-lg'
+                                : 'bg-white/90 text-gray-700 hover:bg-white hover:shadow-lg'
                     }`}
                 >
                     <span className={`material-symbols-outlined text-[18px] ${isFavorite ? 'fill-current' : ''}`}>
@@ -72,13 +83,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggle
                 </div>
                 
                 {/* Título del producto */}
-                <h3 className="font-bold text-sm text-slate-900 group-hover:text-primary transition-colors line-clamp-2 mb-auto">
+                <h3 className={`font-bold text-sm group-hover:text-primary transition-colors line-clamp-2 mb-auto ${
+                    darkMode ? 'text-white' : 'text-slate-900'
+                }`}>
                     {product.title}
                 </h3>
                 
                 {/* Precio destacado */}
                 <div className="flex items-baseline gap-2 mt-3">
-                    <span className="text-2xl font-black text-slate-900 group-hover:text-primary transition-colors">
+                    <span className={`text-2xl font-black group-hover:text-primary transition-colors ${
+                        darkMode ? 'text-white' : 'text-slate-900'
+                    }`}>
                         €{product.price.toFixed(2)}
                     </span>
                     {product.oldPrice && (
@@ -90,7 +105,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggle
                 
                 {/* Descripción */}
                 {product.description && (
-                    <p className="text-sm text-gray-600 line-clamp-2 mb-3">
+                    <p className={`text-sm line-clamp-2 mb-3 ${
+                        darkMode ? 'text-gray-400' : 'text-gray-600'
+                    }`}>
                         {product.description}
                     </p>
                 )}
@@ -101,7 +118,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggle
                         href={product.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-2 inline-flex items-center justify-center gap-2 w-full py-2 bg-gray-100 text-slate-900 font-medium rounded-lg hover:bg-primary hover:text-white transition-colors text-sm"
+                        className={`mt-2 inline-flex items-center justify-center gap-2 w-full py-2 font-medium rounded-lg hover:bg-primary hover:text-white transition-colors text-sm ${
+                            darkMode 
+                                ? 'bg-[#1A2C20] text-white' 
+                                : 'bg-gray-100 text-slate-900'
+                        }`}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <span>Comprar en Amazon</span>
@@ -111,7 +132,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggle
                 
                 {/* Botón de acción si no hay URL */}
                 {!product.url && (
-                    <button className="mt-2 w-full py-2 bg-gray-100 text-slate-900 font-medium rounded-lg hover:bg-primary hover:text-white transition-colors text-sm">
+                    <button className={`mt-2 w-full py-2 font-medium rounded-lg hover:bg-primary hover:text-white transition-colors text-sm ${
+                        darkMode 
+                            ? 'bg-[#1A2C20] text-white' 
+                            : 'bg-gray-100 text-slate-900'
+                    }`}>
                         Ver detalles
                     </button>
                 )}

@@ -13,10 +13,12 @@ import ProductQuickView from './components/ProductQuickView';
 import { CATEGORIES, PRODUCTS } from './constants';
 import { Category, Product } from './types';
 import { useAuth } from './AuthContext';
+import { useTheme } from './ThemeContext';
 import { getUserFavorites, addFavorite, removeFavorite } from './favoritesService';
 
 const App: React.FC = () => {
     const { user } = useAuth();
+    const { darkMode, toggleDarkMode } = useTheme();
     const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
@@ -25,12 +27,6 @@ const App: React.FC = () => {
     const [showAuthModal, setShowAuthModal] = useState(false);
     const [showAllCategories, setShowAllCategories] = useState(false);
     const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
-    
-    // Theme State - Default to light mode
-    const [darkMode, setDarkMode] = useState(() => {
-        const saved = localStorage.getItem('darkMode');
-        return saved ? JSON.parse(saved) : false;
-    });
     
     // Filter States
     const [priceRange, setPriceRange] = useState<[number, number]>([0, 20000]);
@@ -46,11 +42,6 @@ const App: React.FC = () => {
         console.log('   📊 Total productos:', PRODUCTS.length);
         console.log('   📊 Productos con imagen:', PRODUCTS.filter(p => p.image && p.image.startsWith('/images')).length);
     }, []);
-
-    // Guardar preferencia de tema
-    useEffect(() => {
-        localStorage.setItem('darkMode', JSON.stringify(darkMode));
-    }, [darkMode]);
 
     // Cargar favoritos del usuario cuando inicie sesión
     useEffect(() => {
@@ -276,7 +267,7 @@ const App: React.FC = () => {
                 wishlistCount={favoriteIds.length}
                 onOpenAuth={() => setShowAuthModal(true)}
                 darkMode={darkMode}
-                onToggleDarkMode={() => setDarkMode(!darkMode)}
+                onToggleDarkMode={toggleDarkMode}
             />
             
             <AuthModal 
@@ -307,7 +298,7 @@ const App: React.FC = () => {
                 <main className="flex-1 w-full max-w-[1280px] mx-auto px-6 py-8">
                     
                     {/* Hero Section - Only show on pure home */}
-                    {!searchTerm && !showOffers && !showAllCategories && <Hero />}
+                    {!searchTerm && !showOffers && !showAllCategories && <Hero darkMode={darkMode} />}
                     
                     {/* Layout con Sidebar para búsqueda o explorar categorías */}
                     <div className={(searchTerm || showAllCategories) ? "flex gap-6 mt-8" : "flex flex-col gap-12"}>
@@ -351,6 +342,7 @@ const App: React.FC = () => {
                                             favoriteIds={favoriteIds}
                                             onToggleFavorite={handleToggleFavorite}
                                             onProductClick={setQuickViewProduct}
+                                            darkMode={darkMode}
                                         />
                                     )}
                                 </>
@@ -412,6 +404,7 @@ const App: React.FC = () => {
                                                                             isFavorite={favoriteIds.includes(product.id)}
                                                                             onToggleFavorite={() => handleToggleFavorite(product.id)}
                                                                             onOpen={() => setQuickViewProduct(product)}
+                                                                            darkMode={darkMode}
                                                                         />
                                                                     </div>
                                                                 ))}
@@ -460,6 +453,7 @@ const App: React.FC = () => {
                                                 isFavorite={favoriteIds.includes(product.id)}
                                                 onToggleFavorite={() => handleToggleFavorite(product.id)}
                                                 onOpen={() => setQuickViewProduct(product)}
+                                                darkMode={darkMode}
                                             />
                                         </div>
                                     ))}

@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Category, Product } from '../types';
 import { getHeroBackgroundImage, getProductImage } from '../utils/images';
 import { SEO_CATEGORIES_PADRES } from '../src/config/seo-categories';
+import ProductCard from './ProductCard';
 
 interface CategoryPageProps {
     category: Category;
@@ -52,15 +53,16 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
 
     // Config for categories that use the Sectioned Layout
     const getLayoutConfig = (id: number) => {
+        const useDarkMode = darkMode ?? true;
         switch(id) {
             case 2: // Padres
                 return {
-                    darkMode: true,
+                    darkMode: useDarkMode,
                     heroImage: getHeroBackgroundImage(id),
                     accentColor: 'text-primary',
                     buttonColor: 'bg-primary text-background-dark hover:bg-white',
-                    bgColor: 'bg-background-light dark:bg-background-dark',
-                    textColor: 'text-slate-900 dark:text-white',
+                    bgColor: useDarkMode ? 'bg-background-dark' : 'bg-gray-50',
+                    textColor: useDarkMode ? 'text-white' : 'text-gray-900',
                     sections: [
                         { title: "Gadgets para Papá", subcategory: "Gadgets", icon: "devices" },
                         { title: "Experiencias Inolvidables", subcategory: "Experiencias", icon: "local_activity" },
@@ -69,12 +71,12 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 };
             case 3: // Madres
                 return {
-                    darkMode: true,
+                    darkMode: useDarkMode,
                     heroImage: getHeroBackgroundImage(id),
                     accentColor: 'text-rose-400',
                     buttonColor: 'bg-rose-500 text-white hover:bg-rose-400',
-                    bgColor: 'bg-[#1f0a10]',
-                    textColor: 'text-white',
+                    bgColor: useDarkMode ? 'bg-[#1f0a10]' : 'bg-rose-50',
+                    textColor: useDarkMode ? 'text-white' : 'text-gray-900',
                     sections: [
                         { title: "Cuidado Personal y Belleza", subcategory: "Belleza", icon: "spa" },
                         { title: "Hogar y Decoración", subcategory: "Hogar", icon: "home" },
@@ -84,12 +86,12 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 };
             case 4: // Niños
                 return {
-                    darkMode: true,
+                    darkMode: useDarkMode,
                     heroImage: getHeroBackgroundImage(id),
                     accentColor: 'text-blue-400',
                     buttonColor: 'bg-blue-500 text-white hover:bg-blue-400',
-                    bgColor: 'bg-[#0f172a]',
-                    textColor: 'text-white',
+                    bgColor: useDarkMode ? 'bg-[#0f172a]' : 'bg-blue-50',
+                    textColor: useDarkMode ? 'text-white' : 'text-gray-900',
                     sections: [
                         { title: "Aventura y Acción", subcategory: "Acción", icon: "rocket_launch" },
                         { title: "Construcción y LEGO", subcategory: "Construcción", icon: "construction" },
@@ -98,12 +100,12 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 };
             case 5: // Niñas
                 return {
-                    darkMode: true,
+                    darkMode: useDarkMode,
                     heroImage: getHeroBackgroundImage(id),
                     accentColor: 'text-pink-400',
                     buttonColor: 'bg-pink-500 text-white hover:bg-pink-400',
-                    bgColor: 'bg-[#290d23]',
-                    textColor: 'text-white',
+                    bgColor: useDarkMode ? 'bg-[#290d23]' : 'bg-pink-50',
+                    textColor: useDarkMode ? 'text-white' : 'text-gray-900',
                     sections: [
                         { title: "Creatividad y Arte", subcategory: "Creatividad", icon: "palette" },
                         { title: "Mundo de Fantasía", subcategory: "Fantasía", icon: "auto_awesome" },
@@ -112,12 +114,12 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 };
             case 6: // Tecnología
                 return {
-                    darkMode: true,
+                    darkMode: useDarkMode,
                     heroImage: getHeroBackgroundImage(id),
                     accentColor: 'text-cyan-400',
                     buttonColor: 'bg-cyan-500 text-black hover:bg-cyan-400',
-                    bgColor: 'bg-slate-900',
-                    textColor: 'text-white',
+                    bgColor: useDarkMode ? 'bg-slate-900' : 'bg-cyan-50',
+                    textColor: useDarkMode ? 'text-white' : 'text-gray-900',
                     sections: [
                         { title: "Smart Home", subcategory: "Smart Home", icon: "smart_toy" },
                         { title: "Gaming Setup", subcategory: "Gaming", icon: "sports_esports" },
@@ -154,83 +156,6 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
         );
     };
 
-    // Render Product Card (reusable component)
-    const ProductCard = ({ 
-        product, 
-        isDarkMode = false, 
-        buttonColor = '', 
-        textColor = '', 
-        accentColor = '' 
-    }: { 
-        product: Product; 
-        isDarkMode?: boolean; 
-        buttonColor?: string; 
-        textColor?: string; 
-        accentColor?: string; 
-    }) => {
-        return (
-            <div 
-                onClick={() => onOpenProduct?.(product)} 
-                className={`group flex flex-col gap-4 rounded-2xl p-4 transition-all hover:-translate-y-1 hover:shadow-xl cursor-pointer border border-transparent 
-                    ${isDarkMode ? 'bg-[#1e293b] hover:bg-[#334155] hover:border-white/10' : 'bg-white hover:border-black/5 hover:bg-gray-50'}`}
-                role="article"
-            >
-                <div className={`relative w-full aspect-[4/3] overflow-hidden rounded-xl ${isDarkMode ? 'bg-black/20' : 'bg-gray-100'}`}>
-                    {product.tag && (
-                        <span className={`absolute top-3 left-3 z-10 px-2.5 py-1 text-xs font-bold rounded-full ${buttonColor}`}>
-                            {product.tag}
-                        </span>
-                    )}
-                    <FavoriteButton 
-                        productId={product.id} 
-                        colorClass={isDarkMode ? 'bg-black/40 text-white hover:bg-white hover:text-black' : 'bg-white/80 text-black hover:bg-black hover:text-white'} 
-                    />
-                    <div 
-                        className="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" 
-                        style={{backgroundImage: `url("${getProductImage(product)}")`}}
-                        role="img"
-                        aria-label={`Imagen de ${product.title}`}
-                    >
-                    </div>
-                </div>
-                <div className="flex flex-col gap-1">
-                    <h3 className={`${textColor} text-lg font-bold truncate transition-colors`}>
-                        {product.title}
-                    </h3>
-                    <p className="opacity-60 text-sm line-clamp-2">{product.category}</p>
-                    {product.description && (
-                        <p className="opacity-60 text-sm line-clamp-2">{product.description}</p>
-                    )}
-                    <div className="flex items-center justify-between mt-2">
-                        <div className="flex flex-col">
-                            {product.oldPrice && (
-                                <span className="opacity-40 text-xs line-through">
-                                    €{product.oldPrice.toFixed(2)}
-                                </span>
-                            )}
-                            <span className={`${textColor} text-xl font-bold`}>
-                                €{product.price.toFixed(2)}
-                            </span>
-                        </div>
-                    </div>
-                    {product.url && (
-                        <a
-                            href={product.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`mt-1 inline-flex items-center gap-1 text-sm font-bold ${accentColor} hover:underline`}
-                            aria-label={`Ver ${product.title} en Amazon`}
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            Ver en Amazon
-                            <span className="material-symbols-outlined text-base">open_in_new</span>
-                        </a>
-                    )}
-                </div>
-            </div>
-        );
-    };
-
     // If it's a category with a custom landing page layout
     if (config) {
         // Render Subcategory View if active
@@ -241,19 +166,19 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 <div className={`flex flex-1 flex-col items-center w-full px-4 md:px-10 pb-20 min-h-screen ${config.bgColor} ${config.textColor}`}>
                     <div className="flex flex-col max-w-[1200px] w-full flex-1 gap-8 pt-6">
                         <nav aria-label="Navegación" className="flex flex-wrap gap-2 px-4">
-                            <button onClick={onBack} className="opacity-60 hover:opacity-100 transition-opacity text-sm font-medium leading-normal">
+                            <button onClick={onBack} className={`opacity-60 hover:opacity-100 transition-opacity text-sm font-medium leading-normal ${config.textColor}`}>
                                 Inicio
                             </button>
-                            <span className="opacity-40 text-sm font-medium leading-normal">/</span>
-                            <span className="opacity-60 text-sm font-medium leading-normal">Regalos 2025</span>
-                            <span className="opacity-40 text-sm font-medium leading-normal">/</span>
+                            <span className={`opacity-40 text-sm font-medium leading-normal ${config.textColor}`}>/</span>
+                            <span className={`opacity-60 text-sm font-medium leading-normal ${config.textColor}`}>Regalos 2025</span>
+                            <span className={`opacity-40 text-sm font-medium leading-normal ${config.textColor}`}>/</span>
                             <button 
                                 onClick={() => setActiveSubcategory(null)} 
-                                className="opacity-60 hover:opacity-100 transition-opacity text-sm font-medium leading-normal"
+                                className={`opacity-60 hover:opacity-100 transition-opacity text-sm font-medium leading-normal ${config.textColor}`}
                             >
                                 {category.title}
                             </button>
-                            <span className="opacity-40 text-sm font-medium leading-normal">/</span>
+                            <span className={`opacity-40 text-sm font-medium leading-normal ${config.textColor}`}>/</span>
                             <span className={`${config.accentColor} text-sm font-medium leading-normal`}>
                                 {activeSubcategory}
                             </span>
@@ -268,11 +193,11 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                 >
                                     <span className="material-symbols-outlined">arrow_back</span>
                                 </button>
-                                <h1 className="text-3xl md:text-4xl font-black tracking-tight">
+                                <h1 className={`text-3xl md:text-4xl font-black tracking-tight ${config.textColor}`}>
                                     {activeSubcategory}
                                 </h1>
                             </div>
-                            <p className="opacity-60 text-lg max-w-2xl">
+                            <p className={`opacity-60 text-lg max-w-2xl ${config.textColor}`}>
                                 Explora nuestra colección completa de {activeSubcategory.toLowerCase()}, seleccionada especialmente para esta temporada.
                             </p>
                         </div>
@@ -285,10 +210,11 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                     isFavorite={favoriteIds.includes(product.id)}
                                     onToggleFavorite={() => onToggleFavorite(product.id)}
                                     onOpen={() => onOpenProduct?.(product)}
+                                    darkMode={config?.darkMode}
                                 />
                             ))}
                             {subcategoryProducts.length === 0 && (
-                                <div className="col-span-full py-20 text-center opacity-60">
+                                <div className={`col-span-full py-20 text-center opacity-60 ${config.textColor}`}>
                                     <span className="material-symbols-outlined text-4xl mb-2">sentiment_dissatisfied</span>
                                     <p>No hay productos disponibles en esta categoría por el momento.</p>
                                 </div>
@@ -305,12 +231,12 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 <div className="flex flex-col max-w-[1200px] w-full flex-1 gap-8 pt-6">
                     {/* Breadcrumbs */}
                     <nav aria-label="Navegación" className="flex flex-wrap gap-2 px-4">
-                        <button onClick={onBack} className="opacity-60 hover:opacity-100 transition-opacity text-sm font-medium leading-normal">
+                        <button onClick={onBack} className={`opacity-60 hover:opacity-100 transition-opacity text-sm font-medium leading-normal ${config.textColor}`}>
                             Inicio
                         </button>
-                        <span className="opacity-40 text-sm font-medium leading-normal">/</span>
-                        <span className="opacity-60 text-sm font-medium leading-normal">Regalos 2025</span>
-                        <span className="opacity-40 text-sm font-medium leading-normal">/</span>
+                        <span className={`opacity-40 text-sm font-medium leading-normal ${config.textColor}`}>/</span>
+                        <span className={`opacity-60 text-sm font-medium leading-normal ${config.textColor}`}>Regalos 2025</span>
+                        <span className={`opacity-40 text-sm font-medium leading-normal ${config.textColor}`}>/</span>
                         <span className={`${config.accentColor} text-sm font-medium leading-normal`}>
                             {category.title}
                         </span>
@@ -371,7 +297,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                         className={`text-left px-4 py-2 rounded-lg transition-all ${
                                             selectedSeoCategory === null
                                                 ? `${config.accentColor} bg-primary/10 font-bold`
-                                                : `opacity-60 hover:opacity-100 ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`
+                                                : `${config.textColor} opacity-60 hover:opacity-100 ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`
                                         }`}
                                     >
                                         Ver todas
@@ -383,7 +309,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                             className={`text-left px-4 py-2 rounded-lg transition-all text-sm ${
                                                 selectedSeoCategory === cat.slug
                                                     ? `${config.accentColor} bg-primary/10 font-bold`
-                                                    : `opacity-60 hover:opacity-100 ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`
+                                                    : `${config.textColor} opacity-60 hover:opacity-100 ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`
                                             }`}
                                         >
                                             <div className="flex items-center gap-2">
@@ -398,12 +324,12 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                             </aside>
 
                             {/* Contenido principal con carruseles */}
-                            <div className="flex-1 flex flex-col gap-8">
+                            <div className="flex-1 min-w-0 flex flex-col gap-8">
                                 {/* Filtro móvil */}
                                 <div className="lg:hidden">
                                     <button
                                         onClick={() => setShowMobileFilters(!showMobileFilters)}
-                                        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl ${config.darkMode ? 'bg-white/5' : 'bg-gray-100'}`}
+                                        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl ${config.darkMode ? 'bg-white/5 text-white' : 'bg-gray-100 text-gray-900'}`}
                                     >
                                         <span className="flex items-center gap-2">
                                             <span className="material-symbols-outlined">tune</span>
@@ -429,7 +355,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                                 className={`w-full text-left px-4 py-2 rounded-lg mb-2 transition-all ${
                                                     selectedSeoCategory === null 
                                                         ? `${config.accentColor} bg-primary/10 font-bold`
-                                                        : `opacity-60 ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`
+                                                        : `${config.textColor} opacity-60 ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`
                                                 }`}
                                             >
                                                 Ver todas
@@ -444,7 +370,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                                     className={`w-full text-left px-4 py-2 rounded-lg mb-2 transition-all text-sm ${
                                                         selectedSeoCategory === cat.slug
                                                             ? `${config.accentColor} bg-primary/10 font-bold`
-                                                            : `opacity-60 ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`
+                                                            : `${config.textColor} opacity-60 ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`
                                                     }`}
                                                 >
                                                     <div className="flex items-center gap-2">
@@ -480,27 +406,56 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                                             {cat.name}
                                                         </h2>
                                                         {cat.metaDescription && (
-                                                            <p className="opacity-60 text-sm mt-1">
+                                                            <p className={`opacity-60 text-sm mt-1 ${config.textColor}`}>
                                                                 {cat.metaDescription}
                                                             </p>
                                                         )}
                                                     </div>
-                                                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${config.darkMode ? 'bg-white/10' : 'bg-black/5'}`}>
-                                                        {categoryProducts.length} productos
-                                                    </span>
+                                                    <div className="flex items-center gap-3">
+                                                        <span className={`px-3 py-1 rounded-full text-xs font-bold ${config.darkMode ? 'bg-white/10' : 'bg-black/5'}`}>
+                                                            {categoryProducts.length} productos
+                                                        </span>
+                                                        {categoryProducts.length > 4 && (
+                                                            <button
+                                                                onClick={() => {
+                                                                    // Navegar a la página de la categoría SEO
+                                                                    window.location.href = `/padres/${cat.slug}`;
+                                                                }}
+                                                                className={`hidden md:flex items-center gap-1 opacity-60 hover:opacity-100 transition-all text-sm font-medium group ${config.textColor}`}
+                                                                aria-label={`Ver todos los productos de ${cat.name}`}
+                                                            >
+                                                                Ver todos
+                                                                <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
+                                                                    arrow_forward
+                                                                </span>
+                                                            </button>
+                                                        )}
+                                                    </div>
                                                 </div>
 
                                                 {/* Carrusel horizontal scrollable */}
-                                                <div className="relative group/carousel">
-                                                    <div className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
-                                                        <div className="flex gap-4" style={{ minWidth: 'min-content' }}>
+                                                <div className="relative w-full overflow-hidden">
+                                                    <div 
+                                                        className={`overflow-x-auto pb-4 ${
+                                                            config.darkMode 
+                                                                ? 'scrollbar-thin scrollbar-thumb-primary/40 scrollbar-track-white/10' 
+                                                                : 'scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200'
+                                                        }`}
+                                                        style={{ 
+                                                            scrollbarWidth: 'thin',
+                                                            scrollBehavior: 'smooth',
+                                                            overflowY: 'hidden'
+                                                        }}
+                                                    >
+                                                        <div className="flex gap-4 pb-2" style={{ width: 'max-content' }}>
                                                             {categoryProducts.map(product => (
-                                                                <div key={product.id} className="w-[280px] flex-shrink-0">
+                                                                <div key={product.id} style={{ width: '280px', flexShrink: 0 }}>
                                                                     <ProductCard
                                                                         product={product}
                                                                         isFavorite={favoriteIds.includes(product.id)}
                                                                         onToggleFavorite={() => onToggleFavorite(product.id)}
                                                                         onOpen={() => onOpenProduct?.(product)}
+                                                                        darkMode={config?.darkMode}
                                                                     />
                                                                 </div>
                                                             ))}
@@ -513,7 +468,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
 
                                 {/* Mensaje si no hay productos */}
                                 {categoriesWithProducts.length === 0 && (
-                                    <div className="text-center py-20 opacity-60">
+                                    <div className={`text-center py-20 opacity-60 ${config.textColor}`}>
                                         <span className="material-symbols-outlined text-5xl mb-4">inventory_2</span>
                                         <p className="text-lg">No hay productos disponibles en esta categoría.</p>
                                     </div>
@@ -542,7 +497,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                             {sectionProducts.length > 3 && (
                                                 <button
                                                     onClick={() => setActiveSubcategory(section.subcategory)}
-                                                    className="hidden md:flex items-center gap-1 opacity-60 hover:opacity-100 transition-all text-sm font-medium group"
+                                                    className={`hidden md:flex items-center gap-1 opacity-60 hover:opacity-100 transition-all text-sm font-medium group ${config.textColor}`}
                                                     aria-label={`Ver todos los productos de ${section.subcategory}`}
                                                 >
                                                     Ver todos
@@ -560,6 +515,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                                     isFavorite={favoriteIds.includes(product.id)}
                                                     onToggleFavorite={() => onToggleFavorite(product.id)}
                                                     onOpen={() => onOpenProduct?.(product)}
+                                                    darkMode={config?.darkMode}
                                                 />
                                             ))}
                                         </div>
@@ -596,7 +552,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                         <p className={`${config.textColor} text-sm font-medium leading-tight truncate`}>
                                             {product.title}
                                         </p>
-                                        <p className="opacity-60 text-xs">€{product.price.toFixed(2)}</p>
+                                        <p className={`opacity-60 text-xs ${config.textColor}`}>€{product.price.toFixed(2)}</p>
                                     </div>
                                 ))
                             }
@@ -612,22 +568,22 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
         <div className="flex-1 px-6 lg:px-12 py-8 max-w-[1440px] mx-auto w-full">
             {/* Breadcrumbs */}
             <div className="mb-8 flex flex-wrap gap-2 text-sm font-medium">
-                <button onClick={onBack} className="text-gray-500 hover:text-primary transition-colors">
+                <button onClick={onBack} className={`hover:text-primary transition-colors ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                     Inicio
                 </button>
-                <span className="text-gray-600">/</span>
-                <span className="text-gray-500">2025</span>
-                <span className="text-gray-600">/</span>
-                <span className="text-gray-500">{category.title}</span>
+                <span className={darkMode ? 'text-gray-500' : 'text-gray-600'}>/</span>
+                <span className={darkMode ? 'text-gray-400' : 'text-gray-500'}>2025</span>
+                <span className={darkMode ? 'text-gray-500' : 'text-gray-600'}>/</span>
+                <span className={darkMode ? 'text-gray-400' : 'text-gray-500'}>{category.title}</span>
             </div>
 
             {/* Page Heading */}
             <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div className="max-w-2xl">
-                    <h1 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white mb-4">
+                    <h1 className={`text-4xl md:text-5xl font-black tracking-tight mb-4 ${darkMode ? 'text-white' : 'text-slate-900'}`}>
                         {category.title}
                     </h1>
-                    <p className="text-lg text-gray-400">
+                    <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                         Explora nuestra selección especial de {category.title.toLowerCase()}.
                     </p>
                 </div>
@@ -635,7 +591,9 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 <div className="md:hidden w-full relative">
                     <button 
                         onClick={() => setShowMobileFilters(!showMobileFilters)}
-                        className="w-full flex items-center justify-between bg-[#1A2C20] px-4 py-3 rounded-xl text-white font-medium active:scale-95 transition-transform"
+                        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium active:scale-95 transition-transform ${
+                            darkMode ? 'bg-[#1A2C20] text-white' : 'bg-gray-200 text-gray-900'
+                        }`}
                         aria-expanded={showMobileFilters}
                         aria-label="Mostrar filtros"
                     >

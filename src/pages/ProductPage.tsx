@@ -4,20 +4,18 @@ import { ProductLoader } from '../utils/productLoader';
 import { getSEOCategoryBySlug } from '../config/seo-categories';
 import { PRODUCTS } from '../../constants';
 import { getProductImage } from '../../utils/images';
+import { useTheme } from '../../ThemeContext';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-interface ProductPageProps {
-  darkMode?: boolean;
-}
-
-const ProductPage: React.FC<ProductPageProps> = ({ darkMode = false }) => {
+const ProductPage: React.FC = () => {
   const { category, seoCategory, productSlug } = useParams<{
     category: string;
     seoCategory: string;
     productSlug: string;
   }>();
   const navigate = useNavigate();
+  const { darkMode, toggleDarkMode } = useTheme();
 
   // Obtener información de la categoría SEO
   const seoCategoryInfo = seoCategory ? getSEOCategoryBySlug(seoCategory) : null;
@@ -72,7 +70,7 @@ const ProductPage: React.FC<ProductPageProps> = ({ darkMode = false }) => {
         onShowWishlist={() => navigate('/')}
         wishlistCount={0}
         onOpenAuth={() => {}}
-        onToggleDarkMode={() => {}}
+        onToggleDarkMode={toggleDarkMode}
         darkMode={darkMode}
       />
       

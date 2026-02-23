@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { SEO_CATEGORIES_PADRES } from '../config/seo-categories';
 import { PRODUCTS } from '../../constants';
+import { useTheme } from '../../ThemeContext';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ProductCard from '../../components/ProductCard';
@@ -13,6 +14,7 @@ import ProductCard from '../../components/ProductCard';
 const CategoryListPage: React.FC = () => {
   const { category } = useParams<{ category: string }>();
   const navigate = useNavigate();
+  const { darkMode, toggleDarkMode } = useTheme();
   const [selectedSeoCategory, setSelectedSeoCategory] = useState<string | null>(null);
   const [showMobileFilters, setShowMobileFilters] = useState(false);
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
@@ -91,7 +93,7 @@ const CategoryListPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className={`min-h-screen ${darkMode ? 'bg-background-dark text-white' : 'bg-gray-50 text-gray-900'}`}>
       <Header 
         searchTerm=""
         onSearchChange={() => {}}
@@ -101,8 +103,8 @@ const CategoryListPage: React.FC = () => {
         onShowWishlist={() => {}}
         wishlistCount={0}
         onOpenAuth={() => {}}
-        onToggleDarkMode={() => {}}
-        darkMode={false}
+        onToggleDarkMode={toggleDarkMode}
+        darkMode={darkMode}
       />
 
       <main className="container mx-auto px-4 py-12 mt-20">

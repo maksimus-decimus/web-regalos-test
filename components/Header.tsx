@@ -27,10 +27,16 @@ const Header: React.FC<HeaderProps> = ({
     onToggleDarkMode
 }) => {
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-[#28392e] bg-background-dark/80 backdrop-blur-md px-6 py-4">
+        <header className={`sticky top-0 z-50 w-full border-b backdrop-blur-md px-6 py-4 ${
+            darkMode 
+                ? 'border-[#28392e] bg-background-dark/80' 
+                : 'border-gray-200 bg-white/80'
+        }`}>
             <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-6">
                 {/* Logo */}
-                <button onClick={onGoHome} className="flex items-center gap-3 text-white cursor-pointer select-none hover:opacity-80 transition-opacity">
+                <button onClick={onGoHome} className={`flex items-center gap-3 cursor-pointer select-none hover:opacity-80 transition-opacity ${
+                    darkMode ? 'text-white' : 'text-gray-900'
+                }`}>
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary">
                         <span className="material-symbols-outlined text-3xl">redeem</span>
                     </div>
@@ -72,14 +78,39 @@ const Header: React.FC<HeaderProps> = ({
                 {/* Right Actions */}
                 <div className="flex items-center gap-6">
                     <div className="hidden lg:flex items-center gap-6">
-                        <button onClick={onGoHome} className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Inicio</button>
-                        <button onClick={onShowCategories} className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Categorías</button>
-                        <button onClick={onShowOffers} className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Ofertas</button>
+                        <button onClick={onGoHome} className={`text-sm font-medium transition-colors ${
+                            darkMode ? 'text-gray-300 hover:text-primary' : 'text-gray-700 hover:text-primary'
+                        }`}>Inicio</button>
+                        <button onClick={onShowCategories} className={`text-sm font-medium transition-colors ${
+                            darkMode ? 'text-gray-300 hover:text-primary' : 'text-gray-700 hover:text-primary'
+                        }`}>Categorías</button>
+                        <button onClick={onShowOffers} className={`text-sm font-medium transition-colors ${
+                            darkMode ? 'text-gray-300 hover:text-primary' : 'text-gray-700 hover:text-primary'
+                        }`}>Ofertas</button>
                     </div>
                     <div className="flex gap-3">
+                        {/* Dark Mode Toggle */}
+                        <button 
+                            onClick={onToggleDarkMode}
+                            className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors ${
+                                darkMode 
+                                    ? 'bg-[#28392e] text-primary hover:bg-[#344a3b]' 
+                                    : 'bg-yellow-100 text-yellow-600 hover:bg-yellow-200'
+                            }`}
+                            title={darkMode ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+                            aria-label={darkMode ? "Activar modo claro" : "Activar modo oscuro"}
+                        >
+                            <span className="material-symbols-outlined text-[20px]">
+                                {darkMode ? 'light_mode' : 'dark_mode'}
+                            </span>
+                        </button>
                         <button 
                             onClick={onShowWishlist}
-                            className="flex relative h-10 w-10 items-center justify-center rounded-full bg-[#28392e] text-white hover:bg-[#344a3b] transition-colors tooltip-trigger"
+                            className={`flex relative h-10 w-10 items-center justify-center rounded-full transition-colors tooltip-trigger ${
+                                darkMode 
+                                    ? 'bg-[#28392e] text-white hover:bg-[#344a3b]' 
+                                    : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                            }`}
                             title="Lista de Deseados"
                         >
                             <span className="material-symbols-outlined text-[20px] text-red-400">favorite</span>
