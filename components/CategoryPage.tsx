@@ -10,6 +10,7 @@ interface CategoryPageProps {
     favoriteIds: number[];
     onToggleFavorite: (id: number) => void;
     onOpenProduct?: (product: Product) => void;
+    darkMode?: boolean;
 }
 
 const CategoryPage: React.FC<CategoryPageProps> = ({ 
@@ -18,13 +19,11 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
     onBack, 
     favoriteIds, 
     onToggleFavorite,
-    onOpenProduct 
+    onOpenProduct,
+    darkMode 
 }) => {
     const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null);
     const [showMobileFilters, setShowMobileFilters] = useState(false);
-<<<<<<< Updated upstream
-    
-=======
     const [selectedSeoCategory, setSelectedSeoCategory] = useState<string | null>(null);
 
     // Agrupar productos por seoCategory para Padres
@@ -51,7 +50,6 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
         );
     }, [productsBySeoCategory, category.id]);
 
->>>>>>> Stashed changes
     // Config for categories that use the Sectioned Layout
     const getLayoutConfig = (id: number) => {
         switch(id) {
@@ -358,30 +356,6 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                         </div>
                     </div>
 
-<<<<<<< Updated upstream
-                    {/* Dynamic Sections */}
-                    {config.sections.map((section, idx) => {
-                        const sectionProducts = products.filter(p => p.subcategory === section.subcategory);
-                        if (sectionProducts.length === 0) return null;
-
-                        return (
-                            <section key={idx} className="flex flex-col gap-6 px-4 mt-8" id={`section-${idx}`}>
-                                <div className={`flex items-end justify-between border-b pb-4 ${config.darkMode ? 'border-white/10' : 'border-black/10'}`}>
-                                    <div className="flex flex-col gap-1">
-                                        <div className={`flex items-center gap-2 ${config.accentColor} font-bold uppercase tracking-wider text-xs`}>
-                                            <span className="material-symbols-outlined text-sm">{section.icon}</span> 
-                                            {section.subcategory}
-                                        </div>
-                                        <h2 className={`${config.textColor} text-3xl font-bold tracking-tight`}>
-                                            {section.title}
-                                        </h2>
-                                    </div>
-                                    {sectionProducts.length > 3 && (
-                                        <button 
-                                            onClick={() => setActiveSubcategory(section.subcategory)}
-                                            className="hidden md:flex items-center gap-1 opacity-60 hover:opacity-100 transition-all text-sm font-medium group"
-                                            aria-label={`Ver todos los productos de ${section.subcategory}`}
-=======
                     {/* Sistema de Carruseles con Sidebar para Padres */}
                     {category.id === 2 ? (
                         <div className="flex gap-6 px-4 mt-8">
@@ -411,7 +385,6 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                                     ? `${config.accentColor} bg-primary/10 font-bold`
                                                     : `opacity-60 hover:opacity-100 ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-100'}`
                                             }`}
->>>>>>> Stashed changes
                                         >
                                             <div className="flex items-center gap-2">
                                                 <span className="material-symbols-outlined text-sm">
@@ -420,21 +393,6 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                                 <span className="line-clamp-2">{cat.name}</span>
                                             </div>
                                         </button>
-<<<<<<< Updated upstream
-                                    )}
-                                </div>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {sectionProducts.slice(0, 3).map(product => (
-                                        <ProductCard
-                                            key={product.id}
-                                            product={product}
-                                            isDarkMode={config.darkMode}
-                                            buttonColor={config.buttonColor}
-                                            textColor={config.textColor}
-                                            accentColor={config.accentColor}
-                                        />
-=======
->>>>>>> Stashed changes
                                     ))}
                                 </div>
                             </aside>

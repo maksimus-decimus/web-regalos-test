@@ -85,10 +85,9 @@ export const PRODUCTS: Product[] = [
     {
         id: 202,
         categoryId: 2,
-        title: "Tommy Hilfiger Reloj Analógico de Acero Inoxidable",
+        title: "Pistola de masaje muscular",
         subcategory: "Gadgets",
         seoCategory: "padres-deportistas",
-        title: "Pistola de masaje muscular",
         price: 84.99,
         category: "Varios",
         image: "/productos_afiliados/afiliados_padres/producto_B09QPGTLG8/imagen_01.jpg",

@@ -8,9 +8,10 @@ interface WishlistPageProps {
     onToggleFavorite: (id: number) => void;
     onBack: () => void;
     onOpenProduct?: (product: Product) => void;
+    darkMode?: boolean;
 }
 
-const WishlistPage: React.FC<WishlistPageProps> = ({ products, favoriteIds, onToggleFavorite, onBack, onOpenProduct }) => {
+const WishlistPage: React.FC<WishlistPageProps> = ({ products, favoriteIds, onToggleFavorite, onBack, onOpenProduct, darkMode }) => {
     // Filter products that are in the favorites list
     const wishlistProducts = products.filter(p => favoriteIds.includes(p.id));
 

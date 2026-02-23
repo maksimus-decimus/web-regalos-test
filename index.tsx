@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import { AuthProvider } from './AuthContext';
-<<<<<<< Updated upstream
-=======
 import ProductPage from './src/pages/ProductPage';
 import SEOCategoryPage from './src/pages/SEOCategoryPage';
 import CategoryListPage from './src/pages/CategoryListPage';
@@ -11,7 +10,6 @@ import { initializeProducts } from './src/data/initProducts';
 
 // Inicializar productos al cargar la aplicación
 initializeProducts();
->>>>>>> Stashed changes
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -22,9 +20,6 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <AuthProvider>
-<<<<<<< Updated upstream
-      <App />
-=======
       <BrowserRouter>
         <Routes>
           {/* Ruta principal */}
@@ -43,7 +38,6 @@ root.render(
           <Route path="/:category" element={<CategoryListPage />} />
         </Routes>
       </BrowserRouter>
->>>>>>> Stashed changes
     </AuthProvider>
   </React.StrictMode>
 );

@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 
 interface FooterProps {
     onCategorySelect: (id: number) => void;
+    darkMode?: boolean;
 }
 
-const Footer: React.FC<FooterProps> = ({ onCategorySelect }) => {
+const Footer: React.FC<FooterProps> = ({ onCategorySelect, darkMode }) => {
     const [email, setEmail] = useState('');
     const [subscribed, setSubscribed] = useState(false);
 
