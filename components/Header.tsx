@@ -120,7 +120,7 @@ const Header: React.FC<HeaderProps> = ({
                                 </span>
                             )}
                         </button>
-                        <UserMenu onOpenAuth={onOpenAuth} />
+                        <UserMenu onOpenAuth={onOpenAuth} darkMode={darkMode} />
                     </div>
                 </div>
             </div>

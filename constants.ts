@@ -1,5 +1,9 @@
 import { Category, Product } from './types';
 
+// ============================================================================
+// CATEGORÍAS PRINCIPALES
+// ============================================================================
+
 export const CATEGORIES: Category[] = [
     {
         id: 2,
@@ -53,7 +57,15 @@ export const CATEGORIES: Category[] = [
     }
 ];
 
+// ============================================================================
+// PRODUCTOS
+// ============================================================================
+
 export const PRODUCTS: Product[] = [
+
+    // ------------------------------------------------------------------------
+    // PRODUCTOS GENERALES (Sin categoryId específico)
+    // ------------------------------------------------------------------------
     {
         id: 101,
         title: "Sony Noise Cancelling",
@@ -69,7 +81,11 @@ export const PRODUCTS: Product[] = [
         category: "Realidad Virtual",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCXCtUm34EVzf--NdEeWtXWM2Qx1X8jleHWZ_BwD0xj_9FCqt0mSdZEZGTZ6vJJnrKV49_br_O10P4F4ZvWSNZ5iFKAE_pE4QDiJoyxMpqxF1FPGiMxzTptrJaci1jJHlx2Xs249lFsYGzHr3VEX1RvdIqDgphAMmirg1sSQvMElW9vj2cBVQV9tMHDILnlnljm48VcQn8tZHyG0nYkqrGIElSqAioh7A2BXbn3jSBT5AWOp_gzDBzWP3XOoDW3OdOPm4R6KzBm7uU"
     },
-    // ... Fathers and Mothers products remain ...
+
+    // ------------------------------------------------------------------------
+    // CATEGORÍA: REGALOS PARA PADRES (categoryId: 2)
+    // ------------------------------------------------------------------------
+
     {
         id: 201,
         categoryId: 2,
@@ -319,6 +335,10 @@ export const PRODUCTS: Product[] = [
         url: "https://www.amazon.es/dp/B0DXKNBQS6?tag=sitio200181",
         description: "Altavoz Bluetooth portátil"
     },
+    // ------------------------------------------------------------------------
+    // CATEGORÍA: REGALOS PARA MADRES (categoryId: 3)
+    // ------------------------------------------------------------------------
+
     {
         id: 301,
         categoryId: 3,
@@ -544,92 +564,231 @@ export const PRODUCTS: Product[] = [
     {
         id: 401,
         categoryId: 4,
-        subcategory: "Acción",
-        title: "Peluche Simba Licencia Oficial",
-        price: 41.99,
-        category: "Juguetes",
-        image: "/images/nino2.jpg",
-        url: "https://amzn.to/3XVbMze",
-        description: "Peluche suave y ligero, perfecto para acompañar el juego y el descanso."
+        subcategory: "Construcción",
+        title: "LEGO Classic Caja de Ladrillos Creativos Mediana",
+        price: 39.99,
+        category: "Construcción",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/49IWd2X",
+        description: "LEGO Classic Caja de Ladrillos Creativos Mediana - Construcción"
     },
     {
         id: 402,
         categoryId: 4,
         subcategory: "Acción",
-        title: "Marvel Spiderman Mochila Infantil",
-        price: 31.99,
-        category: "Accesorios",
-        image: "/images/nino3.jpg",
-        url: "https://amzn.to/44tcreU",
-        description: "Mochila con compartimentos y tirantes ajustables para el cole y actividades."
+        title: "GKTZ Cámara Infantil Impermeable 1080P",
+        price: 24.99,
+        category: "Cámara infantil",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4b98EHI",
+        description: "GKTZ Cámara Infantil Impermeable 1080P - Cámara infantil"
     },
     {
         id: 403,
         categoryId: 4,
         subcategory: "Acción",
-        title: "Bluey Botella de Plástico",
-        price: 26.99,
-        category: "Hidratación",
-        image: "/images/nino1.jpg",
-        url: "https://amzn.to/3YtBDhO",
-        description: "Botella resistente y reutilizable con diseño de Bluey; práctica para el día a día."
+        title: "Ushining Cámara Subacuática para Niños 1080P",
+        price: 37.99,
+        category: "Fotografía subacuática",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4qVS2b0",
+        description: "Ushining Cámara Subacuática para Niños 1080P - Fotografía subacuática"
     },
     {
         id: 404,
         categoryId: 4,
         subcategory: "Construcción",
-        title: "Bloques Espaciales",
-        price: 65.00,
-        category: "Lego",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCyzcBJllL2YpRO2Ee2CiOlet8Vc3is8TZ3ov6XIb3u1Biln-bUVgWwakpuMZ_C7CBpftWWwJFdi2NHUavjHeS8h0k6EAghL6TzVKyP_DK7xSeGPhLCmeZCtcvkv6jZSIIlqLSxAN3pSTaF79SidufVa7IyTQOyHNkh0LN6dfqv808Ya11XnXDm6JBf7qPkvsrn_r_j6TscAYDapyK81REZ0ynpxGlOgCjVGdcd7GhdqqBa3HhETqBHyu_3rtSAgQ7OpktqIlEzvaY"
+        title: "Olvy Bloques de Construcción Magnéticos Montessori",
+        price: 29.99,
+        category: "Magnéticos Montessori",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4jOQmh3",
+        description: "Olvy Bloques de Construcción Magnéticos Montessori - Magnéticos Montessori"
     },
     {
         id: 405,
         categoryId: 4,
-        subcategory: "Construcción",
-        title: "Circuito de Canicas",
-        price: 45.00,
-        category: "Ingeniería",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCyzcBJllL2YpRO2Ee2CiOlet8Vc3is8TZ3ov6XIb3u1Biln-bUVgWwakpuMZ_C7CBpftWWwJFdi2NHUavjHeS8h0k6EAghL6TzVKyP_DK7xSeGPhLCmeZCtcvkv6jZSIIlqLSxAN3pSTaF79SidufVa7IyTQOyHNkh0LN6dfqv808Ya11XnXDm6JBf7qPkvsrn_r_j6TscAYDapyK81REZ0ynpxGlOgCjVGdcd7GhdqqBa3HhETqBHyu_3rtSAgQ7OpktqIlEzvaY"
+        subcategory: "Acción",
+        title: "KRAFUN Mi primer animal de costura",
+        price: 19.99,
+        category: "Costura fieltro",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/45jnw2u",
+        description: "KRAFUN Mi primer animal de costura - Costura fieltro"
     },
     {
         id: 406,
         categoryId: 4,
-        subcategory: "Vehículos",
-        title: "Carro Control Remoto",
-        price: 55.00,
-        category: "RC",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDR7j3wIHo2MbTE1JQ0U4P4BT3gr4dgMaVhAcaKM2nZypUKymi7GVOFcEeZ_vAP_PqX41ZOPTdEvl_ia488cSUuIJKYS0aOU_2TI2zpiCIpDZCTtFLLZhYsj_qK--VoUrErkCi5xsO0oXNlqedthXqghvxeKggsBruwT2jewHta2EacF4EpJVNiMWWM84rZp8NaQcRQNi3yZEm21TulW2Vxj1vd3ozgXUB1mZfxlhRNtebrTTn5iiuOsNyGEAECVeoRNbqVT_RIGU8"
+        subcategory: "Acción",
+        title: "WSNDM Kit de Costura de Animales",
+        price: 8.99,
+        category: "Costura animales",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4b4I6rb",
+        description: "WSNDM Kit de Costura de Animales - Costura animales"
     },
-    // Nuevos productos "Interes" para Niños (ID 4)
+    {
+        id: 407,
+        categoryId: 4,
+        subcategory: "Acción",
+        title: "DeFieltro Kit Costura Niños",
+        price: 16.99,
+        category: "Maletín costura",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/49wUJtX",
+        description: "DeFieltro Kit Costura Niños - Maletín costura"
+    },
+    {
+        id: 408,
+        categoryId: 4,
+        subcategory: "Acción",
+        title: "Juguete de Tarjetas Flash Parlantes",
+        price: 19.99,
+        category: "Tarjetas parlantes",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4be9KCd",
+        description: "Juguete de Tarjetas Flash Parlantes - Tarjetas parlantes"
+    },
+    {
+        id: 409,
+        categoryId: 4,
+        subcategory: "Acción",
+        title: "AHJ Tarjetas Flash Parlantes Español",
+        price: 19.99,
+        category: "Tarjetas español",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4jSKMdN",
+        description: "AHJ Tarjetas Flash Parlantes Español - Tarjetas español"
+    },
     {
         id: 410,
         categoryId: 4,
-        subcategory: "Interes",
-        title: "Microscopio Junior",
-        price: 39.99,
-        category: "Ciencia",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCW_k_rCqC3MhDqO6pYnZqF2tG1wK5vE8x7jL0yI9h4mB3oA2dF1nE6sJ5rT8uV9iW4qO3lP7zX0mC2kG1yH5bN8vF6dJ9gR3tL1wE4xK7zO2mP5nB8qI1vF0yH6jG9wL3sK5nE7rT9xZ1yU4oM2pQ6wV8tN3kR1jS5hB7vG0xL9yF4wM1pE2zH8qI5nJ6oK9rT3wE4xL7zO1mP2nC5kH8vG3xJ4yF6dI9gR1tL0wE3xK6zO0mP4nB7qI1vF0yH5bN8vF6dJ9gR3tL1w"
+        subcategory: "Acción",
+        title: "Almaxi Busy Board Montessori",
+        price: 21.99,
+        category: "Tablero sensorial",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/49GJkX5",
+        description: "Almaxi Busy Board Montessori - Tablero sensorial"
     },
     {
         id: 411,
         categoryId: 4,
-        subcategory: "Interes",
-        title: "Balón Espacial",
-        price: 24.50,
-        category: "Deportes",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCyzcBJllL2YpRO2Ee2CiOlet8Vc3is8TZ3ov6XIb3u1Biln-bUVgWwakpuMZ_C7CBpftWWwJFdi2NHUavjHeS8h0k6EAghL6TzVKyP_DK7xSeGPhLCmeZCtcvkv6jZSIIlqLSxAN3pSTaF79SidufVa7IyTQOyHNkh0LN6dfqv808Ya11XnXDm6JBf7qPkvsrn_r_j6TscAYDapyK81REZ0ynpxGlOgCjVGdcd7GhdqqBa3HhETqBHyu_3rtSAgQ7OpktqIlEzvaY"
+        subcategory: "Vehículos",
+        title: "HILAND Bicicleta Infantil",
+        price: 159.99,
+        category: "Bicicleta infantil",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4jMdoFn",
+        description: "HILAND Bicicleta Infantil - Bicicleta infantil"
     },
     {
         id: 412,
         categoryId: 4,
-        subcategory: "Interes",
-        title: "Reloj Aventurero",
-        price: 34.00,
-        category: "Accesorios",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDR7j3wIHo2MbTE1JQ0U4P4BT3gr4dgMaVhAcaKM2nZypUKymi7GVOFcEeZ_vAP_PqX41ZOPTdEvl_ia488cSUuIJKYS0aOU_2TI2zpiCIpDZCTtFLLZhYsj_qK--VoUrErkCi5xsO0oXNlqedthXqghvxeKggsBruwT2jewHta2EacF4EpJVNiMWWM84rZp8NaQcRQNi3yZEm21TulW2Vxj1vd3ozgXUB1mZfxlhRNtebrTTn5iiuOsNyGEAECVeoRNbqVT_RIGU8"
+        subcategory: "Construcción",
+        title: "Olvy Bloques Magnéticos Montessori (95 piezas)",
+        price: 29.99,
+        category: "Bloques magnéticos",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3LIrsmI",
+        description: "Olvy Bloques Magnéticos Montessori (95 piezas) - Bloques magnéticos"
     },
-    // New Kids (Girl) Products (ID 5)
+    {
+        id: 413,
+        categoryId: 4,
+        subcategory: "Construcción",
+        title: "Wootoyz Cubos Magnéticos (100 piezas)",
+        price: 21.99,
+        category: "Cubos magnéticos",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4r2vBRA",
+        description: "Wootoyz Cubos Magnéticos (100 piezas) - Cubos magnéticos"
+    },
+    {
+        id: 414,
+        categoryId: 4,
+        subcategory: "Acción",
+        title: "FMKLDENA Guantes Lanzatelarañas (juego de 3)",
+        price: 13.99,
+        category: "Accesorios superhéroe",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/49JRE8F",
+        description: "FMKLDENA Guantes Lanzatelarañas (juego de 3) - Accesorios superhéroe"
+    },
+    {
+        id: 415,
+        categoryId: 4,
+        subcategory: "Acción",
+        title: "Lansay Blopens Centro de Actividades",
+        price: 10.99,
+        category: "Aerografía infantil",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/45kGx4N",
+        description: "Lansay Blopens Centro de Actividades - Aerografía infantil"
+    },
+    {
+        id: 416,
+        categoryId: 4,
+        subcategory: "Acción",
+        title: "Ravensburger Memory Mini Peppa Pig",
+        price: 9.99,
+        category: "Memoria imágenes",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3LIKVUv",
+        description: "Ravensburger Memory Mini Peppa Pig - Memoria imágenes"
+    },
+    {
+        id: 417,
+        categoryId: 4,
+        subcategory: "Acción",
+        title: "Melissa & Doug Set de Comida de Juguete de Madera",
+        price: 0,
+        category: "Juego cocina",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/49IWd2X",
+        description: "Melissa & Doug Set de Comida de Juguete de Madera - Juego cocina"
+    },
+    {
+        id: 418,
+        categoryId: 4,
+        subcategory: "Construcción",
+        title: "BONNYCO Puzle XXL Animales de la Jungla (48 piezas)",
+        price: 13.99,
+        category: "Puzle XXL",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3LWvzf7",
+        description: "BONNYCO Puzle XXL Animales de la Jungla (48 piezas) - Puzle XXL"
+    },
+    {
+        id: 419,
+        categoryId: 4,
+        subcategory: "Acción",
+        title: "Hahaland Kit de Manualidades de Costura para Niños",
+        price: 20.99,
+        category: "Costura guiada",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4beb6Nj",
+        description: "Hahaland Kit de Manualidades de Costura para Niños - Costura guiada"
+    },
+    {
+        id: 420,
+        categoryId: 4,
+        subcategory: "Acción",
+        title: "DeFieltro Maletín de Costura Infantil",
+        price: 19.99,
+        category: "Maletín infantil",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4jLQYUM",
+        description: "DeFieltro Maletín de Costura Infantil - Maletín infantil"
+    },
+
+
+
+    // ------------------------------------------------------------------------
+    // CATEGORÍA: REGALOS PARA NIÑAS (categoryId: 5)
+    // ------------------------------------------------------------------------
+
+
     {
         id: 501,
         categoryId: 5,
@@ -646,32 +805,34 @@ export const PRODUCTS: Product[] = [
         id: 502,
         categoryId: 5,
         subcategory: "Creatividad",
-        title: "Play-Doh Camión de Helados",
-        price: 22.99,
-        category: "Creatividad",
-        image: "/images/nina2.jpg",
-        url: "https://amzn.to/4pWM0Hj",
-        description: "Set Play-Doh con camión y moldes para crear helados y figuras divertidas."
+        title: "Jackinthebox Poke Poke Art",
+        price: 18.79,
+        category: "Manualidades, prensador de flores",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0D839DLTL?tag=sitio200181-21",
+        description: "Jackinthebox Poke Poke Art - Manualidades, prensador de flores"
     },
     {
         id: 503,
         categoryId: 5,
-        subcategory: "Fantasía",
-        title: "Amazon Essentials Chaqueta con Cremallera",
-        price: 36.99,
-        category: "Ropa",
-        image: "/images/nina3.jpg",
-        url: "https://amzn.to/44tQc8z",
-        description: "Chaqueta ligera con cierre completo, cómoda para uso diario."
+        subcategory: "Muñecas",
+        title: "Mini máquina de karaoke",
+        price: 23.06,
+        category: "Electrónico",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0CHS2VNHC?tag=sitio200181-21",
+        description: "Mini máquina de karaoke - Electrónico"
     },
     {
         id: 504,
         categoryId: 5,
-        subcategory: "Muñecas",
-        title: "Casa de Muñecas XL",
-        price: 120.00,
-        category: "Juguetes",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBcnEtjkqNu8wh_qzpesuqkhPLhQ-HQLD030OHtxJT__fey35w84ZmbxPuRWGT2aVrSbpi0CfBsxs_IhOeXUHwRy4oVMNUtDs74VTRGvyOPayX8HGY5fkGqsC_7Fo2pzdd4YWYheqhBrOSdKsF9RQzRW4p1UqRqcw9h_qDd-b8j50GKHQyxYbtVe9Jujru-Vk-WqzyM0ETSPz47m79C2KECIZ1ZY8mYNWfbyDCsq4W423I8sQmG_E6t4B9as7kwhpIIPNYPAHhP6t0"
+        subcategory: "Creatividad",
+        title: "Kit de sellos de gemas para el cabello",
+        price: 17.06,
+        category: "Moda y maquillaje",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0CDH69RMR?tag=sitio200181-21",
+        description: "Kit de sellos de gemas para el cabello - Moda y maquillaje"
     },
     {
         id: 505,
@@ -729,7 +890,6 @@ export const PRODUCTS: Product[] = [
         url: "https://www.amazon.com/dp/B0CCYMV1T1?tag=sitio200181-21",
         description: "Patinete Infantil - Patinete"
     },
-    // Nuevos productos "Interes" para Niñas (ID 5)
     {
         id: 510,
         categoryId: 5,
@@ -744,11 +904,13 @@ export const PRODUCTS: Product[] = [
     {
         id: 511,
         categoryId: 5,
-        subcategory: "Interes",
-        title: "Cámara Instantánea",
-        price: 79.00,
-        category: "Fotografía",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtJbDgBMRbSuRfuli5reM5fNU3FqdqoljoYIX0auaH8JT8YOTYufGPAEr1GWurFXuUID6Xx9EkSGvB_KCY6TA2pEwkjPS0-I0vFCy_DeggrRIKWnG_qb_8fha-X1iO86dvsWihwAmfy_z4uOSoI-hakcq4w3s8FFsgNiThZlxSvW4e-atxIuIT9x9Hct8002vwuldlSrItBU4den1dfv9d_5Q9w_C2bcUBhPmYE242CaaSFvcZ3bIA3KW4cWSiU1_43NjgJZCk5vc"
+        subcategory: "Muñecas",
+        title: "Coche de Control Remoto",
+        price: 25.63,
+        category: "Autos trepadores",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0CTTYRJJY?tag=sitio200181-21",
+        description: "Coche de Control Remoto - Autos trepadores"
     },
     {
         id: 512,
@@ -862,9 +1024,9 @@ export const PRODUCTS: Product[] = [
         categoryId: 6,
         subcategory: "Smart Home",
         title: "Luces Solares de Navidad para Exterior (Yorezcop)",
-        price: 469.99,
+        price: 18.69,
         category: "Iluminación",
-        image: "/images/tecnologia2.jpg",
+        image: "/images/tecnologia1.jpg",
         url: "https://amzn.to/4pDBnZz",
         description: "Guirnaldas solares impermeables para decoración exterior, fáciles de instalar."
     },
@@ -873,20 +1035,22 @@ export const PRODUCTS: Product[] = [
         categoryId: 6,
         subcategory: "Smart Home",
         title: "Echo Pop | Altavoz Inteligente con Alexa",
-        price: 179.99,
+        price: 54.99,
         category: "Smart Home",
-        image: "/images/tecnologia3.jpg",
+        image: "/images/tecnologia2.jpg",
         url: "https://amzn.to/48SFUQN",
         description: "Altavoz compacto con Alexa para música, control por voz y hogar conectado."
     },
+
+    // Subcategoría: Gaming
     {
         id: 603,
         categoryId: 6,
         subcategory: "Gaming",
         title: "Auriculares Inalámbricos Impermeables",
-        price: 329.99,
+        price: 23.99,
         category: "Audio",
-        image: "/images/tecnologia1.jpg",
+        image: "/images/tecnologia3.jpg",
         url: "https://amzn.to/4aWxLx8",
         description: "Auriculares Bluetooth con diseño resistente al agua y estuche de carga."
     },
@@ -899,6 +1063,8 @@ export const PRODUCTS: Product[] = [
         category: "Periféricos",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB95I5g5kwB3RgzfM4qkw9zxxhlinYH9uNt2YAGm4cdC-z_NY4A_9POPmzFA5c17TI6TcKKwqJ5n8h8rQM-UYRyjbFL_R38l_gT97zLGpckwlFYNNvtO6y2FfjeL3MHUkNv7LAv3Dl5r3TvZY4MZDZ0Q3VdQ3av0cJwsAeIeCF07W9ahIRYs8E7Z6XjvVZo00WHXgJiAYniwL31tqUiJ7pYT5QcLtr-cyE-hCmbVkN8TM5-RQq9NhGACmQaHv143UI7i_mD3fNPvWw"
     },
+
+    // Subcategoría: Movilidad
     {
         id: 605,
         categoryId: 6,
@@ -916,5 +1082,159 @@ export const PRODUCTS: Product[] = [
         price: 89.00,
         category: "Seguridad",
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCTSNpW5tL-bx7Owz63idZNyxr-sirOvFnK7PO6jFEqxdjdbQnEa1IFB1Ji6R_C0uxeNcH9SY2l7h6shf6_KFWy8km1HYopgxcwkBaU0nNr6dnhDvLLSvXImOLCzYqNTlJHb38MwTWkHTco3D4u_w_ycKnvyT2XorxkqW-NpZhahbmZ73p66bHpNUwhzsLFTTv1CY5QsiXRZbR0_m43WmuthXOamC4HTpNiRG9FO3CXBOuE7F3Tg0qSbehoN94a9FXZ_J0CRTcK6zk"
+    },
+    {
+        id: 607,
+        categoryId: 6,
+        subcategory: "Smart Home",
+        title: "Enchufe Inteligente WiFi",
+        price: 15.99,
+        category: "Smart Home",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Controla tus dispositivos desde el móvil."
+    },
+    {
+        id: 608,
+        categoryId: 6,
+        subcategory: "Smart Home",
+        title: "Bombilla LED Inteligente RGB",
+        price: 12.50,
+        category: "Iluminación",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Millones de colores y control por voz."
+    },
+    {
+        id: 609,
+        categoryId: 6,
+        subcategory: "Smart Home",
+        title: "Robot Aspirador Slim",
+        price: 159.00,
+        category: "Limpieza",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Limpieza automática con navegación inteligente."
+    },
+    {
+        id: 610,
+        categoryId: 6,
+        subcategory: "Smart Home",
+        title: "Cámara de Seguridad Interior",
+        price: 35.99,
+        category: "Seguridad",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Vigilancia HD y visión nocturna."
+    },
+    {
+        id: 611,
+        categoryId: 6,
+        subcategory: "Smart Home",
+        title: "Termostato Inteligente",
+        price: 129.99,
+        category: "Climatización",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Ahorra energía controlando la calefacción."
+    },
+    {
+        id: 612,
+        categoryId: 6,
+        subcategory: "Gaming",
+        title: "Ratón Gaming Ultraligero",
+        price: 49.99,
+        category: "Periféricos",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Alta precisión y diseño ergonómico."
+    },
+    {
+        id: 613,
+        categoryId: 6,
+        subcategory: "Gaming",
+        title: "Alfombrilla XXL RGB",
+        price: 25.00,
+        category: "Accesorios",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Superficie optimizada con iluminación LED."
+    },
+    {
+        id: 614,
+        categoryId: 6,
+        subcategory: "Gaming",
+        title: "Mando Inalámbrico Pro",
+        price: 69.99,
+        category: "Controles",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Compatible con PC y consolas."
+    },
+    {
+        id: 615,
+        categoryId: 6,
+        subcategory: "Gaming",
+        title: "Soporte para Auriculares",
+        price: 19.99,
+        category: "Accesorios",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Organiza tu setup con estilo."
+    },
+    {
+        id: 616,
+        categoryId: 6,
+        subcategory: "Gaming",
+        title: "Micrófono USB Streaming",
+        price: 85.00,
+        category: "Audio",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Calidad de estudio para tus directos."
+    },
+    {
+        id: 617,
+        categoryId: 6,
+        subcategory: "Movilidad",
+        title: "Soporte Móvil para Patinete",
+        price: 14.99,
+        category: "Accesorios",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Navega seguro mientras conduces."
+    },
+    {
+        id: 618,
+        categoryId: 6,
+        subcategory: "Movilidad",
+        title: "Candado Antirrobo",
+        price: 29.99,
+        category: "Seguridad",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Alta seguridad para tu vehículo eléctrico."
+    },
+    {
+        id: 619,
+        categoryId: 6,
+        subcategory: "Movilidad",
+        title: "Bolsa de Almacenamiento Scooter",
+        price: 22.50,
+        category: "Accesorios",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Lleva tus cosas cómodamente."
+    },
+    {
+        id: 620,
+        categoryId: 6,
+        subcategory: "Movilidad",
+        title: "Guantes Térmicos Táctiles",
+        price: 18.99,
+        category: "Ropa",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3EXAMPLE",
+        description: "Protección contra el frío y uso de pantallas."
     }
 ];

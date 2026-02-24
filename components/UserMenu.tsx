@@ -4,9 +4,10 @@ import { logOut } from '../authService';
 
 interface UserMenuProps {
   onOpenAuth: () => void;
+  darkMode?: boolean;
 }
 
-export default function UserMenu({ onOpenAuth }: UserMenuProps) {
+export default function UserMenu({ onOpenAuth, darkMode = true }: UserMenuProps) {
   const { user } = useAuth();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -22,7 +23,11 @@ export default function UserMenu({ onOpenAuth }: UserMenuProps) {
   if (!user) {
     return (
       <button 
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-[#28392e] text-white hover:bg-[#344a3b] transition-colors"
+        className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors ${
+          darkMode 
+            ? 'bg-[#28392e] text-white hover:bg-[#344a3b]' 
+            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+        }`}
         title="Iniciar Sesión"
         onClick={onOpenAuth}
       >
@@ -47,14 +52,20 @@ export default function UserMenu({ onOpenAuth }: UserMenuProps) {
             className="fixed inset-0 z-40" 
             onClick={() => setShowMenu(false)}
           />
-          <div className="absolute right-0 mt-2 w-64 bg-[#1a2620] rounded-lg shadow-xl border border-[#28392e] overflow-hidden z-50">
-            <div className="p-4 border-b border-[#28392e]">
-              <p className="text-sm text-gray-400">Conectado como</p>
-              <p className="text-white font-medium truncate">{user.email}</p>
+          <div className={`absolute right-0 mt-2 w-64 rounded-lg shadow-xl overflow-hidden z-50 ${
+            darkMode 
+              ? 'bg-[#1a2620] border border-[#28392e]' 
+              : 'bg-white border border-gray-200'
+          }`}>
+            <div className={`p-4 border-b ${darkMode ? 'border-[#28392e]' : 'border-gray-200'}`}>
+              <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Conectado como</p>
+              <p className={`font-medium truncate ${darkMode ? 'text-white' : 'text-gray-900'}`}>{user.email}</p>
             </div>
             <button
               onClick={handleLogOut}
-              className="w-full px-4 py-3 text-left text-red-400 hover:bg-[#28392e] transition-colors flex items-center gap-2"
+              className={`w-full px-4 py-3 text-left text-red-400 transition-colors flex items-center gap-2 ${
+                darkMode ? 'hover:bg-[#28392e]' : 'hover:bg-gray-100'
+              }`}
             >
               <span className="material-symbols-outlined text-[20px]">logout</span>
               Cerrar Sesión
