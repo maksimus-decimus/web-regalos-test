@@ -1,0 +1,77 @@
+/* Estilos personalizados para scrollbars */
+
+/* Scrollbar horizontal para carruseles */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(19, 236, 91, 0.2);
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(19, 236, 91, 0.4);
+}
+
+/* Para Firefox */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(19, 236, 91, 0.2) transparent;
+}
+
+/* Ocultar scrollbar pero mantener funcionalidad */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animaciones suaves para scroll */
+.overflow-x-auto {
+  scroll-behavior: smooth;
+}
+
+/* Animación de entrada para elementos */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Efecto de hover mejorado para tarjetas */
+.group\/carousel:hover .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(19, 236, 91, 0.3);
+}
+
+/* Transiciones suaves globales */
+* {
+  scroll-behavior: smooth;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animación suave para scroll */
+.overflow-x-auto {
+  scroll-behavior: smooth;
+}

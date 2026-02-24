@@ -25,7 +25,10 @@ export const ProductSchema = z.object({
   seoCategory: z.string().min(1, 'La categoría SEO es requerida'),
   
   // Media
-  image: z.string().url('La imagen debe ser una URL válida'),
+  image: z.string().min(1, 'La imagen es requerida').refine(
+    (val) => val.startsWith('http://') || val.startsWith('https://') || val.startsWith('/'),
+    'La imagen debe ser una URL válida o una ruta válida'
+  ),
   
   // Enlace afiliado
   url: z.string().url('La URL de Amazon debe ser válida'),

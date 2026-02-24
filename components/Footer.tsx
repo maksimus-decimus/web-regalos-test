@@ -5,7 +5,7 @@ interface FooterProps {
     darkMode?: boolean;
 }
 
-const Footer: React.FC<FooterProps> = ({ onCategorySelect, darkMode = true }) => {
+const Footer: React.FC<FooterProps> = ({ onCategorySelect, darkMode }) => {
     const [email, setEmail] = useState('');
     const [subscribed, setSubscribed] = useState(false);
 
@@ -25,7 +25,7 @@ const Footer: React.FC<FooterProps> = ({ onCategorySelect, darkMode = true }) =>
     };
 
     return (
-        <footer className={`mt-auto border-t py-10 px-6 w-full transition-colors duration-300 ${
+        <footer className={`mt-auto border-t py-10 px-6 w-full ${
             darkMode 
                 ? 'border-[#28392e] bg-surface-dark' 
                 : 'border-gray-200 bg-gray-50'
@@ -43,18 +43,34 @@ const Footer: React.FC<FooterProps> = ({ onCategorySelect, darkMode = true }) =>
                 
                 <div className="flex flex-col gap-2">
                     <h4 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Comprar</h4>
-                    <button onClick={() => onCategorySelect(2)} className={`text-left text-sm hover:text-primary transition-colors ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Para Papá</button>
-                    <button onClick={() => onCategorySelect(3)} className={`text-left text-sm hover:text-primary transition-colors ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Para Mamá</button>
-                    <button onClick={() => onCategorySelect(4)} className={`text-left text-sm hover:text-primary transition-colors ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Niños (Aventura)</button>
-                    <button onClick={() => onCategorySelect(5)} className={`text-left text-sm hover:text-primary transition-colors ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Niñas (Fantasía)</button>
-                    <button onClick={() => onCategorySelect(6)} className={`text-left text-sm hover:text-primary transition-colors ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Tecnología</button>
+                    <button onClick={() => onCategorySelect(2)} className={`text-left text-sm transition-colors ${
+                        darkMode ? 'text-gray-400 hover:text-primary' : 'text-gray-600 hover:text-primary'
+                    }`}>Para Papá</button>
+                    <button onClick={() => onCategorySelect(3)} className={`text-left text-sm transition-colors ${
+                        darkMode ? 'text-gray-400 hover:text-primary' : 'text-gray-600 hover:text-primary'
+                    }`}>Para Mamá</button>
+                    <button onClick={() => onCategorySelect(4)} className={`text-left text-sm transition-colors ${
+                        darkMode ? 'text-gray-400 hover:text-primary' : 'text-gray-600 hover:text-primary'
+                    }`}>Niños (Aventura)</button>
+                    <button onClick={() => onCategorySelect(5)} className={`text-left text-sm transition-colors ${
+                        darkMode ? 'text-gray-400 hover:text-primary' : 'text-gray-600 hover:text-primary'
+                    }`}>Niñas (Fantasía)</button>
+                    <button onClick={() => onCategorySelect(6)} className={`text-left text-sm transition-colors ${
+                        darkMode ? 'text-gray-400 hover:text-primary' : 'text-gray-600 hover:text-primary'
+                    }`}>Tecnología</button>
                 </div>
                 
                 <div className="flex flex-col gap-2">
                     <h4 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Soporte</h4>
-                    <a href="#" onClick={handleStaticLink} className={`text-sm hover:text-primary transition-colors ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Centro de Ayuda</a>
-                    <a href="#" onClick={handleStaticLink} className={`text-sm hover:text-primary transition-colors ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Devoluciones</a>
-                    <a href="#" onClick={handleStaticLink} className={`text-sm hover:text-primary transition-colors ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Envíos</a>
+                    <a href="#" onClick={handleStaticLink} className={`text-sm transition-colors ${
+                        darkMode ? 'text-gray-400 hover:text-primary' : 'text-gray-600 hover:text-primary'
+                    }`}>Centro de Ayuda</a>
+                    <a href="#" onClick={handleStaticLink} className={`text-sm transition-colors ${
+                        darkMode ? 'text-gray-400 hover:text-primary' : 'text-gray-600 hover:text-primary'
+                    }`}>Devoluciones</a>
+                    <a href="#" onClick={handleStaticLink} className={`text-sm transition-colors ${
+                        darkMode ? 'text-gray-400 hover:text-primary' : 'text-gray-600 hover:text-primary'
+                    }`}>Envíos</a>
                 </div>
                 
                 <div className="flex flex-col gap-2">
@@ -67,8 +83,8 @@ const Footer: React.FC<FooterProps> = ({ onCategorySelect, darkMode = true }) =>
                             onChange={(e) => setEmail(e.target.value)}
                             className={`flex-1 border-none rounded-lg text-sm px-3 py-2 focus:ring-1 focus:ring-primary focus:outline-none ${
                                 darkMode 
-                                    ? 'bg-[#28392e] text-white' 
-                                    : 'bg-white text-gray-900 border border-gray-300'
+                                    ? 'bg-[#28392e] text-white placeholder-gray-500' 
+                                    : 'bg-white text-gray-900 placeholder-gray-400 border border-gray-300'
                             }`}
                             placeholder="Tu email" 
                         />
@@ -83,12 +99,18 @@ const Footer: React.FC<FooterProps> = ({ onCategorySelect, darkMode = true }) =>
             </div>
             
             <div className={`mx-auto max-w-[1280px] mt-10 border-t pt-6 flex flex-col md:flex-row justify-between items-center text-xs ${
-                darkMode ? 'border-[#28392e] text-gray-600' : 'border-gray-200 text-gray-500'
+                darkMode 
+                    ? 'border-[#28392e] text-gray-600' 
+                    : 'border-gray-200 text-gray-500'
             }`}>
                 <p>© 2025 Regalos Inc. Todos los derechos reservados.</p>
                 <div className="flex gap-4 mt-2 md:mt-0">
-                    <a href="#" onClick={handleStaticLink} className="hover:text-gray-400">Privacidad</a>
-                    <a href="#" onClick={handleStaticLink} className="hover:text-gray-400">Términos</a>
+                    <a href="#" onClick={handleStaticLink} className={`transition-colors ${
+                        darkMode ? 'hover:text-gray-400' : 'hover:text-gray-700'
+                    }`}>Privacidad</a>
+                    <a href="#" onClick={handleStaticLink} className={`transition-colors ${
+                        darkMode ? 'hover:text-gray-400' : 'hover:text-gray-700'
+                    }`}>Términos</a>
                 </div>
             </div>
         </footer>

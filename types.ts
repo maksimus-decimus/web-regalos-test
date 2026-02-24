@@ -11,6 +11,8 @@ export interface Product {
     oldPrice?: number;
     categoryId?: number;
     subcategory?: string;
+    seoCategory?: string;
+    featured?: boolean;
 }
 
 export interface Category {

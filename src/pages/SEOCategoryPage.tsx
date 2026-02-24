@@ -2,26 +2,40 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ProductLoader } from '../utils/productLoader';
 import { getSEOCategoryBySlug, SEO_CATEGORIES_PADRES } from '../config/seo-categories';
+import { useTheme } from '../../ThemeContext';
 import ProductCard from '../../components/ProductCard';
+import { PRODUCTS } from '../../constants';
 
-interface SEOCategoryPageProps {
-  darkMode?: boolean;
-}
-
-const SEOCategoryPage: React.FC<SEOCategoryPageProps> = ({ darkMode = false }) => {
+const SEOCategoryPage: React.FC = () => {
   const { category, seoCategory } = useParams<{
     category: string;
     seoCategory: string;
   }>();
   const navigate = useNavigate();
+  const { darkMode, toggleDarkMode } = useTheme();
 
   // Obtener información de la categoría SEO
   const seoCategoryInfo = seoCategory ? getSEOCategoryBySlug(seoCategory) : null;
   
-  // Obtener productos de esta categoría
+  // Obtener productos de esta categoría (desde ProductLoader y constants.ts)
   const products = React.useMemo(() => {
     if (!seoCategory) return [];
-    return ProductLoader.getProductsBySEOCategory(seoCategory);
+    
+    // Productos del ProductLoader
+    const loaderProducts = ProductLoader.getProductsBySEOCategory(seoCategory);
+    
+    // Productos de constants.ts filtrados por seoCategory
+    const constantsProducts = PRODUCTS.filter(p => p.seoCategory === seoCategory);
+    
+    // Combinar ambas fuentes (evitar duplicados por ID)
+    const allProducts = [...loaderProducts];
+    constantsProducts.forEach(cp => {
+      if (!allProducts.some(p => p.id === cp.id)) {
+        allProducts.push(cp as any); // Type assertion necesaria por diferencias menores en tipos
+      }
+    });
+    
+    return allProducts;
   }, [seoCategory]);
 
   // Si no se encuentra la categoría, mostrar 404
