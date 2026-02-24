@@ -73,7 +73,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 return {
                     darkMode: useDarkMode,
                     heroImage: getHeroBackgroundImage(id),
-                    accentColor: isDark ? 'text-rose-400' : 'text-rose-600',
+                    accentColor: useDarkMode ? 'text-rose-400' : 'text-rose-600',
                     buttonColor: 'bg-rose-500 text-white hover:bg-rose-400',
                     bgColor: useDarkMode ? 'bg-[#1f0a10]' : 'bg-rose-50',
                     textColor: useDarkMode ? 'text-white' : 'text-gray-900',
@@ -88,7 +88,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 return {
                     darkMode: useDarkMode,
                     heroImage: getHeroBackgroundImage(id),
-                    accentColor: isDark ? 'text-blue-400' : 'text-blue-600',
+                    accentColor: useDarkMode ? 'text-blue-400' : 'text-blue-600',
                     buttonColor: 'bg-blue-500 text-white hover:bg-blue-400',
                     bgColor: useDarkMode ? 'bg-[#0f172a]' : 'bg-blue-50',
                     textColor: useDarkMode ? 'text-white' : 'text-gray-900',
@@ -102,7 +102,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 return {
                     darkMode: useDarkMode,
                     heroImage: getHeroBackgroundImage(id),
-                    accentColor: isDark ? 'text-pink-400' : 'text-pink-600',
+                    accentColor: useDarkMode ? 'text-pink-400' : 'text-pink-600',
                     buttonColor: 'bg-pink-500 text-white hover:bg-pink-400',
                     bgColor: useDarkMode ? 'bg-[#290d23]' : 'bg-pink-50',
                     textColor: useDarkMode ? 'text-white' : 'text-gray-900',
@@ -116,7 +116,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 return {
                     darkMode: useDarkMode,
                     heroImage: getHeroBackgroundImage(id),
-                    accentColor: isDark ? 'text-cyan-400' : 'text-cyan-600',
+                    accentColor: useDarkMode ? 'text-cyan-400' : 'text-cyan-600',
                     buttonColor: 'bg-cyan-500 text-black hover:bg-cyan-400',
                     bgColor: useDarkMode ? 'bg-slate-900' : 'bg-cyan-50',
                     textColor: useDarkMode ? 'text-white' : 'text-gray-900',

@@ -28,12 +28,6 @@ const App: React.FC = () => {
     const [showAllCategories, setShowAllCategories] = useState(false);
     const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
     
-    // Theme State - Default to light mode
-    const [darkMode, setDarkMode] = useState(() => {
-        const saved = localStorage.getItem('darkMode');
-        return saved ? JSON.parse(saved) : false;
-    });
-    
     // Filter States
     const [priceRange, setPriceRange] = useState<[number, number]>([0, 20000]);
     const [selectedRecipient, setSelectedRecipient] = useState<string | null>(null);
