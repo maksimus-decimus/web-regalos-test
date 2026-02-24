@@ -1,0 +1,27 @@
+{
+  "id": 1004,
+  "slug": "set-utensilios-barbacoa-profesional",
+  "title": "Set de Utensilios para Barbacoa Profesional - 20 Piezas",
+  "description": "Kit completo de utensilios premium para barbacoa. Incluye 20 piezas de acero inoxidable de alta calidad en maletín de aluminio. Perfecto para padres maestros de la parrilla.",
+  "price": 64.99,
+  "oldPrice": 89.99,
+  "discount": "-28%",
+  "category": "Regalos para Padres",
+  "categoryId": 2,
+  "subcategory": "Cocinero",
+  "seoCategory": "padres-cocinitas",
+  "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600",
+  "url": "https://www.amazon.es/dp/EJEMPLO321?tag=tusitioweb-21",
+  "tag": "OFERTA",
+  "featured": true,
+  "metaTitle": "Set Barbacoa Profesional 20 Piezas - Regalo Padre Cocinero",
+  "metaDescription": "Kit completo para barbacoa con 20 utensilios profesionales. Acero inoxidable premium con maletín. El regalo perfecto para padres maestros de la parrilla.",
+  "keywords": [
+    "set barbacoa",
+    "utensilios parrilla",
+    "regalo padre cocinero",
+    "kit BBQ profesional",
+    "accesorios barbacoa"
+  ],
+  "createdAt": "2026-02-17T11:30:00Z"
+}

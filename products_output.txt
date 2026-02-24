@@ -1,0 +1,816 @@
+    // ------------------------------------------------------------------------
+    // CATEGORÍA: REGALOS PARA PADRES (categoryId: 2)
+    // ------------------------------------------------------------------------
+
+    {
+        id: 201,
+        categoryId: 2,
+        title: "TEMPUR Original Almohada cervical",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B00UVQPD28?tag=sitio200181",
+        description: "TEMPUR Original Almohada cervical"
+    },
+    {
+        id: 202,
+        categoryId: 2,
+        title: "Pistola de masaje muscular",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B09QPGTLG8?tag=sitio200181",
+        description: "Pistola de masaje muscular"
+    },
+    {
+        id: 203,
+        categoryId: 2,
+        title: "Cecotec Freidora de Aire",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B0BPYVNW3L?tag=sitio200181",
+        description: "Cecotec Freidora de Aire"
+    },
+    {
+        id: 204,
+        categoryId: 2,
+        title: "Garmin Vívoactive 5",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B0CY2QBKNS?tag=sitio200181",
+        description: "Garmin Vívoactive 5"
+    },
+    {
+        id: 205,
+        categoryId: 2,
+        title: "Kindle",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B0CFPXBJ9Y?tag=sitio200181",
+        description: "Kindle"
+    },
+    {
+        id: 206,
+        categoryId: 2,
+        title: "OPPO Reno13",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B0DVH12PT3?tag=sitio200181",
+        description: "OPPO Reno13"
+    },
+    {
+        id: 207,
+        categoryId: 2,
+        title: "Cámara instantánea",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B08H887HNJ?tag=sitio200181",
+        description: "Cámara instantánea"
+    },
+    {
+        id: 208,
+        categoryId: 2,
+        title: "Xiaomi Redmi Pad Pro",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B0D31XB4ST?tag=sitio200181",
+        description: "Xiaomi Redmi Pad Pro"
+    },
+    {
+        id: 209,
+        categoryId: 2,
+        title: "Taza",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B0DJPFRWPF?tag=sitio200181",
+        description: "Taza"
+    },
+    {
+        id: 210,
+        categoryId: 2,
+        title: "Kit barba",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B08GYDSD72?tag=sitio200181",
+        description: "Kit barba"
+    },
+    {
+        id: 211,
+        categoryId: 2,
+        title: "Maquinilla Gillette",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B0DTTNGTP7?tag=sitio200181",
+        description: "Maquinilla Gillette"
+    },
+    {
+        id: 212,
+        categoryId: 2,
+        title: "Smartbox – 2 días con encanto",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B07Z5LKRMF?tag=sitio200181",
+        description: "Smartbox – 2 días con encanto"
+    },
+    {
+        id: 213,
+        categoryId: 2,
+        title: "Taza personalizada",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B089GY91MH?tag=sitio200181",
+        description: "Taza personalizada"
+    },
+    {
+        id: 214,
+        categoryId: 2,
+        title: "Libro biografía papá",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/8401022509?tag=sitio200181",
+        description: "Libro biografía papá"
+    },
+    {
+        id: 215,
+        categoryId: 2,
+        title: "Manta Día del Padre",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B0F14RWPT3?tag=sitio200181",
+        description: "Manta Día del Padre"
+    },
+    {
+        id: 216,
+        categoryId: 2,
+        title: "Destornillador multipuntas",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B0D2HGJFL2?tag=sitio200181",
+        description: "Destornillador multipuntas"
+    },
+    {
+        id: 217,
+        categoryId: 2,
+        title: "Navaja multiusos",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B0BYRN75WT?tag=sitio200181",
+        description: "Navaja multiusos"
+    },
+    {
+        id: 218,
+        categoryId: 2,
+        title: "Tocadiscos",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B0BHT39Q3J?tag=sitio200181",
+        description: "Tocadiscos"
+    },
+    {
+        id: 219,
+        categoryId: 2,
+        title: "Set de whisky",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B0FL2GS63J?tag=sitio200181",
+        description: "Set de whisky"
+    },
+    {
+        id: 220,
+        categoryId: 2,
+        title: "Altavoz Bluetooth portátil",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/dp/B0DXKNBQS6?tag=sitio200181",
+        description: "Altavoz Bluetooth portátil"
+    },
+    // ------------------------------------------------------------------------
+    // CATEGORÍA: REGALOS PARA MADRES (categoryId: 3)
+    // ------------------------------------------------------------------------
+
+    {
+        id: 301,
+        categoryId: 3,
+        title: "Set de Cuidado Facial QUIYUM",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/QUIYUM-Cuidado-Regalo-Skincare-Limpiadora/dp/B0DK5GFXPF/?tag=sitio200181-21",
+        description: "Kit completo de skincare con limpiadora y productos de cuidado personal."
+    },
+    {
+        id: 302,
+        categoryId: 3,
+        title: "Taza divertida para madres MUGFFINS",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/MUGFFINS-Siempre-Español-divertido-cumpleaños/dp/B0FW28HGD7/?tag=sitio200181-21",
+        description: "Taza con mensaje en español, perfecta para sacar una sonrisa."
+    },
+    {
+        id: 303,
+        categoryId: 3,
+        title: "Caja Regalo Smartbox Relax & Wellness",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/Smartbox-relaxation-parents-wellness-activity/dp/B07Z5LKT1Q/?tag=sitio200181-21",
+        description: "Experiencia de spa y bienestar para desconectar."
+    },
+    {
+        id: 304,
+        categoryId: 3,
+        title: "Bombones de Chocolate Amatller",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/Chocolate-Amatller-Original-Chocolates-Assorted/dp/B0756HHDKT/?tag=sitio200181-21",
+        description: "Surtido gourmet de chocolates tradicionales."
+    },
+    {
+        id: 305,
+        categoryId: 3,
+        title: "Mochila femenina multifuncional Leathario",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/Leathario-Backpack-Multi-Pockets-Multifunctional-University/dp/B0CH8KFBK5/?tag=sitio200181-21",
+        description: "Mochila práctica y elegante para el día a día."
+    },
+    {
+        id: 306,
+        categoryId: 3,
+        title: "Smartwatch Popglory para mujer",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/Popglory-Pressure-Smartwatch-Respiratory-Android/dp/B0CGJ8P6VC/?tag=sitio200181-21",
+        description: "Reloj inteligente con funciones de salud y notificaciones."
+    },
+    {
+        id: 307,
+        categoryId: 3,
+        title: "Camiseta térmica sin costuras CLOSEMATE",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/CLOSEMATE-Thermal-Seamless-Extreme-Earthtones-Brown/dp/B0DDQ4FBDX/?tag=sitio200181-21",
+        description: "Prenda cómoda para el frío."
+    },
+    {
+        id: 308,
+        categoryId: 3,
+        title: "Set de invierno WEASIC (bufanda, guantes, orejeras)",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/WEASIC-Scarf-Earmuffs-Touch-Gloves/dp/B0B2JKN53B/?tag=sitio200181-21",
+        description: "Conjunto cálido para protegerse del frío."
+    },
+    {
+        id: 309,
+        categoryId: 3,
+        title: "Rosa preservada decorativa Yamonic",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/Yamonic-Preserved-Birthday-Christmas-Valentines/dp/B0D129W8B5/?tag=sitio200181-21",
+        description: "Rosa eterna en caja elegante."
+    },
+    {
+        id: 310,
+        categoryId: 3,
+        title: "Pulsera bohemia de acero inoxidable",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/Bracelet-Bohemian-Stainless-Birthday-Gemstone/dp/B0CNYTHC5V/?tag=sitio200181-21",
+        description: "Pulsera con diseño boho para uso diario."
+    },
+    {
+        id: 311,
+        categoryId: 3,
+        title: "Sudadera oversize Disney Stitch",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/Disney-Stitch-Womens-Sweatshirt-Oversize/dp/B09D55GFR2/?tag=sitio200181-21",
+        description: "Sudadera cómoda con personaje Disney."
+    },
+    {
+        id: 312,
+        categoryId: 3,
+        title: "Perfume femenino gourmand Eau de Toilette",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/Seductive-Toilette-Gourmand-Cologne-Fragrance/dp/B09GKJ77WD/?tag=sitio200181-21",
+        description: "Fragancia dulce y envolvente."
+    },
+    {
+        id: 313,
+        categoryId: 3,
+        title: "Cuaderno vintage de piel LEATHER Journal",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/LEATHER-Vintage-Leather-Journal-Notebook/dp/B0CS6XB4D9/?tag=sitio200181-21",
+        description: "Libreta artesanal para notas y planes."
+    },
+    {
+        id: 314,
+        categoryId: 3,
+        title: "Vela aromática decorativa",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/Scented-Decorative-Aromatherapy-Birthdays-Christmas/dp/B092VP2KQX/?tag=sitio200181-21",
+        description: "Vela perfumada para un ambiente acogedor."
+    },
+    {
+        id: 315,
+        categoryId: 3,
+        title: "Espejo de aumento con luz GRIFEMA",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/GRIFEMA-GF1001W-Magnification-Adjustable-Rotation/dp/B09QLVRZPC/?tag=sitio200181-21",
+        description: "Espejo giratorio para maquillaje y cuidado."
+    },
+    {
+        id: 316,
+        categoryId: 3,
+        title: "Bolso para portátil Tibora Lindsay",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/Tibora-Lindsay-Laptop-Woman-195890153/dp/B071VK7CT8/?tag=sitio200181-21",
+        description: "Bolso elegante y funcional para llevar portátil."
+    },
+    {
+        id: 317,
+        categoryId: 3,
+        title: "Manta térmica con peso para hombros Comfytemp",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/Comfytemp-Weighted-Thermal-Shoulders-Levels/dp/B0FB2XQLFV/?tag=sitio200181-21",
+        description: "Alivia tensiones con calor relajante."
+    },
+    {
+        id: 318,
+        categoryId: 3,
+        title: "Depiladora eléctrica Silk-épil",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/Silk-épil-Electric-Epilator-Removal-Flamingo/dp/B0CQRTB5J2/?tag=sitio200181-21",
+        description: "Depilación eficaz para piel suave."
+    },
+    {
+        id: 319,
+        categoryId: 3,
+        title: "Set de regalo de belleza y autocuidado para mujer",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/gp/aw/d/B098QTS954/?tag=sitio200181-21",
+        description: "Pack completo para momentos de relax."
+    },
+    {
+        id: 320,
+        categoryId: 3,
+        title: "Regalo personalizado de metacrilato transparente",
+        price: 0,
+        category: "Varios",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.es/-/en/Transparent-Personalised-Anniversary-Personalized-Valentines/dp/B0DW4CJ9FR/?tag=sitio200181-21",
+        description: "Detalle personalizable para aniversarios o San Valentín."
+    },
+    // ------------------------------------------------------------------------
+    // CATEGORÍA: REGALOS PARA NIÑOS (categoryId: 4)
+    // ------------------------------------------------------------------------
+
+    {
+        id: 401,
+        categoryId: 4,
+        title: "LEGO Classic Caja de Ladrillos Creativos Mediana",
+        price: 0,
+        category: "Construcción",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/49IWd2X",
+        description: "LEGO Classic Caja de Ladrillos Creativos Mediana - Construcción"
+    },
+    {
+        id: 402,
+        categoryId: 4,
+        title: "GKTZ Cámara Infantil Impermeable 1080P",
+        price: 0,
+        category: "Cámara infantil",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4b98EHI",
+        description: "GKTZ Cámara Infantil Impermeable 1080P - Cámara infantil"
+    },
+    {
+        id: 403,
+        categoryId: 4,
+        title: "Ushining Cámara Subacuática para Niños 1080P",
+        price: 0,
+        category: "Fotografía subacuática",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4qVS2b0",
+        description: "Ushining Cámara Subacuática para Niños 1080P - Fotografía subacuática"
+    },
+    {
+        id: 404,
+        categoryId: 4,
+        title: "Olvy Bloques de Construcción Magnéticos Montessori",
+        price: 0,
+        category: "Magnéticos Montessori",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4jOQmh3",
+        description: "Olvy Bloques de Construcción Magnéticos Montessori - Magnéticos Montessori"
+    },
+    {
+        id: 405,
+        categoryId: 4,
+        title: "KRAFUN Mi primer animal de costura",
+        price: 0,
+        category: "Costura fieltro",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/45jnw2u",
+        description: "KRAFUN Mi primer animal de costura - Costura fieltro"
+    },
+    {
+        id: 406,
+        categoryId: 4,
+        title: "WSNDM Kit de Costura de Animales",
+        price: 0,
+        category: "Costura animales",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4b4I6rb",
+        description: "WSNDM Kit de Costura de Animales - Costura animales"
+    },
+    {
+        id: 407,
+        categoryId: 4,
+        title: "DeFieltro Kit Costura Niños",
+        price: 0,
+        category: "Maletín costura",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/49wUJtX",
+        description: "DeFieltro Kit Costura Niños - Maletín costura"
+    },
+    {
+        id: 408,
+        categoryId: 4,
+        title: "Juguete de Tarjetas Flash Parlantes",
+        price: 0,
+        category: "Tarjetas parlantes",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4be9KCd",
+        description: "Juguete de Tarjetas Flash Parlantes - Tarjetas parlantes"
+    },
+    {
+        id: 409,
+        categoryId: 4,
+        title: "AHJ Tarjetas Flash Parlantes Español",
+        price: 0,
+        category: "Tarjetas español",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4jSKMdN",
+        description: "AHJ Tarjetas Flash Parlantes Español - Tarjetas español"
+    },
+    {
+        id: 410,
+        categoryId: 4,
+        title: "Almaxi Busy Board Montessori",
+        price: 0,
+        category: "Tablero sensorial",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/49GJkX5",
+        description: "Almaxi Busy Board Montessori - Tablero sensorial"
+    },
+    {
+        id: 411,
+        categoryId: 4,
+        title: "HILAND Bicicleta Infantil",
+        price: 0,
+        category: "Bicicleta infantil",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4jMdoFn",
+        description: "HILAND Bicicleta Infantil - Bicicleta infantil"
+    },
+    {
+        id: 412,
+        categoryId: 4,
+        title: "Olvy Bloques Magnéticos Montessori (95 piezas)",
+        price: 0,
+        category: "Bloques magnéticos",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3LIrsmI",
+        description: "Olvy Bloques Magnéticos Montessori (95 piezas) - Bloques magnéticos"
+    },
+    {
+        id: 413,
+        categoryId: 4,
+        title: "Wootoyz Cubos Magnéticos (100 piezas)",
+        price: 0,
+        category: "Cubos magnéticos",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4r2vBRA",
+        description: "Wootoyz Cubos Magnéticos (100 piezas) - Cubos magnéticos"
+    },
+    {
+        id: 414,
+        categoryId: 4,
+        title: "FMKLDENA Guantes Lanzatelarañas (juego de 3)",
+        price: 0,
+        category: "Accesorios superhéroe",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/49JRE8F",
+        description: "FMKLDENA Guantes Lanzatelarañas (juego de 3) - Accesorios superhéroe"
+    },
+    {
+        id: 415,
+        categoryId: 4,
+        title: "Lansay Blopens Centro de Actividades",
+        price: 0,
+        category: "Aerografía infantil",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/45kGx4N",
+        description: "Lansay Blopens Centro de Actividades - Aerografía infantil"
+    },
+    {
+        id: 416,
+        categoryId: 4,
+        title: "Ravensburger Memory Mini Peppa Pig",
+        price: 0,
+        category: "Memoria imágenes",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3LIKVUv",
+        description: "Ravensburger Memory Mini Peppa Pig - Memoria imágenes"
+    },
+    {
+        id: 417,
+        categoryId: 4,
+        title: "Melissa & Doug Set de Comida de Juguete de Madera",
+        price: 0,
+        category: "Juego cocina",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/49IWd2X",
+        description: "Melissa & Doug Set de Comida de Juguete de Madera - Juego cocina"
+    },
+    {
+        id: 418,
+        categoryId: 4,
+        title: "BONNYCO Puzle XXL Animales de la Jungla (48 piezas)",
+        price: 0,
+        category: "Puzle XXL",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/3LWvzf7",
+        description: "BONNYCO Puzle XXL Animales de la Jungla (48 piezas) - Puzle XXL"
+    },
+    {
+        id: 419,
+        categoryId: 4,
+        title: "Hahaland Kit de Manualidades de Costura para Niños",
+        price: 0,
+        category: "Costura guiada",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4beb6Nj",
+        description: "Hahaland Kit de Manualidades de Costura para Niños - Costura guiada"
+    },
+    {
+        id: 420,
+        categoryId: 4,
+        title: "DeFieltro Maletín de Costura Infantil",
+        price: 0,
+        category: "Maletín infantil",
+        image: "https://placehold.co/600x400",
+        url: "https://amzn.to/4jLQYUM",
+        description: "DeFieltro Maletín de Costura Infantil - Maletín infantil"
+    },
+    // ------------------------------------------------------------------------
+    // CATEGORÍA: REGALOS PARA NIÑAS (categoryId: 5)
+    // ------------------------------------------------------------------------
+
+    {
+        id: 501,
+        categoryId: 5,
+        title: "Estudio de arte de uñas",
+        price: 0,
+        category: "Moda y maquillaje",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0B4BRLFF9?tag=sitio200181-21",
+        description: "Estudio de arte de uñas - Moda y maquillaje"
+    },
+    {
+        id: 502,
+        categoryId: 5,
+        title: "Jackinthebox Poke Poke Art",
+        price: 0,
+        category: "Manualidades, prensador de flores",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0D839DLTL?tag=sitio200181-21",
+        description: "Jackinthebox Poke Poke Art - Manualidades, prensador de flores"
+    },
+    {
+        id: 503,
+        categoryId: 5,
+        title: "Mini máquina de karaoke",
+        price: 0,
+        category: "Electrónico",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0CHS2VNHC?tag=sitio200181-21",
+        description: "Mini máquina de karaoke - Electrónico"
+    },
+    {
+        id: 504,
+        categoryId: 5,
+        title: "Kit de sellos de gemas para el cabello",
+        price: 0,
+        category: "Moda y maquillaje",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0CDH69RMR?tag=sitio200181-21",
+        description: "Kit de sellos de gemas para el cabello - Moda y maquillaje"
+    },
+    {
+        id: 505,
+        categoryId: 5,
+        title: "Kit de fabricación de pulseras",
+        price: 0,
+        category: "Manualidades",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0B4BX6SY2?tag=sitio200181-21",
+        description: "Kit de fabricación de pulseras - Manualidades"
+    },
+    {
+        id: 506,
+        categoryId: 5,
+        title: "Rueda de cerámica",
+        price: 0,
+        category: "Cerámica",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0FLDJ3WJS?tag=sitio200181-21",
+        description: "Rueda de cerámica - Cerámica"
+    },
+    {
+        id: 507,
+        categoryId: 5,
+        title: "Walkie Talkies",
+        price: 0,
+        category: "Electrónico",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0FZGRNPLM?tag=sitio200181-21",
+        description: "Walkie Talkies - Electrónico"
+    },
+    {
+        id: 508,
+        categoryId: 5,
+        title: "Juguetes de Unicornio",
+        price: 0,
+        category: "Peluches",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0DF7PRCQ6?tag=sitio200181-21",
+        description: "Juguetes de Unicornio - Peluches"
+    },
+    {
+        id: 509,
+        categoryId: 5,
+        title: "Patinete Infantil",
+        price: 0,
+        category: "Patinete",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0CCYMV1T1?tag=sitio200181-21",
+        description: "Patinete Infantil - Patinete"
+    },
+    {
+        id: 510,
+        categoryId: 5,
+        title: "Kit de fabricación de diademas",
+        price: 0,
+        category: "Moda y maquillaje",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0B3WTSVSV?tag=sitio200181-21",
+        description: "Kit de fabricación de diademas - Moda y maquillaje"
+    },
+    {
+        id: 511,
+        categoryId: 5,
+        title: "Coche de Control Remoto",
+        price: 0,
+        category: "Autos trepadores",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0CTTYRJJY?tag=sitio200181-21",
+        description: "Coche de Control Remoto - Autos trepadores"
+    },
+    {
+        id: 512,
+        categoryId: 5,
+        title: "Crayola Color Wonder",
+        price: 0,
+        category: "Arte y manualidades",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B084Y3DLFJ?tag=sitio200181-21",
+        description: "Crayola Color Wonder - Arte y manualidades"
+    },
+    {
+        id: 513,
+        categoryId: 5,
+        title: "Kit médico de juguete",
+        price: 0,
+        category: "Juego de imitación médicos",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B09PD6YWF1?tag=sitio200181-21",
+        description: "Kit médico de juguete - Juego de imitación médicos"
+    },
+    {
+        id: 514,
+        categoryId: 5,
+        title: "6 Pack de Slimes",
+        price: 0,
+        category: "Masa viscosa para jugar",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0CYT6D2ZS?tag=sitio200181-21",
+        description: "6 Pack de Slimes - Masa viscosa para jugar"
+    },
+    {
+        id: 515,
+        categoryId: 5,
+        title: "Tiza para Cabello",
+        price: 0,
+        category: "Tintes para cabello",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B07FTGLWDR?tag=sitio200181-21",
+        description: "Tiza para Cabello - Tintes para cabello"
+    },
+    {
+        id: 516,
+        categoryId: 5,
+        title: "Joyero musical",
+        price: 0,
+        category: "Caja de joyería para niños",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0CHKLZ7PJ?tag=sitio200181-21",
+        description: "Joyero musical - Caja de joyería para niños"
+    },
+    {
+        id: 517,
+        categoryId: 5,
+        title: "Kit de maquillaje",
+        price: 0,
+        category: "Maquillaje",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B095LT69HN?tag=sitio200181-21",
+        description: "Kit de maquillaje - Maquillaje"
+    },
+    {
+        id: 518,
+        categoryId: 5,
+        title: "Kit de terrario de sirena",
+        price: 0,
+        category: "Manualidades",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B083Z3JMGP?tag=sitio200181-21",
+        description: "Kit de terrario de sirena - Manualidades"
+    },
+    {
+        id: 519,
+        categoryId: 5,
+        title: "Lego",
+        price: 0,
+        category: "Juguetes de construcción",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0BRBMNN93?tag=sitio200181-21",
+        description: "Lego - Juguetes de construcción"
+    },
+    {
+        id: 520,
+        categoryId: 5,
+        title: "Tapete de baile de unicornio",
+        price: 0,
+        category: "Electrónico",
+        image: "https://placehold.co/600x400",
+        url: "https://www.amazon.com/dp/B0BJPFZ6MV?tag=sitio200181-21",
+        description: "Tapete de baile de unicornio - Electrónico"
+    },

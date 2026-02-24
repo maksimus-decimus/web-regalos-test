@@ -6,11 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "validate": "node scripts/validateProduct.cjs",
+    "validate:all": "find src/content/products -type f \\( -name '*.json' -o -name '*.md' \\) -exec node scripts/validateProduct.cjs {} \\;"
   },
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
     "firebase": "^12.7.0",
+    "gray-matter": "^4.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.13.0",

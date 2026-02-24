@@ -1,0 +1,27 @@
+{
+  "id": 1002,
+  "slug": "kit-cerveza-artesanal",
+  "title": "Kit de Cervezas Artesanales del Mundo - Selección Premium",
+  "description": "Colección exclusiva de 12 cervezas artesanales de diferentes países. El regalo perfecto para padres cerveceros que disfrutan explorando nuevos sabores. Incluye guía de cata profesional y notas de cada cerveza.",
+  "price": 79.99,
+  "oldPrice": 99.99,
+  "discount": "-20%",
+  "category": "Regalos para Padres",
+  "categoryId": 2,
+  "subcategory": "Cervecero",
+  "seoCategory": "padres-cerveceros",
+  "image": "https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600",
+  "url": "https://www.amazon.es/dp/EJEMPLO456?tag=tusitioweb-21",
+  "tag": "BESTSELLER",
+  "featured": true,
+  "metaTitle": "Kit Cervezas Artesanales Premium - Regalo Padre Cervecero",
+  "metaDescription": "Pack de 12 cervezas artesanales seleccionadas de todo el mundo. Incluye guía de cata. El regalo perfecto para padres amantes de la cerveza.",
+  "keywords": [
+    "kit cerveza artesanal",
+    "cervezas del mundo",
+    "regalo cervecero",
+    "pack cerveza premium",
+    "padre cervecero"
+  ],
+  "createdAt": "2026-02-17T10:30:00Z"
+}

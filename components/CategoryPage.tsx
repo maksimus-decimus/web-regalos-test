@@ -14,11 +14,11 @@ interface CategoryPageProps {
     darkMode?: boolean;
 }
 
-const CategoryPage: React.FC<CategoryPageProps> = ({ 
-    category, 
-    products, 
-    onBack, 
-    favoriteIds, 
+const CategoryPage: React.FC<CategoryPageProps> = ({
+    category,
+    products,
+    onBack,
+    favoriteIds,
     onToggleFavorite,
     onOpenProduct,
     darkMode 
@@ -73,7 +73,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 return {
                     darkMode: useDarkMode,
                     heroImage: getHeroBackgroundImage(id),
-                    accentColor: 'text-rose-400',
+                    accentColor: isDark ? 'text-rose-400' : 'text-rose-600',
                     buttonColor: 'bg-rose-500 text-white hover:bg-rose-400',
                     bgColor: useDarkMode ? 'bg-[#1f0a10]' : 'bg-rose-50',
                     textColor: useDarkMode ? 'text-white' : 'text-gray-900',
@@ -88,7 +88,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 return {
                     darkMode: useDarkMode,
                     heroImage: getHeroBackgroundImage(id),
-                    accentColor: 'text-blue-400',
+                    accentColor: isDark ? 'text-blue-400' : 'text-blue-600',
                     buttonColor: 'bg-blue-500 text-white hover:bg-blue-400',
                     bgColor: useDarkMode ? 'bg-[#0f172a]' : 'bg-blue-50',
                     textColor: useDarkMode ? 'text-white' : 'text-gray-900',
@@ -102,7 +102,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 return {
                     darkMode: useDarkMode,
                     heroImage: getHeroBackgroundImage(id),
-                    accentColor: 'text-pink-400',
+                    accentColor: isDark ? 'text-pink-400' : 'text-pink-600',
                     buttonColor: 'bg-pink-500 text-white hover:bg-pink-400',
                     bgColor: useDarkMode ? 'bg-[#290d23]' : 'bg-pink-50',
                     textColor: useDarkMode ? 'text-white' : 'text-gray-900',
@@ -116,7 +116,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 return {
                     darkMode: useDarkMode,
                     heroImage: getHeroBackgroundImage(id),
-                    accentColor: 'text-cyan-400',
+                    accentColor: isDark ? 'text-cyan-400' : 'text-cyan-600',
                     buttonColor: 'bg-cyan-500 text-black hover:bg-cyan-400',
                     bgColor: useDarkMode ? 'bg-slate-900' : 'bg-cyan-50',
                     textColor: useDarkMode ? 'text-white' : 'text-gray-900',
@@ -137,16 +137,15 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
     const FavoriteButton = ({ productId, colorClass = "" }: { productId: number, colorClass?: string }) => {
         const isFav = favoriteIds.includes(productId);
         return (
-            <button 
-                onClick={(e) => { 
-                    e.stopPropagation(); 
-                    onToggleFavorite(productId); 
+            <button
+                onClick={(e) => {
+                    e.stopPropagation();
+                    onToggleFavorite(productId);
                 }}
-                className={`absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full backdrop-blur-sm transition-colors ${
-                    isFav 
-                    ? 'bg-red-500 text-white' 
-                    : (colorClass || 'bg-black/40 text-white hover:bg-white hover:text-black')
-                }`}
+                className={`absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full backdrop-blur-sm transition-colors ${isFav
+                        ? 'bg-red-500 text-white'
+                        : (colorClass || 'bg-black/40 text-white hover:bg-white hover:text-black')
+                    }`}
                 aria-label={isFav ? "Quitar de favoritos" : "Añadir a favoritos"}
             >
                 <span className={`material-symbols-outlined text-[18px] ${isFav ? 'fill-current' : ''}`}>
@@ -161,9 +160,9 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
         // Render Subcategory View if active
         if (activeSubcategory) {
             const subcategoryProducts = products.filter(p => p.subcategory === activeSubcategory);
-            
+
             return (
-                <div className={`flex flex-1 flex-col items-center w-full px-4 md:px-10 pb-20 min-h-screen ${config.bgColor} ${config.textColor}`}>
+                <div className={`flex flex-1 flex-col items-center w-full px-4 md:px-10 pb-20 min-h-screen transition-colors duration-300 ${config.bgColor} ${config.textColor}`}>
                     <div className="flex flex-col max-w-[1200px] w-full flex-1 gap-8 pt-6">
                         <nav aria-label="Navegación" className="flex flex-wrap gap-2 px-4">
                             <button onClick={onBack} className={`opacity-60 hover:opacity-100 transition-opacity text-sm font-medium leading-normal ${config.textColor}`}>
@@ -183,11 +182,11 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                 {activeSubcategory}
                             </span>
                         </nav>
-                        
+
                         <div className="px-4">
                             <div className="flex items-center gap-4 mb-4">
-                                <button 
-                                    onClick={() => setActiveSubcategory(null)} 
+                                <button
+                                    onClick={() => setActiveSubcategory(null)}
                                     className={`flex items-center justify-center size-10 rounded-full ${config.darkMode ? 'bg-white/10 hover:bg-white/20' : 'bg-black/5 hover:bg-black/10'} transition-colors`}
                                     aria-label="Volver a categorías"
                                 >
@@ -227,7 +226,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
 
         // Render Main Landing Page
         return (
-            <div className={`flex flex-1 flex-col items-center w-full px-4 md:px-10 pb-20 ${config.bgColor} ${config.textColor}`}>
+            <div className={`flex flex-1 flex-col items-center w-full px-4 md:px-10 pb-20 transition-colors duration-300 ${config.bgColor} ${config.textColor}`}>
                 <div className="flex flex-col max-w-[1200px] w-full flex-1 gap-8 pt-6">
                     {/* Breadcrumbs */}
                     <nav aria-label="Navegación" className="flex flex-wrap gap-2 px-4">
@@ -244,15 +243,15 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
 
                     {/* Hero Section */}
                     <div className="px-4">
-                        <div 
-                            className="relative w-full rounded-3xl overflow-hidden min-h-[400px] flex items-end p-8 md:p-12 bg-cover bg-center group shadow-2xl" 
-                            style={{backgroundImage: `url(${config.heroImage})`}}
+                        <div
+                            className="relative w-full rounded-3xl overflow-hidden min-h-[400px] flex items-end p-8 md:p-12 bg-cover bg-center group shadow-2xl"
+                            style={{ backgroundImage: `url(${config.heroImage})` }}
                             role="banner"
                         >
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent z-0"></div>
                             <div className="relative z-10 flex flex-col gap-4 max-w-2xl">
                                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider backdrop-blur-md w-fit border border-white/20 shadow-sm">
-                                    <span className="material-symbols-outlined text-sm">verified</span> 
+                                    <span className="material-symbols-outlined text-sm">verified</span>
                                     Edición 2025
                                 </span>
                                 <h1 className="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight drop-shadow-md">
@@ -266,7 +265,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                     {category.id === 6 && "El futuro hoy. Descubre la última tecnología que transformará tu vida."}
                                 </p>
                                 <div className="flex gap-4 mt-2">
-                                    <button 
+                                    <button
                                         onClick={() => {
                                             const firstSection = document.querySelector('section');
                                             firstSection?.scrollIntoView({ behavior: 'smooth' });
@@ -528,7 +527,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                     {/* Algorithmic Footer Section */}
                     <section className={`mt-12 px-4 pt-10 border-t ${config.darkMode ? 'border-white/10' : 'border-black/10'}`}>
                         <h2 className={`${config.textColor} text-2xl font-bold mb-6 flex items-center gap-2`}>
-                            <span className={`material-symbols-outlined ${config.accentColor}`}>auto_awesome</span> 
+                            <span className={`material-symbols-outlined ${config.accentColor}`}>auto_awesome</span>
                             Te puede interesar...
                         </h2>
                         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -536,15 +535,15 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                 .filter(p => !p.subcategory || p.subcategory === 'Interes')
                                 .slice(0, 6)
                                 .map(product => (
-                                    <div 
-                                        key={product.id} 
-                                        onClick={() => onOpenProduct?.(product)} 
+                                    <div
+                                        key={product.id}
+                                        onClick={() => onOpenProduct?.(product)}
                                         className={`flex flex-col gap-2 p-2 rounded-xl transition-colors cursor-pointer group ${config.darkMode ? 'hover:bg-white/5' : 'hover:bg-black/5'}`}
                                         role="article"
                                     >
-                                        <div 
+                                        <div
                                             className={`aspect-square rounded-lg bg-cover bg-center relative ${config.darkMode ? 'bg-white/5' : 'bg-black/5'}`}
-                                            style={{backgroundImage: `url("${getProductImage(product)}")`}}
+                                            style={{ backgroundImage: `url("${getProductImage(product)}")` }}
                                             role="img"
                                             aria-label={`Imagen de ${product.title}`}
                                         >
@@ -565,7 +564,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
 
     // Default Layout (Generic Fallback)
     return (
-        <div className="flex-1 px-6 lg:px-12 py-8 max-w-[1440px] mx-auto w-full">
+        <div className={`flex-1 px-6 lg:px-12 py-8 max-w-[1440px] mx-auto w-full transition-colors duration-300 ${darkMode ? 'bg-background-dark' : 'bg-white'}`}>
             {/* Breadcrumbs */}
             <div className="mb-8 flex flex-wrap gap-2 text-sm font-medium">
                 <button onClick={onBack} className={`hover:text-primary transition-colors ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
@@ -589,7 +588,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 </div>
                 {/* Mobile Filters */}
                 <div className="md:hidden w-full relative">
-                    <button 
+                    <button
                         onClick={() => setShowMobileFilters(!showMobileFilters)}
                         className={`w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium active:scale-95 transition-transform ${
                             darkMode ? 'bg-[#1A2C20] text-white' : 'bg-gray-200 text-gray-900'
@@ -608,17 +607,17 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                             <div className="flex flex-col gap-4">
                                 <h3 className="font-bold text-white border-b border-gray-700 pb-2">Mostrar</h3>
                                 <label className="flex items-center gap-3 cursor-pointer">
-                                    <input 
-                                        type="checkbox" 
-                                        defaultChecked 
-                                        className="rounded border-gray-500 bg-transparent text-primary focus:ring-primary" 
+                                    <input
+                                        type="checkbox"
+                                        defaultChecked
+                                        className="rounded border-gray-500 bg-transparent text-primary focus:ring-primary"
                                     />
                                     <span className="text-white">Todos los productos</span>
                                 </label>
                                 <label className="flex items-center gap-3 cursor-pointer">
-                                    <input 
-                                        type="checkbox" 
-                                        className="rounded border-gray-500 bg-transparent text-primary focus:ring-primary" 
+                                    <input
+                                        type="checkbox"
+                                        className="rounded border-gray-500 bg-transparent text-primary focus:ring-primary"
                                     />
                                     <span className="text-gray-400">Solo Ofertas</span>
                                 </label>
@@ -633,22 +632,22 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                 {/* Sidebar Filters (Desktop) */}
                 <aside className="hidden lg:flex w-64 flex-col gap-8 shrink-0">
                     <div className="flex flex-col gap-4">
-                        <h3 className="font-bold text-lg text-slate-900 dark:text-white border-b border-gray-200 dark:border-gray-800 pb-2">
+                        <h3 className={`font-bold text-lg border-b pb-2 ${darkMode ? 'text-white border-gray-800' : 'text-slate-900 border-gray-200'}`}>
                             Tipo de Producto
                         </h3>
                         <div className="flex flex-col gap-3">
                             <label className="flex items-center gap-3 cursor-pointer group">
                                 <div className="relative flex items-center">
-                                    <input 
-                                        defaultChecked 
-                                        className="peer h-5 w-5 appearance-none rounded-md border border-gray-500 bg-transparent checked:border-primary checked:bg-primary transition-all" 
+                                    <input
+                                        defaultChecked
+                                        className="peer h-5 w-5 appearance-none rounded-md border border-gray-500 bg-transparent checked:border-primary checked:bg-primary transition-all"
                                         type="checkbox"
                                     />
                                     <span className="material-symbols-outlined absolute left-0 top-0 text-black opacity-0 peer-checked:opacity-100 text-[18px] pointer-events-none">
                                         check
                                     </span>
                                 </div>
-                                <span className="text-gray-500 dark:text-gray-300 group-hover:text-primary transition-colors">
+                                <span className={`group-hover:text-primary transition-colors ${darkMode ? 'text-gray-300' : 'text-gray-500'}`}>
                                     Todos
                                 </span>
                             </label>
@@ -661,13 +660,14 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                     {/* Products Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {products.map(product => (
-                            <div 
-                                key={product.id} 
-                                onClick={() => onOpenProduct?.(product)} 
-                                className="group relative flex flex-col rounded-2xl bg-white dark:bg-[#1A2C20] p-4 transition-all hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-primary/5 border border-transparent hover:border-primary/50"
+                            <div
+                                key={product.id}
+                                onClick={() => onOpenProduct?.(product)}
+                                className={`group relative flex flex-col rounded-2xl p-4 transition-all hover:-translate-y-1 hover:shadow-xl border border-transparent hover:border-primary/50 ${darkMode ? 'bg-[#1A2C20] hover:shadow-primary/5' : 'bg-white'
+                                    }`}
                                 role="article"
                             >
-                                <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-gray-100 dark:bg-[#111813] mb-4">
+                                <div className={`relative aspect-square w-full overflow-hidden rounded-xl mb-4 ${darkMode ? 'bg-[#111813]' : 'bg-gray-100'}`}>
                                     {product.tag && (
                                         <span className="absolute left-3 top-3 z-10 rounded-full bg-primary px-2.5 py-1 text-xs font-bold text-background-dark">
                                             {product.tag}
@@ -679,22 +679,22 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                         </span>
                                     )}
                                     <FavoriteButton productId={product.id} />
-                                    <img 
-                                        alt={product.title} 
-                                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                                    <img
+                                        alt={product.title}
+                                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                                         src={getProductImage(product)}
                                         loading="lazy"
                                     />
                                 </div>
                                 <div className="flex flex-col flex-1 gap-2">
-                                    <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                                    <h3 className={`text-lg font-bold group-hover:text-primary transition-colors ${darkMode ? 'text-white' : 'text-slate-900'}`}>
                                         {product.title}
                                     </h3>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                                    <p className={`text-sm line-clamp-2 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                                         {product.category}
                                     </p>
                                     {product.description && (
-                                        <p className="text-sm text-gray-400 dark:text-gray-400 line-clamp-2">
+                                        <p className="text-sm text-gray-400 line-clamp-2">
                                             {product.description}
                                         </p>
                                     )}
@@ -705,7 +705,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                                     €{product.oldPrice.toFixed(2)}
                                                 </span>
                                             )}
-                                            <span className="text-xl font-bold text-slate-900 dark:text-white">
+                                            <span className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-slate-900'}`}>
                                                 €{product.price.toFixed(2)}
                                             </span>
                                         </div>
