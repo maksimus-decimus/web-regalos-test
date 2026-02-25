@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { SEO_CATEGORIES_PADRES } from '../config/seo-categories';
+import { SEO_CATEGORIES_PADRES, SEO_CATEGORIES_NINOS } from '../config/seo-categories';
 import { PRODUCTS } from '../../constants';
 import { useTheme } from '../../ThemeContext';
 import Header from '../../components/Header';
@@ -8,8 +8,17 @@ import Footer from '../../components/Footer';
 import ProductCard from '../../components/ProductCard';
 
 /**
+ * Mapa de categoría URL → configuración
+ */
+const CATEGORY_CONFIG: Record<string, { categoryId: number; seoCategories: typeof SEO_CATEGORIES_PADRES; label: string }> = {
+  padres: { categoryId: 2, seoCategories: SEO_CATEGORIES_PADRES, label: 'Padres' },
+  ninos: { categoryId: 4, seoCategories: SEO_CATEGORIES_NINOS, label: 'Niños' },
+};
+
+/**
  * Página que muestra las categorías SEO de una categoría principal
  * Ejemplo: /padres muestra los productos en carruseles organizados por categoría SEO
+ * Ejemplo: /ninos muestra los productos de niños organizados por categoría SEO
  */
 const CategoryListPage: React.FC = () => {
   const { category } = useParams<{ category: string }>();
@@ -19,17 +28,18 @@ const CategoryListPage: React.FC = () => {
   const [showMobileFilters, setShowMobileFilters] = useState(false);
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
 
-  // Por ahora solo soportamos "padres" con categorías SEO
-  const seoCategoriesAvailable = category === 'padres';
-  const seoCategories = seoCategoriesAvailable ? SEO_CATEGORIES_PADRES : [];
+  // Soportamos padres y niños con categorías SEO
+  const config = category ? CATEGORY_CONFIG[category] : undefined;
+  const seoCategoriesAvailable = !!config;
+  const seoCategories = config?.seoCategories ?? [];
 
-  // Obtener productos de la categoría (categoryId: 2 para Padres)
+  // Obtener productos de la categoría
   const categoryProducts = useMemo(() => {
-    if (category === 'padres') {
-      return PRODUCTS.filter(p => p.categoryId === 2);
+    if (config) {
+      return PRODUCTS.filter(p => p.categoryId === config.categoryId);
     }
     return [];
-  }, [category]);
+  }, [category, config]);
 
   // Agrupar productos por seoCategory
   const productsBySeoCategory = useMemo(() => {
@@ -79,7 +89,7 @@ const CategoryListPage: React.FC = () => {
             Categoría no disponible
           </h1>
           <p className="text-gray-600 mb-6">
-            Las subcategorías SEO solo están disponibles para "padres" por ahora.
+            Las subcategorías SEO están disponibles para "padres" y "niños".
           </p>
           <button
             onClick={handleGoHome}

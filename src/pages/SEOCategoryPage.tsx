@@ -1,10 +1,11 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ProductLoader } from '../utils/productLoader';
-import { getSEOCategoryBySlug, SEO_CATEGORIES_PADRES } from '../config/seo-categories';
+import { getSEOCategoryBySlug, SEO_CATEGORIES_PADRES, SEO_CATEGORIES_NINOS } from '../config/seo-categories';
 import { useTheme } from '../../ThemeContext';
 import ProductCard from '../../components/ProductCard';
 import { PRODUCTS } from '../../constants';
+import { getProductImage } from '../../utils/images';
 
 const SEOCategoryPage: React.FC = () => {
   const { category, seoCategory } = useParams<{
@@ -59,8 +60,44 @@ const SEOCategoryPage: React.FC = () => {
     );
   }
 
+  // JSON-LD structured data para SEO
+  const jsonLd = seoCategoryInfo ? {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: seoCategoryInfo.metaTitle || seoCategoryInfo.name,
+    description: seoCategoryInfo.metaDescription || '',
+    url: `https://tudominio.com/${category}/${seoCategory}`,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: products.map((product, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'Product',
+          name: product.title,
+          image: getProductImage(product),
+          description: product.description || product.title,
+          offers: {
+            '@type': 'Offer',
+            price: product.price,
+            priceCurrency: 'EUR',
+            availability: 'https://schema.org/InStock',
+            url: product.url,
+          },
+        },
+      })),
+    },
+  } : null;
+
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-background-dark text-white' : 'bg-white text-slate-900'} transition-colors`}>
+      {/* JSON-LD Structured Data */}
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
       <div className="max-w-7xl mx-auto px-6 py-8">
         {/* Breadcrumbs */}
         <nav className="mb-8 flex flex-wrap gap-2 text-sm font-medium">
@@ -114,7 +151,7 @@ const SEOCategoryPage: React.FC = () => {
         <div className="mt-16 pt-8 border-t border-gray-200 dark:border-white/10">
           <h2 className="text-2xl font-bold mb-6">Explora otras categorías</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {SEO_CATEGORIES_PADRES.filter(cat => cat.slug !== seoCategory)
+            {(category === 'ninos' ? SEO_CATEGORIES_NINOS : SEO_CATEGORIES_PADRES).filter(cat => cat.slug !== seoCategory)
               .slice(0, 6)
               .map((cat) => (
                 <button

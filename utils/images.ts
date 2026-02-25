@@ -40,8 +40,13 @@ export const getHeroBackgroundImage = (categoryId: number): string => {
 
 // Resolver de imagen para productos: intenta locales por categoría; fallback a la remota original
 export const getProductImage = (product: Product): string => {
-    // Si el producto tiene una imagen específica (de productos_afiliados), usarla directamente
-    if (product.image && (product.image.startsWith('/productos_afiliados/') || product.image.startsWith('productos_afiliados/') || product.image.startsWith('http'))) {
+    // Si el producto tiene una imagen específica (de productos_afiliados o images/productos), usarla directamente
+    if (product.image && (
+        product.image.startsWith('/productos_afiliados/') || 
+        product.image.startsWith('productos_afiliados/') || 
+        product.image.startsWith('/images/productos/') ||
+        product.image.startsWith('http')
+    )) {
         return product.image;
     }
 

@@ -1,25 +1,31 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SEO_CATEGORIES_PADRES } from '../config/seo-categories';
+import { SEO_CATEGORIES_PADRES, SEO_CATEGORIES_NINOS, SEOCategory } from '../config/seo-categories';
 
 interface SEOCategoriesNavProps {
   darkMode?: boolean;
   currentCategory?: string;
+  parentCategory?: 'padres' | 'ninos'; // Nueva prop para seleccionar qué categorías mostrar
 }
 
 /**
  * Componente de navegación para categorías SEO
- * Muestra las 20 categorías optimizadas de forma atractiva
+ * Muestra las categorías optimizadas de forma atractiva para padres o niños
  */
 const SEOCategoriesNav: React.FC<SEOCategoriesNavProps> = ({ 
   darkMode = false,
-  currentCategory 
+  currentCategory,
+  parentCategory = 'padres'
 }) => {
   const navigate = useNavigate();
 
-  // Iconos para cada tipo de categoría (puedes personalizarlos)
+  // Seleccionar categorías según parent
+  const seoCategories: SEOCategory[] = parentCategory === 'ninos' ? SEO_CATEGORIES_NINOS : SEO_CATEGORIES_PADRES;
+
+  // Iconos para cada tipo de categoría
   const getIcon = (categoryId: string): string => {
     const iconMap: Record<string, string> = {
+      // Padres
       'padres-originales': 'auto_awesome',
       'padre-que-tiene-todo': 'workspace_premium',
       'regalos-personalizados': 'edit',
@@ -40,6 +46,28 @@ const SEOCategoriesNav: React.FC<SEOCategoriesNavProps> = ({
       'regalos-baratos': 'savings',
       'ultima-hora': 'schedule',
       'manualidades-diy': 'handyman',
+      // Niños
+      'ninos-mejores-regalos': 'child_care',
+      'ninos-10-anos': 'cake',
+      'juguetes-educativos': 'school',
+      'ninos-regalos-originales': 'redeem',
+      'ninos-5-anos': 'looks_5',
+      'ninos-8-anos': 'looks',
+      'juguetes-construccion': 'construction',
+      'ninos-comunion': 'church',
+      'juegos-mesa-ninos': 'casino',
+      'ninos-dinosaurios': 'cruelty_free',
+      'robots-ninos': 'smart_toy',
+      'ninos-deportivo': 'sports_soccer',
+      'ciencia-ninos': 'science',
+      'ninos-reyes': 'star',
+      'ninos-exterior': 'park',
+      'ninos-12-anos': 'cake',
+      'tecnologico-ninos': 'devices',
+      'stem-ninos': 'calculate',
+      'creativos-ninos': 'palette',
+      'disfraces-ninos': 'theater_comedy',
+      'baratos-cumpleanos-ninos': 'savings',
     };
     return iconMap[categoryId] || 'category';
   };
@@ -57,13 +85,13 @@ const SEOCategoriesNav: React.FC<SEOCategoriesNavProps> = ({
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-          {SEO_CATEGORIES_PADRES.map((category) => {
+          {seoCategories.map((category) => {
             const isActive = currentCategory === category.slug;
             
             return (
               <button
                 key={category.id}
-                onClick={() => navigate(`/padres/${category.slug}`)}
+                onClick={() => navigate(`/${parentCategory}/${category.slug}`)}
                 className={`
                   flex flex-col items-center gap-3 p-4 rounded-xl transition-all
                   hover:scale-[1.02] active:scale-95
@@ -105,13 +133,13 @@ const SEOCategoriesNav: React.FC<SEOCategoriesNavProps> = ({
                 if (!term) return;
                 
                 // Buscar categoría que coincida
-                const found = SEO_CATEGORIES_PADRES.find(cat => 
+                const found = seoCategories.find(cat => 
                   cat.name.toLowerCase().includes(term) ||
                   cat.slug.includes(term)
                 );
                 
                 if (found) {
-                  navigate(`/padres/${found.slug}`);
+                  navigate(`/${parentCategory}/${found.slug}`);
                   e.target.value = '';
                 }
               }}

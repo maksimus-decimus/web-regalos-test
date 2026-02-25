@@ -248,11 +248,229 @@ export const SEO_CATEGORIES_PADRES: SEOCategory[] = [
 ];
 
 /**
+ * Categorías SEO para Niños
+ * URLs: midominio.com/ninos/[slug-categoria]
+ */
+export const SEO_CATEGORIES_NINOS: SEOCategory[] = [
+  {
+    id: 'ninos-mejores-regalos',
+    name: 'Regalos para Niños',
+    slug: 'mejores-regalos-ninos',
+    parent: 'ninos',
+    icon: 'child_care',
+    metaTitle: 'Los Mejores Regalos para Niños 2026 | Top Selección',
+    metaDescription: 'Selección de los mejores regalos para niños. Ideas probadas que gustarán a cualquier niño.',
+    keywords: ['regalos niños', 'regalos niño', 'regalo infantil'],
+  },
+  {
+    id: 'ninos-10-anos',
+    name: 'Regalos para niños de 10 años',
+    slug: 'ninos-10-anos',
+    parent: 'ninos',
+    icon: 'cake',
+    metaTitle: 'Regalos para Niños de 10 Años | Ideas Perfectas 2026',
+    metaDescription: 'Los mejores regalos para niños de 10 años. Juguetes y gadgets perfectos para esta edad.',
+    keywords: ['regalo niño 10 años', 'juguetes 10 años', 'regalos diez años'],
+  },
+  {
+    id: 'juguetes-educativos',
+    name: 'Juguetes educativos para niños',
+    slug: 'juguetes-educativos',
+    parent: 'ninos',
+    icon: 'school',
+    metaTitle: 'Juguetes Educativos para Niños | Aprende Jugando 2026',
+    metaDescription: 'Los mejores juguetes educativos para niños. Aprenden mientras se divierten.',
+    keywords: ['juguetes educativos', 'aprendizaje niños', 'juguetes didácticos'],
+  },
+  {
+    id: 'ninos-regalos-originales',
+    name: 'Regalos originales para niños',
+    slug: 'regalos-originales-ninos',
+    parent: 'ninos',
+    icon: 'redeem',
+    metaTitle: 'Regalos Originales para Niños | Ideas Únicas 2026',
+    metaDescription: 'Descubre regalos originales y únicos para niños. Ideas sorprendentes que no encontrarás en cualquier tienda.',
+    keywords: ['regalos originales niños', 'regalo único niño', 'ideas originales infantil'],
+  },
+  {
+    id: 'ninos-5-anos',
+    name: 'Qué regalar a un niño de 5 años',
+    slug: 'ninos-5-anos',
+    parent: 'ninos',
+    icon: 'looks_5',
+    metaTitle: '¿Qué Regalar a un Niño de 5 Años? | Ideas 2026',
+    metaDescription: 'Los mejores regalos para niños de 5 años. Juguetes divertidos y educativos para esta etapa.',
+    keywords: ['regalo niño 5 años', 'juguetes 5 años', 'regalos cinco años'],
+  },
+  {
+    id: 'ninos-8-anos',
+    name: 'Regalos para niños de 8 años',
+    slug: 'ninos-8-anos',
+    parent: 'ninos',
+    icon: 'looks_8',
+    metaTitle: 'Regalos para Niños de 8 Años | Selección 2026',
+    metaDescription: 'Ideas de regalos perfectas para niños de 8 años. Juguetes, juegos y actividades para su edad.',
+    keywords: ['regalo niño 8 años', 'juguetes 8 años', 'regalos ocho años'],
+  },
+  {
+    id: 'juguetes-construccion',
+    name: 'Juguetes de construcción para niños',
+    slug: 'juguetes-construccion',
+    parent: 'ninos',
+    icon: 'construction',
+    metaTitle: 'Juguetes de Construcción para Niños | LEGO y Más 2026',
+    metaDescription: 'Los mejores juguetes de construcción para niños. Bloques, LEGO y magnéticos que desarrollan la creatividad.',
+    keywords: ['juguetes construccion', 'bloques niños', 'lego regalo'],
+  },
+  {
+    id: 'ninos-comunion',
+    name: 'Regalos para niños comunión',
+    slug: 'comunion',
+    parent: 'ninos',
+    icon: 'church',
+    metaTitle: 'Regalos para Primera Comunión | Ideas Especiales 2026',
+    metaDescription: 'Regalos perfectos para la Primera Comunión de un niño. Ideas especiales y significativas.',
+    keywords: ['regalo comunion niño', 'primera comunion', 'regalo especial niño ciudad'],
+  },
+  {
+    id: 'juegos-mesa-ninos',
+    name: 'Juegos de mesa para niños 6 años',
+    slug: 'juegos-mesa',
+    parent: 'ninos',
+    icon: 'casino',
+    metaTitle: 'Juegos de Mesa para Niños de 6 Años | Top 2026',
+    metaDescription: 'Los mejores juegos de mesa para niños de 6 años. Diversión en familia y en grupo.',
+    keywords: ['juegos de mesa niños', 'juego mesa 6 años', 'juego familiar infantil'],
+  },
+  {
+    id: 'ninos-dinosaurios',
+    name: 'Regalos para niños que aman los dinosaurios',
+    slug: 'dinosaurios',
+    parent: 'ninos',
+    icon: 'cruelty_free',
+    metaTitle: 'Regalos de Dinosaurios para Niños | Ideas 2026',
+    metaDescription: 'Regalos perfectos para niños amantes de los dinosaurios. Juguetes, libros y actividades temáticas.',
+    keywords: ['regalo dinosaurios niño', 'juguetes dinosaurio', 'niño dinosaurios'],
+  },
+  {
+    id: 'robots-ninos',
+    name: 'Robots para niños regalar',
+    slug: 'robots',
+    parent: 'ninos',
+    icon: 'smart_toy',
+    metaTitle: 'Robots para Niños | Los Mejores para Regalar 2026',
+    metaDescription: 'Los mejores robots educativos y de juguete para niños. Aprenden programación y robótica jugando.',
+    keywords: ['robots niños', 'robot educativo', 'regalo robot infantil'],
+  },
+  {
+    id: 'ninos-deportivo',
+    name: 'Regalos deportivos para niños',
+    slug: 'deportivo',
+    parent: 'ninos',
+    icon: 'sports_soccer',
+    metaTitle: 'Regalos Deportivos para Niños | Activos y Sanos 2026',
+    metaDescription: 'Regalos deportivos para niños activos. Bicicletas, patinetes y material deportivo.',
+    keywords: ['regalos deportivos ninos', 'bicicleta niño', 'deporte infantil'],
+  },
+  {
+    id: 'ciencia-ninos',
+    name: 'Kits de ciencia para niños',
+    slug: 'ciencia',
+    parent: 'ninos',
+    icon: 'science',
+    metaTitle: 'Kits de Ciencia para Niños | Experimentos 2026',
+    metaDescription: 'Los mejores kits de ciencia y experimentos para niños curiosos. Aprenden ciencia de forma divertida.',
+    keywords: ['kit ciencia niños', 'experimentos niño', 'regalos científicos infantil'],
+  },
+  {
+    id: 'ninos-reyes',
+    name: 'Regalos de Reyes para niños',
+    slug: 'reyes',
+    parent: 'ninos',
+    icon: 'star',
+    metaTitle: 'Regalos de Reyes Magos para Niños 2026',
+    metaDescription: 'Los mejores regalos de Reyes Magos para niños. Ideas mágicas para el 6 de enero.',
+    keywords: ['reyes magos niños', '6 enero regalo niño', 'regalos reyes infantil'],
+  },
+  {
+    id: 'ninos-exterior',
+    name: 'Juguetes para exterior niños',
+    slug: 'exterior',
+    parent: 'ninos',
+    icon: 'park',
+    metaTitle: 'Juguetes para Exterior para Niños | Aire Libre 2026',
+    metaDescription: 'Los mejores juguetes para exterior para niños. Actividades y juegos al aire libre.',
+    keywords: ['juguetes exterior niños', 'juegos aire libre niño', 'bicicleta patinete'],
+  },
+  {
+    id: 'ninos-12-anos',
+    name: 'Regalos para niños de 12 años',
+    slug: 'ninos-12-anos',
+    parent: 'ninos',
+    icon: 'cake',
+    metaTitle: 'Regalos para Niños de 12 Años | Ideas 2026',
+    metaDescription: 'Los mejores regalos para niños de 12 años. Tecnología, gadgets y juguetes para preadolescentes.',
+    keywords: ['regalo niño 12 años', 'juguetes 12 años', 'preadolescente regalo'],
+  },
+  {
+    id: 'tecnologico-ninos',
+    name: 'Regalos tecnológicos para niños',
+    slug: 'tecnologico',
+    parent: 'ninos',
+    icon: 'devices',
+    metaTitle: 'Regalos Tecnológicos para Niños | Gadgets 2026',
+    metaDescription: 'Los mejores regalos tecnológicos para niños. Cámaras, tablets y gadgets educativos.',
+    keywords: ['regalos tecnologicos niños', 'gadgets niño', 'tecnologia infantil'],
+  },
+  {
+    id: 'stem-ninos',
+    name: 'Juguetes STEM España',
+    slug: 'stem',
+    parent: 'ninos',
+    icon: 'calculate',
+    metaTitle: 'Juguetes STEM para Niños España | Ciencia y Tecnología 2026',
+    metaDescription: 'Los mejores juguetes STEM para niños en España. Ciencia, tecnología, ingeniería y matemáticas jugando.',
+    keywords: ['juguetes stem españa', 'stem niños', 'regalo stem infantil'],
+  },
+  {
+    id: 'creativos-ninos',
+    name: 'Regalos para niños creativos',
+    slug: 'creativos',
+    parent: 'ninos',
+    icon: 'palette',
+    metaTitle: 'Regalos para Niños Creativos | Arte y Manualidades 2026',
+    metaDescription: 'Regalos perfectos para niños creativos. Kits de arte, costura, pintura y manualidades.',
+    keywords: ['regalos niños creativos', 'manualidades niño', 'arte infantil'],
+  },
+  {
+    id: 'disfraces-ninos',
+    name: 'Disfraces originales para niños',
+    slug: 'disfraces',
+    parent: 'ninos',
+    icon: 'theater_comedy',
+    metaTitle: 'Disfraces Originales para Niños | Ideas 2026',
+    metaDescription: 'Los disfraces más originales para niños. Superhéroes, animales y fantasía para Carnaval y Halloween.',
+    keywords: ['disfraces originales niños', 'disfraz niño', 'halloween carnaval infantil'],
+  },
+  {
+    id: 'baratos-cumpleanos-ninos',
+    name: 'Regalos baratos para cumpleaños niños',
+    slug: 'baratos-cumpleanos',
+    parent: 'ninos',
+    icon: 'savings',
+    metaTitle: 'Regalos Baratos para Cumpleaños de Niños | Económicos 2026',
+    metaDescription: 'Regalos económicos pero geniales para cumpleaños de niños. Ideas con precio reducido.',
+    keywords: ['regalos baratos cumpleanos niño', 'regalo economico niño', 'barato cumpleaños infantil'],
+  },
+];
+
+/**
  * Mapa de categorías por slug para búsqueda rápida
  */
-export const SEO_CATEGORIES_MAP = new Map<string, SEOCategory>(
-  SEO_CATEGORIES_PADRES.map(cat => [cat.slug, cat])
-);
+export const SEO_CATEGORIES_MAP = new Map<string, SEOCategory>([
+  ...SEO_CATEGORIES_PADRES.map(cat => [cat.slug, cat] as [string, SEOCategory]),
+  ...SEO_CATEGORIES_NINOS.map(cat => [cat.slug, cat] as [string, SEOCategory]),
+]);
 
 /**
  * Obtener categoría SEO por slug
@@ -265,7 +483,7 @@ export const getSEOCategoryBySlug = (slug: string): SEOCategory | undefined => {
  * Obtener todos los slugs de categorías SEO
  */
 export const getAllSEOCategorySlugs = (): string[] => {
-  return SEO_CATEGORIES_PADRES.map(cat => cat.slug);
+  return [...SEO_CATEGORIES_PADRES, ...SEO_CATEGORIES_NINOS].map(cat => cat.slug);
 };
 
 /**

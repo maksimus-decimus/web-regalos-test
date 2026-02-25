@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Category, Product } from '../types';
 import { getHeroBackgroundImage, getProductImage } from '../utils/images';
-import { SEO_CATEGORIES_PADRES } from '../src/config/seo-categories';
+import { SEO_CATEGORIES_PADRES, SEO_CATEGORIES_NINOS, SEOCategory } from '../src/config/seo-categories';
 import ProductCard from './ProductCard';
 
 interface CategoryPageProps {
@@ -27,9 +27,9 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
     const [showMobileFilters, setShowMobileFilters] = useState(false);
     const [selectedSeoCategory, setSelectedSeoCategory] = useState<string | null>(null);
 
-    // Agrupar productos por seoCategory para Padres
+    // Agrupar productos por seoCategory para Padres y Niños
     const productsBySeoCategory = useMemo(() => {
-        if (category.id !== 2) return {}; // Solo para Padres por ahora
+        if (category.id !== 2 && category.id !== 4) return {}; // Padres y Niños
         
         const grouped: Record<string, Product[]> = {};
         products.forEach(product => {
@@ -45,8 +45,9 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
 
     // Filtrar categorías SEO que tengan productos
     const categoriesWithProducts = useMemo(() => {
-        if (category.id !== 2) return [];
-        return SEO_CATEGORIES_PADRES.filter(cat => 
+        if (category.id !== 2 && category.id !== 4) return [];
+        const seoCats: SEOCategory[] = category.id === 2 ? SEO_CATEGORIES_PADRES : SEO_CATEGORIES_NINOS;
+        return seoCats.filter(cat => 
             productsBySeoCategory[cat.slug]?.length > 0
         );
     }, [productsBySeoCategory, category.id]);
