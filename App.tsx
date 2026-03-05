@@ -125,6 +125,12 @@ const App: React.FC = () => {
             navigate('/padres');
             return;
         }
+
+        // Si es Regalos para Madres (id: 3), navegar a categorías SEO
+        if (category.id === 3) {
+            navigate('/madres');
+            return;
+        }
         
         // Para otras categorías, usar el comportamiento tradicional
         resetViews();
