@@ -355,7 +355,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 302,
         categoryId: 3,
-        seoCategory: "detalles-emotivos-madres",
+        seoCategory: "emotivos",
         subcategory: "Hogar",
         title: "Taza divertida para madres MUGFFINS",
         price: 12.95,
@@ -367,7 +367,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 303,
         categoryId: 3,
-        seoCategory: "regalos-bienestar-madres",
+        seoCategory: "bienestar",
         subcategory: "Experiencias",
         title: "Caja Regalo Smartbox Relax & Wellness",
         price: 37.90,
@@ -380,7 +380,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 304,
         categoryId: 3,
-        seoCategory: "detalles-emotivos-madres",
+        seoCategory: "emotivos",
         subcategory: "Hogar",
         title: "Bombones de Chocolate Amatller",
         price: 13.47,
@@ -393,7 +393,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 305,
         categoryId: 3,
-        seoCategory: "regalos-madres-trabajadoras",
+        seoCategory: "trabajadoras",
         subcategory: "Moda",
         title: "Mochila femenina multifuncional Leathario",
         price: 21.99,
@@ -405,7 +405,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 306,
         categoryId: 3,
-        seoCategory: "regalos-madres-trabajadoras",
+        seoCategory: "trabajadoras",
         subcategory: "Moda",
         title: "Smartwatch Popglory para mujer",
         price: 31.40,
@@ -418,7 +418,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 307,
         categoryId: 3,
-        seoCategory: "regalos-madres-modernos",
+        seoCategory: "modernos",
         subcategory: "Moda",
         title: "Camiseta térmica sin costuras CLOSEMATE",
         price: 14.99,
@@ -442,7 +442,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 309,
         categoryId: 3,
-        seoCategory: "detalles-emotivos-madres",
+        seoCategory: "emotivos",
         subcategory: "Hogar",
         title: "Rosa preservada decorativa Yamonic",
         price: 15.99,
@@ -454,7 +454,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 310,
         categoryId: 3,
-        seoCategory: "joyas-regalar-madre",
+        seoCategory: "joyas",
         subcategory: "Moda",
         title: "Pulsera bohemia de acero inoxidable",
         price: 17.99,
@@ -466,7 +466,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 311,
         categoryId: 3,
-        seoCategory: "regalos-madres-modernos",
+        seoCategory: "modernos",
         subcategory: "Moda",
         title: "Sudadera oversize Disney Stitch",
         price: 33.19,
@@ -491,7 +491,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 313,
         categoryId: 3,
-        seoCategory: "regalos-madres-lectura",
+        seoCategory: "amantes-lectura",
         subcategory: "Hogar",
         title: "Cuaderno vintage de piel LEATHER Journal",
         price: 19.99,
@@ -503,7 +503,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 314,
         categoryId: 3,
-        seoCategory: "regalos-bienestar-madres",
+        seoCategory: "bienestar",
         subcategory: "Hogar",
         title: "Vela aromática decorativa",
         price: 18.99,
@@ -515,7 +515,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 315,
         categoryId: 3,
-        seoCategory: "regalos-bienestar-madres",
+        seoCategory: "bienestar",
         subcategory: "Belleza",
         title: "Espejo de aumento con luz GRIFEMA",
         price: 16.00,
@@ -528,7 +528,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 316,
         categoryId: 3,
-        seoCategory: "regalos-madres-trabajadoras",
+        seoCategory: "trabajadoras",
         subcategory: "Moda",
         title: "Tous Tibora Lindsay Bolsa para portátil",
         price: 105.00,
@@ -541,7 +541,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 317,
         categoryId: 3,
-        seoCategory: "regalos-bienestar-madres",
+        seoCategory: "bienestar",
         subcategory: "Belleza",
         title: "Braun Silk-épil 7 Depiladora Eléctrica",
         price: 85.89,
@@ -554,7 +554,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 318,
         categoryId: 3,
-        seoCategory: "regalos-foto-madres",
+        seoCategory: "con-foto",
         subcategory: "Hogar",
         title: "Lámpara Personalizada Polaroid con Fotos",
         price: 12.00,
@@ -566,7 +566,7 @@ export const PRODUCTS: Product[] = [
     {
         id: 319,
         categoryId: 3,
-        seoCategory: "regalos-bienestar-madres",
+        seoCategory: "bienestar",
         subcategory: "Bienestar",
         title: "Comfytemp Almohadilla Térmica Ponderada",
         price: 49.00,
