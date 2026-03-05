@@ -4,12 +4,14 @@ import { ProductLoader } from '../utils/productLoader';
 import productosPadres from './productos-padres.json';
 import productosMadres from './productos-madres.json';
 import productosNinas from './productos-ninas.json';
+import productosNinos from './productos-ninos.json';
 
 // Combinar todos los productos
 const PRODUCTOS_AMAZON = [
   ...productosPadres,
   ...productosMadres,
   ...productosNinas,
+  ...productosNinos,
 ];
 
 /**
@@ -40,6 +42,7 @@ export const initializeProducts = () => {
     console.log(`   👨 Padres: ${productosPadres.length} productos`);
     console.log(`   👩 Madres: ${productosMadres.length} productos`);
     console.log(`   👧 Niñas: ${productosNinas.length} productos`);
+    console.log(`   👦 Niños: ${productosNinos.length} productos`);
     console.log(`   🎯 Registrados en ProductLoader: ${loadedCount}`);
   } catch (error) {
     console.log('%c❌ ERROR AL CARGAR PRODUCTOS', 'background: #ef4444; color: white; font-size: 16px; padding: 5px 10px; border-radius: 5px;');
