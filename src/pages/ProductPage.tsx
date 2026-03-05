@@ -59,8 +59,73 @@ const ProductPage: React.FC = () => {
     );
   }
 
+  // JSON-LD structured data para producto individual
+  const productJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.title,
+    image: getProductImage(product),
+    description: product.description || product.title,
+    sku: `SKU-${product.id}`,
+    brand: {
+      '@type': 'Brand',
+      name: product.category || 'Regalos',
+    },
+    offers: {
+      '@type': 'Offer',
+      url: product.url,
+      priceCurrency: 'EUR',
+      price: product.price,
+      availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'Organization',
+        name: 'Amazon',
+      },
+    },
+  };
+
+  // BreadcrumbList JSON-LD
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Inicio',
+        item: 'https://tudominio.com/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: category === 'ninos' ? 'Regalos para Niños' : `Regalos para ${category}`,
+        item: `https://tudominio.com/${category}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: seoCategoryInfo?.name || seoCategory,
+        item: `https://tudominio.com/${category}/${seoCategory}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: product.title,
+      },
+    ],
+  };
+
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-background-dark text-white' : 'bg-gray-50 text-slate-900'} transition-colors`}>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Header 
         searchTerm=""
         onSearchChange={() => {}}

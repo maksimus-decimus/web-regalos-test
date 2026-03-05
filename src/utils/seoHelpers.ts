@@ -1,5 +1,5 @@
 import { ProductLoader } from '../utils/productLoader';
-import { SEO_CATEGORIES_PADRES, generateProductURL } from '../config/seo-categories';
+import { SEO_CATEGORIES_PADRES, SEO_CATEGORIES_NINOS, generateProductURL } from '../config/seo-categories';
 
 /**
  * Genera un sitemap.xml para el sitio
@@ -19,11 +19,40 @@ export const generateSitemap = (): string => {
     <priority>1.0</priority>
   </url>
 
-  <!-- Páginas de categorías SEO -->
+  <!-- Páginas de categorías principales -->
+  <url>
+    <loc>${baseUrl}/padres</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/ninos</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Páginas de categorías SEO - Padres -->
 `;
 
-  // Añadir categorías SEO
+  // Añadir categorías SEO de Padres
   SEO_CATEGORIES_PADRES.forEach(category => {
+    sitemap += `  <url>
+    <loc>${baseUrl}/${category.parent}/${category.slug}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+`;
+  });
+
+  sitemap += `
+  <!-- Páginas de categorías SEO - Niños -->
+`;
+
+  // Añadir categorías SEO de Niños
+  SEO_CATEGORIES_NINOS.forEach(category => {
     sitemap += `  <url>
     <loc>${baseUrl}/${category.parent}/${category.slug}</loc>
     <lastmod>${today}</lastmod>
@@ -40,7 +69,9 @@ export const generateSitemap = (): string => {
   // Añadir productos
   const products = ProductLoader.getAllProducts();
   products.forEach(product => {
-    const url = generateProductURL('padres', product.seoCategory, product.slug);
+    // Determinar la categoría padre basándose en categoryId
+    const parentCategory = product.categoryId === 4 ? 'ninos' : 'padres';
+    const url = generateProductURL(parentCategory, product.seoCategory, product.slug);
     const lastmod = product.updatedAt || product.createdAt || today;
     
     sitemap += `  <url>
