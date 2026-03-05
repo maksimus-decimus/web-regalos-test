@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { SEO_CATEGORIES_PADRES } from '../config/seo-categories';
+import { SEO_CATEGORIES_PADRES, SEO_CATEGORIES_NINOS } from '../config/seo-categories';
 import { PRODUCTS } from '../../constants';
 import { useTheme } from '../../ThemeContext';
 import Header from '../../components/Header';
@@ -19,14 +19,17 @@ const CategoryListPage: React.FC = () => {
   const [showMobileFilters, setShowMobileFilters] = useState(false);
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
 
-  // Por ahora solo soportamos "padres" con categorías SEO
-  const seoCategoriesAvailable = category === 'padres';
-  const seoCategories = seoCategoriesAvailable ? SEO_CATEGORIES_PADRES : [];
+  // Soportamos "padres" y "niños" con categorías SEO
+  const seoCategoriesAvailable = category === 'padres' || category === 'ninos';
+  const seoCategories = category === 'padres' ? SEO_CATEGORIES_PADRES : 
+                        category === 'ninos' ? SEO_CATEGORIES_NINOS : [];
 
-  // Obtener productos de la categoría (categoryId: 2 para Padres)
+  // Obtener productos de la categoría (categoryId: 2 para Padres, categoryId: 4 para Niños)
   const categoryProducts = useMemo(() => {
     if (category === 'padres') {
       return PRODUCTS.filter(p => p.categoryId === 2);
+    } else if (category === 'ninos') {
+      return PRODUCTS.filter(p => p.categoryId === 4);
     }
     return [];
   }, [category]);
@@ -79,7 +82,7 @@ const CategoryListPage: React.FC = () => {
             Categoría no disponible
           </h1>
           <p className="text-gray-600 mb-6">
-            Las subcategorías SEO solo están disponibles para "padres" por ahora.
+            Las subcategorías SEO solo están disponibles para "padres" y "niños" por ahora.
           </p>
           <button
             onClick={handleGoHome}

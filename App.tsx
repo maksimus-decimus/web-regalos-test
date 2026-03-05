@@ -126,6 +126,12 @@ const App: React.FC = () => {
             return;
         }
         
+        // Si es Regalos para Niños (id: 4), navegar a categorías SEO
+        if (category.id === 4) {
+            navigate('/ninos');
+            return;
+        }
+        
         // Para otras categorías, usar el comportamiento tradicional
         resetViews();
         setSelectedCategory(category);
