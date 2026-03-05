@@ -43,6 +43,13 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
         return grouped;
     }, [products, category.id]);
 
+    // Obtener las categorías SEO apropiadas según el tipo de categoría
+    const getSeoCategoriesForCategory = useMemo(() => {
+        if (category.id === 2) return SEO_CATEGORIES_PADRES;
+        if (category.id === 3) return SEO_CATEGORIES_MADRES;
+        return [];
+    }, [category.id]);
+
     // Filtrar categorías SEO que tengan productos
     const categoriesWithProducts = useMemo(() => {
         if (category.id !== 2 && category.id !== 4) return [];
@@ -78,12 +85,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                     buttonColor: 'bg-rose-500 text-white hover:bg-rose-400',
                     bgColor: useDarkMode ? 'bg-[#1f0a10]' : 'bg-rose-50',
                     textColor: useDarkMode ? 'text-white' : 'text-gray-900',
-                    sections: [
-                        { title: "Cuidado Personal y Belleza", subcategory: "Belleza", icon: "spa" },
-                        { title: "Hogar y Decoración", subcategory: "Hogar", icon: "home" },
-                        { title: "Moda y Accesorios", subcategory: "Moda", icon: "styler" },
-                        { title: "Experiencias Relajantes", subcategory: "Experiencias", icon: "diamond" }
-                    ]
+                    sections: [] // Las madres usan categorías SEO en lugar de secciones
                 };
             case 4: // Niños
                 return {
@@ -282,8 +284,8 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                         </div>
                     </div>
 
-                    {/* Sistema de Carruseles con Sidebar para Padres */}
-                    {category.id === 2 ? (
+                    {/* Sistema de Carruseles con Sidebar para Padres y Madres */}
+                    {(category.id === 2 || category.id === 3) ? (
                         <div className="flex gap-6 px-4 mt-8">
                             {/* Sidebar de filtros */}
                             <aside className={`hidden lg:block w-64 flex-shrink-0 ${config.darkMode ? 'bg-white/5' : 'bg-gray-50'} rounded-2xl p-4 h-fit sticky top-4`}>
@@ -419,7 +421,8 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
                                                             <button
                                                                 onClick={() => {
                                                                     // Navegar a la página de la categoría SEO
-                                                                    window.location.href = `/padres/${cat.slug}`;
+                                                                    const categoryPath = category.id === 2 ? 'padres' : category.id === 3 ? 'madres' : 'general';
+                                                                    window.location.href = `/${categoryPath}/${cat.slug}`;
                                                                 }}
                                                                 className={`hidden md:flex items-center gap-1 opacity-60 hover:opacity-100 transition-all text-sm font-medium group ${config.textColor}`}
                                                                 aria-label={`Ver todos los productos de ${cat.name}`}
